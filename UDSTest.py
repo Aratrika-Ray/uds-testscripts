@@ -47,4 +47,4 @@ class run:
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
             self.Test(testId)
             
-run('Unit_Test','This is a template dry run', 'Scheme_605685_fortest.xlsx', 'rules.dslr', 'column-map1.json')
+run('Unit_Test','This is a template dry run', 'Scheme_605685_fortest-cellhighlight.xls',  'rules.dslr', 'column-map1.json')
