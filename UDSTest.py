@@ -60,28 +60,27 @@ class run:
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
             self.Test(testId, transformType)
             
-def main():
-    # parser for command line flags
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-f", type=str, required=True)
-    parser.add_argument("-ap", type=str)
-    parser.add_argument("-sp", type=str)
-    parser.add_argument("-m", type=str, required=True)
+# parser for command line flags
+parser = argparse.ArgumentParser()
+parser.add_argument("-f", type=str, required=True)
+parser.add_argument("-ap", type=str)
+parser.add_argument("-sp", type=str)
+parser.add_argument("-m", type=str, required=True)
 
-    args = parser.parse_args()
+args = parser.parse_args()
 
-    # check for all rules combination    
-    # ap & sp
-    if(args.ap and args.sp): 
-        t = threading.Thread(traget=run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
-        if(apDownload):
-            run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
-    #ap only
-    elif(args.ap):
-        run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
-    #sp only
-    elif(args.sp):
+# check for all rules combination    
+# ap & sp
+if(args.ap and args.sp): 
+    t = threading.Thread(traget=run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
+    if(apDownload):
         run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
-    # neither
-    else: 
-        print("Please use an AP or SP rule file to continue...")
+#ap only
+elif(args.ap):
+    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+#sp only
+elif(args.sp):
+    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+# neither
+else: 
+    print("Please use an AP or SP rule file to continue...")
