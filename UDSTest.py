@@ -5,7 +5,9 @@ import S3Utility
 import RequestMessage
 import json
 import argparse
-import asyncio
+import threading
+
+apDownload = False
 
 class run:
     # Method called on receiving a response from UDS
@@ -58,7 +60,7 @@ class run:
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
             self.Test(testId, transformType)
             
-async def main():
+def main():
     # parser for command line flags
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", type=str, required=True)
@@ -71,10 +73,9 @@ async def main():
     # check for all rules combination    
     # ap & sp
     if(args.ap and args.sp): 
-        ap = asyncio.current_task(run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
-        await ap
-        print(apDownload)
-        # run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+        t = threading.Thread(traget=run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
+        if(apDownload):
+            run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
     #ap only
     elif(args.ap):
         run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
