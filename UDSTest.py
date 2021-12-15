@@ -41,7 +41,6 @@ class run:
         self.producer.close()
         self.consumer.close()
         print('********************** End of Test **********************')
-
    
     # constructor
     def __init__(self, testId, description, uploadFilePath, rulesAssetPath, columnMappingPath):
@@ -58,6 +57,9 @@ class run:
         if(len(rulesAssetPath) > 1):
             if(self.preTest(testId, description, uploadFilePath, rulesAssetPath[0], columnMappingPath)):
                 self.Test(testId, "aptrans_")
+            # after ap download, start sp process
+            self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
+            self.producer = Producer.newProducer(self.config)
             if(self.apDownload and self.preTest(testId, description, uploadFilePath, rulesAssetPath[1], columnMappingPath)):
                 self.Test(testId, "sptrans_")
         else:
@@ -75,18 +77,16 @@ parser.add_argument("-map", type=str, required=True)
 
 args = parser.parse_args()
 
-# check for all rules combination
-# ap or sp
-if(args.ap or args.sp):
-    # ap
-    if(args.ap):
-        run('Unit_Test_AP','This is a template dry run for ap transform', args.f, [args.ap], args.map)
-    # sp
-    else:
-        run('Unit_Test_SP','This is a template dry run for sp transform', args.f, [args.sp], args.map)
+# check for all rules combination    
 # ap & sp
-if(args.ap and args.sp):
+if(args.ap and args.sp): 
     run('Unit_Test_AP_SP','This is a template dry run for ap and sp transform', args.f, [args.ap, args.sp], args.map)
+#ap only
+elif(args.ap):
+    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, [args.ap], args.map)
+#sp only
+elif(args.sp):
+    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, [args.sp], args.map)
 # neither
-if(not (args.ap or args.sp)):
+else: 
     print("Please use an AP or SP rule file to continue...")
