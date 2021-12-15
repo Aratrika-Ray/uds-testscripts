@@ -71,7 +71,8 @@ async def main():
     # check for all rules combination    
     # ap & sp
     if(args.ap and args.sp): 
-        await run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+        ap = asyncio.current_task(run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
+        await ap
         print(apDownload)
         # run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
     #ap only
