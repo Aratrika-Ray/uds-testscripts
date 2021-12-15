@@ -5,6 +5,7 @@ import S3Utility
 import RequestMessage
 import json
 import argparse
+import asyncio
 
 class run:
     # Method called on receiving a response from UDS
@@ -57,26 +58,28 @@ class run:
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
             self.Test(testId, transformType)
             
-# parser for command line flags
-parser = argparse.ArgumentParser()
-parser.add_argument("-f", type=str, required=True)
-parser.add_argument("-ap", type=str)
-parser.add_argument("-sp", type=str)
-parser.add_argument("-map", type=str, required=True)
+async def main():
+    # parser for command line flags
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", type=str, required=True)
+    parser.add_argument("-ap", type=str)
+    parser.add_argument("-sp", type=str)
+    parser.add_argument("-m", type=str, required=True)
 
-args = parser.parse_args()
+    args = parser.parse_args()
 
-# check for all rules combination    
-# ap & sp
-if(args.ap and args.sp): 
-    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.map)
-    if(apDownload): run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.map)
-#ap only
-elif(args.ap):
-    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.map)
-#sp only
-elif(args.sp):
-    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.map)
-# neither
-else: 
-    print("Please use an AP or SP rule file to continue...")
+    # check for all rules combination    
+    # ap & sp
+    if(args.ap and args.sp): 
+        await run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+        print(apDownload)
+        # run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+    #ap only
+    elif(args.ap):
+        run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+    #sp only
+    elif(args.sp):
+        run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+    # neither
+    else: 
+        print("Please use an AP or SP rule file to continue...")
