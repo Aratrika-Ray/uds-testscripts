@@ -5,9 +5,6 @@ import S3Utility
 import RequestMessage
 import json
 import argparse
-import threading
-
-apDownload = False
 
 class run:
     # Method called on receiving a response from UDS
@@ -33,17 +30,16 @@ class run:
 
     # End of test
     def postTest(self, response):
-        global apDownload
         responseObject = json.loads(response)
+        testID = responseObject['requestMsgId'].split("_")
+        folderName = "_".join(testID[1:])
         for assetsInfo in responseObject['assetsInfo']:
             for outputAssets in assetsInfo['outputAssets']:
                 # checking success status
                 if(outputAssets['status'] == "DATAEXTRACT_SUCCESS"):
-                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'])
-                    apDownload = True
+                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
                 else:
-                    apDownload = False
-                    print("\n There has been some error!", outputAssets['status'], "\n")
+                    print("\n ---There has been some error! **", outputAssets['status'], "**---\n")
         self.producer.close()
         self.consumer.close()
         print('********************** End of Test **********************')
@@ -72,9 +68,8 @@ args = parser.parse_args()
 # check for all rules combination    
 # ap & sp
 if(args.ap and args.sp): 
-    t = threading.Thread(traget=run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
-    if(apDownload):
-        run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
 #ap only
 elif(args.ap):
     run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
