@@ -2,17 +2,21 @@ import boto3
 import logging
 import uuid
 from botocore.exceptions import ClientError
+import os
 
 class instance:
     # Download asset from AWS S3 bucket
-    def downloadFileAWS(self, asset_id):
+    def downloadFileAWS(self, asset_id, folder):
         s3 = boto3.client('s3',self.s3Region)
         print("asset id to download:" + asset_id)
         theFileData = s3.get_object(Bucket=self.s3Bucket, Key=asset_id)
         print("file meta data: %s" %( theFileData))
         filenameHeader = theFileData["ContentDisposition"]
         print("filename after split %s" %(filenameHeader))
-        s3.download_file(self.s3Bucket, asset_id, filenameHeader)
+        if(not os.path.exists(folder)):
+            os.mkdir(folder)
+        filePath = os.path.join(folder, filenameHeader)
+        s3.download_file(self.s3Bucket, asset_id, filePath)
         print("done download")
 
     # Upload file to AWS S3 bucket

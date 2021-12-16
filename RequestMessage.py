@@ -3,11 +3,11 @@ import RabbitMQConfiguration
 
 class new:
     # Get request message JSON
-    def getRequestMessage(self, rulesAssetId, columnMapAssetId, docProcessingMode, transformType):
+    def getRequestMessage(self, rulesAssetId, columnMapAssetId, docProcessingMode, filePrefix):
         self.request['rulesAssetId'] = rulesAssetId
         self.request['columnMapAssetId'] = columnMapAssetId
         self.request['docProcessingMode'] = docProcessingMode
-        self.request['outputFormat']['outputDocumentNameValue'] = transformType
+        self.request['outputFormat']['outputDocumentNameValue'] = filePrefix
         return json.dumps(self.request)
                 
     # Add new asset to request

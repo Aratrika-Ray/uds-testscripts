@@ -5,9 +5,6 @@ import S3Utility
 import RequestMessage
 import json
 import argparse
-import threading
-
-apDownload = False
 
 class run:
     # Method called on receiving a response from UDS
@@ -26,23 +23,23 @@ class run:
         return (self.rulesAssetId is not None) and (self.columnMapAssetId is not None) and (self.fileAssetId is not None)
         
     # Generate a MQ message and send to UDS
-    def Test(self, testId, transformType):
+    def Test(self, testId):
+        filePrefix = "aptrans_" if testId[len(testId)-2:]=="AP" else "sptrans_"
         msg = RequestMessage.new(testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
-        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId,'TRANSFORM_MODE', transformType))
+        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId,'TRANSFORM_MODE', filePrefix))
 
     # End of test
     def postTest(self, response):
-        global apDownload
         responseObject = json.loads(response)
+        testID = responseObject['requestMsgId'].split("_")
+        folderName = "_".join(testID[1:])
         for assetsInfo in responseObject['assetsInfo']:
             for outputAssets in assetsInfo['outputAssets']:
                 # checking success status
                 if(outputAssets['status'] == "DATAEXTRACT_SUCCESS"):
-                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'])
-                    apDownload = True
+                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
                 else:
-                    apDownload = False
                     print("\n There has been some error!", outputAssets['status'], "\n")
         self.producer.close()
         self.consumer.close()
@@ -54,11 +51,10 @@ class run:
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
-        
-        transformType = "aptrans_" if testId[len(testId)-2:]=="AP" else "sptrans_"
-        
+        self.testID = testId
+                
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
-            self.Test(testId, transformType)
+            self.Test(testId)
             
 # parser for command line flags
 parser = argparse.ArgumentParser()
@@ -72,9 +68,8 @@ args = parser.parse_args()
 # check for all rules combination    
 # ap & sp
 if(args.ap and args.sp): 
-    t = threading.Thread(traget=run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m))
-    if(apDownload):
-        run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
+    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
+    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
 #ap only
 elif(args.ap):
     run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
