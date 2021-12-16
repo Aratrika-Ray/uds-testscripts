@@ -40,7 +40,7 @@ class run:
                 if(outputAssets['status'] == "DATAEXTRACT_SUCCESS"):
                     self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
                 else:
-                    print("\n There has been some error!", outputAssets['status'], "\n")
+                    print("\n ---There has been some error! **", outputAssets['status'], "**---\n")
         self.producer.close()
         self.consumer.close()
         print('********************** End of Test **********************')
@@ -51,7 +51,6 @@ class run:
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
-        self.testID = testId
                 
         if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
             self.Test(testId)
