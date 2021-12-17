@@ -5,6 +5,11 @@ import S3Utility
 import RequestMessage
 import json
 import argparse
+import RegressionSuite
+import threading
+
+def regressionSuite(transformedFolder):
+    RegressionSuite("path to idealFolder", transformedFolder)
 
 class run:
     # Method called on receiving a response from UDS
@@ -38,12 +43,15 @@ class run:
             for outputAssets in assetsInfo['outputAssets']:
                 # checking success status
                 if(outputAssets['status'] == "DATAEXTRACT_SUCCESS"):
-                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
+                    filePath = self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
                 else:
                     print("\n ---There has been some error! **", outputAssets['status'], "**---\n")
         self.producer.close()
         self.consumer.close()
         print('********************** End of Test **********************')
+        
+        # compare expected and tranformed file and ouput Success/Failure
+        regressionSuite(folderName)
    
     # constructor
     def __init__(self, testId, description, uploadFilePath, rulesAssetPath, columnMappingPath):
@@ -61,20 +69,50 @@ parser.add_argument("-f", type=str, required=True)
 parser.add_argument("-ap", type=str)
 parser.add_argument("-sp", type=str)
 parser.add_argument("-m", type=str, required=True)
-
+parser.add_argument("-r", type=str)
 args = parser.parse_args()
 
-# check for all rules combination    
-# ap & sp
-if(args.ap and args.sp): 
-    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
-    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
-#ap only
-elif(args.ap):
-    run('Unit_Test_AP','This is a template dry run for ap transform', args.f, args.ap, args.m)
-#sp only
-elif(args.sp):
-    run('Unit_Test_SP','This is a template dry run for sp transform', args.f, args.sp, args.m)
-# neither
-else: 
-    print("Please use an AP or SP rule file to continue...")
+def runAP(file, aprules, mapping):
+    run('Unit_Test_AP','This is a template dry run for ap transform', file, aprules, mapping)
+
+def runSP(file, sprules, mapping):
+    run('Unit_Test_SP','This is a template dry run for sp transform', file, sprules, mapping)
+
+def runAP_SP(file, aprules, sprules, mapping):
+    runAP(file, aprules, mapping)
+    runSP(file, sprules, mapping)
+
+if(not args.r):
+    # ap & sp
+    if(args.ap and args.sp): 
+        runAP_SP(args.f, args.ap, args.sp, args.m)
+    #ap only
+    elif(args.ap):
+        runAP(args.f, args.ap, args.m)
+    #sp only
+    elif(args.sp):
+        runSP(args.f, args.sp, args.m)
+    # neither
+    else: 
+        print("Please use an AP or SP rule file to continue...")
+# regression test suite
+elif(args.r):
+    print("\n********** Running all 3 test cases **********\n")
+    
+    t1 = threading.Thread(target=runAP(args.f, args.ap, args.m))
+    t2 = threading.Thread(target=runSP(args.f, args.sp, args.m))
+    t3 = threading.Thread(target=runAP_SP(args.f, args.ap, args.sp, args.m))
+
+    #run only ap
+    print("ONLY AP\n")
+    t1.start()
+
+    #run only sp
+    print("ONLY SP\n")
+    t1.join()
+    t2.start()
+
+    #run both AP and SP
+    print("BOTH AP & SP\n")
+    t2.join()
+    t3.start()

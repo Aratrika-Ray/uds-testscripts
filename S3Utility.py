@@ -3,6 +3,7 @@ import logging
 import uuid
 from botocore.exceptions import ClientError
 import os
+import pandas
 
 class instance:
     # Download asset from AWS S3 bucket
@@ -13,11 +14,22 @@ class instance:
         print("file meta data: %s" %( theFileData))
         filenameHeader = theFileData["ContentDisposition"]
         print("filename after split %s" %(filenameHeader))
+
+        # create unit test folder
         if(not os.path.exists(folder)):
             os.mkdir(folder)
         filePath = os.path.join(folder, filenameHeader)
+
         s3.download_file(self.s3Bucket, asset_id, filePath)
         print("done download")
+
+        #check if file is in .xlsx format
+        if(filePath.endswith(".xls")):
+            df = pandas.read_excel(filePath, header=None)
+            df.to_excel(filePath.replace(".xls",".xlsx"), index=False, header=False)
+            os.remove(filePath)
+
+        return filePath
 
     # Upload file to AWS S3 bucket
     def uploadFileAWS(self, file_name):
