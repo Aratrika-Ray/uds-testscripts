@@ -9,16 +9,18 @@ class instance:
     # Download asset from AWS S3 bucket
     def downloadFileAWS(self, asset_id, folder):
         s3 = boto3.client('s3',self.s3Region)
-        print("asset id to download:" + asset_id)
+        # print("asset id to download:" + asset_id)
         theFileData = s3.get_object(Bucket=self.s3Bucket, Key=asset_id)
-        print("file meta data: %s" %( theFileData))
+        print("file meta data: %s\n" %( theFileData))
         filenameHeader = theFileData["ContentDisposition"]
-        print("filename after split %s" %(filenameHeader))
+        # print("filename after split %s" %(filenameHeader))
 
         # create unit test folder
         if(not os.path.exists(folder)):
             os.mkdir(folder)
+            print(f"{folder} created")
         filePath = os.path.join(folder, filenameHeader)
+        print(f"\n{filePath}\n")
 
         s3.download_file(self.s3Bucket, asset_id, filePath)
         print("done download")
