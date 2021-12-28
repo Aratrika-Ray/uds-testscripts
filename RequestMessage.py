@@ -3,11 +3,12 @@ import RabbitMQConfiguration
 
 class new:
     # Get request message JSON
-    def getRequestMessage(self, rulesAssetId, columnMapAssetId, docProcessingMode, filePrefix):
+    def getRequestMessage(self, rulesAssetId, columnMapAssetId, docProcessingMode, filePrefix, password):
         self.request['rulesAssetId'] = rulesAssetId
         self.request['columnMapAssetId'] = columnMapAssetId
         self.request['docProcessingMode'] = docProcessingMode
         self.request['outputFormat']['outputDocumentNameValue'] = filePrefix
+        self.request['filePassword'] = password
         return json.dumps(self.request)
                 
     # Add new asset to request
@@ -31,3 +32,4 @@ class new:
                 self.request = template 
             except Exception as e:
                 print(e)
+
