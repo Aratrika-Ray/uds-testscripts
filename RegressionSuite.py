@@ -48,17 +48,10 @@ def if_same_sheets(wb1, wb2):
     wb2_sheets = get_comparable_sheetnames(wb2)
     return set(wb1_sheets) == set(wb2_sheets), wb1_sheets
 
-
-<<<<<<< HEAD
 def compare_excel_files(transformed_file, input_folder):
     cur_sheet = None
     try:
         exists, ideal_file = os.path.exists(f"{input_folder}/expected_{os.path.basename(transformed_file)}"), f"{input_folder}/expected_{os.path.basename(transformed_file)}"
-=======
-def compare_excel_files(transformed_file, ideal_folder):
-    try:
-        exists, ideal_file = os.path.exists(f"{ideal_folder}/{os.path.basename('expected_'+transformed_file)}"), f"{ideal_folder}/{os.path.basename('expected_'+transformed_file)}"
->>>>>>> ca021bb0b21902343875533183cdf1725fcf2ea6
         if(exists):
             wb1 = load_workbook(ideal_file)
             wb2 = load_workbook(transformed_file)
@@ -66,10 +59,7 @@ def compare_excel_files(transformed_file, ideal_folder):
             same_sheets, sheets = if_same_sheets(wb1, wb2)
             if same_sheets:
                 for sheet in sheets:
-<<<<<<< HEAD
                     cur_sheet = sheet
-=======
->>>>>>> ca021bb0b21902343875533183cdf1725fcf2ea6
                     df_ideal = pd.read_excel(ideal_file, sheet_name=sheet)
                     df_tranformed = pd.read_excel(transformed_file, sheet_name=sheet)
                     result, message = compare_two_dfs(df_ideal, df_tranformed)
@@ -82,7 +72,6 @@ def compare_excel_files(transformed_file, ideal_folder):
                 f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}",
             )
         else:
-<<<<<<< HEAD
             return (False, f"{ideal_file} not found in {input_folder}")
     except Exception as e:
         return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
@@ -97,52 +86,20 @@ def regressionTest(input_folder):
             if(os.path.basename(file).startswith('aptrans_') or os.path.basename(file).startswith('sptrans_')):
                 try:
                     res, msg = compare_excel_files(file, input_folder)
-=======
-            return (False, f"{ideal_file} not found in {ideal_folder}")
-    except Exception as e:
-        return False, f"Exception Occurred in File={transformed_file}={e} in sheet={sheet}"
-
-def regressionTest(ideal_folder, input_folder):
-    # total = min(len(f for f in os.listdir(ideal_folder) if (f.endswith('.xlsx') and not f.startswith('expected_'))), len(f for f in os.listdir(input_folder) if (f.endswith('.xlsx') and not f.startswith('expected_'))))
-    total = len([f for f in os.listdir(input_folder) if f.endswith('.xlsx') and not f.startswith('expected_')])
-    total_correct = 0
-    start_time = time()
-    status = True
-    with open(f"{input_folder}/regression_report_{input_folder}.txt", "w") as f:
-        for file in glob(f"{input_folder}/*.xlsx"):
-            if(not os.path.basename(file).startswith('expected_')):
-                try:
-                    res, msg = compare_excel_files(file, ideal_folder)
->>>>>>> ca021bb0b21902343875533183cdf1725fcf2ea6
                     if not res:
                         status = False
                         f.write(f"{os.path.basename(file)}\n{msg}\n\n")
 
                     total_correct += res
-<<<<<<< HEAD
-=======
-
->>>>>>> ca021bb0b21902343875533183cdf1725fcf2ea6
                 except Exception as e:
                     f.write(e)
         
         f.write(f"Test results for {input_folder}-\n")
         f.write(f"\n\nTotalFiles\tPassed\tFailed\n")
         f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
-<<<<<<< HEAD
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
     return status
 
 # input_folder = sys.argv[1]
 # regressionTest(input_folder)
-=======
-        f.write(f"\n\nTotal time taken={time()-start_time} seconds")
-    
-    return status
-
-
-input_folder = sys.argv[1]
-ideal_folder = sys.argv[2]
-regressionTest(ideal_folder, input_folder)
->>>>>>> ca021bb0b21902343875533183cdf1725fcf2ea6
