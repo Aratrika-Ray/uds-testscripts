@@ -6,7 +6,7 @@
 	"docProcessingMode": "TRANSFORM_MODE",
 	"rulesAssetId": "",
 	"columnMapAssetId": "",
-	"filePassword": "",
+	"filePassword": "601597",
 	"outputFormat": {
 		"newSheet": {
 			"prefixOrSuffixForName": "Prefix",

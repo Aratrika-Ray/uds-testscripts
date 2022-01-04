@@ -73,7 +73,7 @@ def compare_excel_files(transformed_file, ideal_folder):
                 f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}",
             )
         else:
-            return (False, f"{ideal_file} not found in {ideal_folder}")
+            return (False, f"{ideal_file} not found in {input_folder}")
     except Exception as e:
         return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
 
@@ -86,7 +86,7 @@ def regressionTest(ideal_folder, input_folder):
         for file in glob(f"{input_folder}/*.xlsx"):
             if(os.path.basename(file).startswith('aptrans_') or os.path.basename(file).startswith('sptrans_')):
                 try:
-                    res, msg = compare_excel_files(file, ideal_folder)
+                    res, msg = compare_excel_files(file, input_folder)
                     if not res:
                         status = False
                         f.write(f"{os.path.basename(file)}\n{msg}\n\n")
