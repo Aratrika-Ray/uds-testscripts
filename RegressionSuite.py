@@ -73,7 +73,7 @@ def compare_excel_files(transformed_file, ideal_folder):
                 f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}",
             )
         else:
-            return (False, f"{ideal_file} not found in {input_folder}")
+            return (False, f"{ideal_file} not found in {ideal_folder}")
     except Exception as e:
         return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
 

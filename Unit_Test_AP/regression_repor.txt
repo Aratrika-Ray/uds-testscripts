@@ -1,7 +1,0 @@
-Test results for Unit_Test_AP-
-
-
-TotalFiles	Passed	Failed
-3		3	0
-
-Total time taken=7.503800630569458 seconds
