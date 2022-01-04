@@ -3,10 +3,9 @@ import RabbitMQConfiguration
 
 class new:
     # Get request message JSON
-    def getRequestMessage(self, rulesAssetId, columnMapAssetId, docProcessingMode, filePrefix):
+    def getRequestMessage(self, rulesAssetId, columnMapAssetId, filePrefix):
         self.request['rulesAssetId'] = rulesAssetId
         self.request['columnMapAssetId'] = columnMapAssetId
-        self.request['docProcessingMode'] = docProcessingMode
         self.request['outputFormat']['outputDocumentNameValue'] = filePrefix
         return json.dumps(self.request)
                 
@@ -20,8 +19,8 @@ class new:
         self.request['assets'].append(asset)
         
     # constructor
-    def __init__(self, testId, config):
-        with open('RequestMessageTemplate.json','r') as stream:
+    def __init__(self, MQTemplateFile, testId, config):
+        with open(MQTemplateFile,'r') as stream:
             try:
                 template = json.load(stream)
                 template['requestMsgId'] = 'reqMsgId_' + testId

@@ -104,5 +104,45 @@
         "SSEKMSKeyId": "arn:aws:kms:us-west-2: 920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63",
         "BucketKeyEnabled": "True",
         "Body": "<botocore.response.StreamingBody object at 0x7fd546775ac0>"
+    },
+    "folderMap": {
+        "Unit_Test_2": {
+            "RegressionTests/Unit_Test_2/anon.603520Irish_Life_Pension_Report_July_2020.xlsx": [
+                "aptrans"
+            ],
+            "RegressionTests/Unit_Test_2/anon.Copy_of_Irish_Life_Transfer_letter.xlsx": [
+                "aptrans"
+            ]
+        },
+        "Unit_Test_1": {
+            "RegressionTests/Unit_Test_1/HiddenColumn.xlsx": [
+                "aptrans"
+            ]
+        },
+        "Unit_Test_3": {
+            "RegressionTests/Unit_Test_3/601597_pass.xlsx": [
+                "aptrans"
+            ],
+            "RegressionTests/Unit_Test_3/601595_pass.xlsx": [
+                "aptrans"
+            ]
+        },
+        "Unit_Test_5": {
+            "RegressionTests/Unit_Test_5/Ext_rows(1)/anon.603570-20_12_03 nov 7721.50.xlsx": [
+                "aptrans",
+                "sptrans"
+            ],
+            "RegressionTests/Unit_Test_5/Ext_rows(1)/anon.608762-20_11_30nov 4468.65.xlsx": [
+                "aptrans"
+            ],
+            "RegressionTests/Unit_Test_5/Ext_rows(1)/anon.608407-20_12_01 NOV 945.74.XLSX": [
+                "aptrans"
+            ]
+        },
+        "Unit_Test_4": {
+            "RegressionTests/Unit_Test_4/anon.Copyof603992MonthlyPensionBreakdownMillicentPharmaLtdJuly2020upload.xlsx": [
+                "aptrans"
+            ]
+        }
     }
 }

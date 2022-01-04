@@ -15,12 +15,10 @@ class instance:
         filenameHeader = theFileData["ContentDisposition"]
         # print("filename after split %s" %(filenameHeader))
 
-        # create unit test folder
         if(not os.path.exists(folder)):
             os.mkdir(folder)
-            print(f"{folder} created")
         filePath = os.path.join(folder, filenameHeader)
-        print(f"\n{filePath}\n")
+        print(f"\nDownloading {filePath} ...\n")
 
         s3.download_file(self.s3Bucket, asset_id, filePath)
         print("done download")
@@ -41,8 +39,8 @@ class instance:
         asset_id = str(uuid.uuid1())
         print("asset id: %s" %( asset_id))
         try:
-            response = s3_client.upload_file(file_name, self.s3Bucket, asset_id,ExtraArgs={'ContentDisposition': str(file_name)})
-        except ClientError as e:
+            response = s3_client.upload_file(file_name, self.s3Bucket, asset_id, ExtraArgs={'ContentDisposition': str(os.path.basename(file_name))})
+        except ClientError as e:    
             logging.error(e)
             return None
         return asset_id
