@@ -13,7 +13,7 @@ def compare_two_dfs(df_ideal, df_transformed, columns_to_ignore=[]):
     if_same_cols = check_same_cols(df_ideal, df_transformed)
     df_ideal = df_ideal.fillna(0)
     df_transformed = df_transformed.fillna(0)
-
+    
     if if_same_cols:
         col_set = set(df_ideal.columns) - set(columns_to_ignore)
 
@@ -27,8 +27,6 @@ def compare_two_dfs(df_ideal, df_transformed, columns_to_ignore=[]):
                 )
 
         return True, ""
-
-    return False, f"Columns not same \n{df_ideal.columns} !={df_transformed.columns}"
 
 
 def get_comparable_sheetnames(workbook):
@@ -48,6 +46,14 @@ def if_same_sheets(wb1, wb2):
     wb2_sheets = get_comparable_sheetnames(wb2)
     return set(wb1_sheets) == set(wb2_sheets), wb1_sheets
 
+def if_same_color_sheets(wb1, wb2):
+    n = len(wb1.worksheets)
+    for i in range(0, n):
+        if(wb1.worksheets[i].sheet_properties.tabColor != wb2.worksheets[i].sheet_properties.tabColor):
+            return (False, f"Sheet colors do not match in {wb1.worksheets[i]} and {wb2.worksheets[i]}")
+    
+    return (True, "")
+
 
 def compare_excel_files(transformed_file, ideal_folder):
     cur_sheet = None
@@ -59,19 +65,22 @@ def compare_excel_files(transformed_file, ideal_folder):
 
             same_sheets, sheets = if_same_sheets(wb1, wb2)
             if same_sheets:
+                sheet_color, sheet_color_message = if_same_color_sheets(wb1, wb2)
                 for sheet in sheets:
                     cur_sheet = sheet
                     df_ideal = pd.read_excel(ideal_file, sheet_name=sheet)
                     df_tranformed = pd.read_excel(transformed_file, sheet_name=sheet)
                     result, message = compare_two_dfs(df_ideal, df_tranformed)
-                    if not result:
-                        return False, f"{message} in sheet={sheet}"
-
+                    
+                    if not (result and sheet_color):
+                        return (False, f"{message} in sheet={sheet}\n{sheet_color_message}")
+                    elif not result:
+                        return (False, f"{message} in sheet={sheet}")
+                    elif not sheet_color:
+                        return (False, f"{sheet_color_message}"
+)
                 return True, ""
-            return (
-                False,
-                f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}",
-            )
+            return (False, f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}")
         else:
             return (False, f"{ideal_file} not found in {ideal_folder}")
     except Exception as e:
@@ -81,14 +90,12 @@ def regressionTest(ideal_folder, input_folder):
     total = len([f for f in os.listdir(ideal_folder) if (f.endswith('.xlsx') and f.startswith('expected_'))])
     total_correct = 0
     start_time = time()
-    status = True
     with open(f"{input_folder}/regression_report.txt", "w") as f:
         for file in glob(f"{input_folder}/*.xlsx"):
-            if(os.path.basename(file).startswith('aptrans_') or os.path.basename(file).startswith('sptrans_')):
+            if(('aptrans_' in os.path.basename(file) or 'sptrans_' in os.path.basename(file)) and not 'expected_' in os.path.basename(file)):
                 try:
                     res, msg = compare_excel_files(file, input_folder)
                     if not res:
-                        status = False
                         f.write(f"{os.path.basename(file)}\n{msg}\n\n")
 
                     total_correct += res
@@ -97,10 +104,10 @@ def regressionTest(ideal_folder, input_folder):
         
         f.write(f"Test results for {input_folder}-\n")
         f.write(f"\n\nTotalFiles\tPassed\tFailed\n")
-        f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
+        f.write(f"{total}\t\t\t{total_correct}\t\t{total-total_correct}")
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
-    return status
+    return total_correct == total
 
-# input_folder = sys.argv[1]
-# regressionTest(input_folder)
+# input_folder, ideal_folder = sys.argv[1], sys.argv[2]
+# regressionTest(ideal_folder, input_folder)

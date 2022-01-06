@@ -3,7 +3,9 @@ unit_test_2 - multi-header column
 unit_test_3 - password 
 unit_test_4 - hidden sheets
 unit_test_5 - zip folder
-unit_test_6 - ap,sp
+unit_test_6 - long name
+unit_test_7 - color coding of transformed sheets
+unit_test_8 - ui params
 
 folder
 |--> original file like Unit_Test_Folder/605685_Scheme_ILCB.xlsx

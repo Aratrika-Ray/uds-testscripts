@@ -39,7 +39,7 @@ class instance:
         asset_id = str(uuid.uuid1())
         print("asset id: %s" %( asset_id))
         try:
-            response = s3_client.upload_file(file_name, self.s3Bucket, asset_id, ExtraArgs={'ContentDisposition': str(os.path.basename(file_name))})
+            response = s3_client.upload_file(file_name, self.s3Bucket, asset_id, ExtraArgs={'ContentDisposition': os.path.basename(file_name).replace('original_', '')})
         except ClientError as e:    
             logging.error(e)
             return None
