@@ -16,11 +16,6 @@ class instance:
         if(not os.path.exists(folder)):
             os.mkdir(folder)
         filePath = os.path.join(folder, filenameHeader)
-<<<<<<< HEAD
-=======
-        print(f"\nDownloading {filePath} ...\n")
-
->>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
         s3.download_file(self.s3Bucket, asset_id, filePath)
 
         #check if file is in .xlsx format
