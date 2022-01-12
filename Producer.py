@@ -5,7 +5,7 @@ class newProducer:
     # Send message on the queue
     def publishMessage(self, message):
         self.queue.getChannel().basic_publish(exchange=self.config.getPublishExchange(), routing_key=self.config.getPublishRoutingKey(), body=message)
-        print('Sent message - '+message)
+        print('\nSent message - '+message)
     
     # close RabbitMQ connection
     def close(self):

@@ -9,13 +9,15 @@ import RegressionSuite
 import threading
 import os
 
+lock = {'folderLock': False, 'downloadLock': False}
+
 class run:
     __tests = {}
 
     # Method called on receiving a response from UDS
     def onMessageReceived(self, ch, method, properties, body):
         response = body.decode('UTF-8')
-        print('Received message - ' + response)
+        print('\nReceived message - ' + response)
         self.postTest(response)
 
     # Upload a file to S3 bucket in a given region
@@ -29,38 +31,50 @@ class run:
         return (self.rulesAssetId is not None) and (self.columnMapAssetId is not None) and (self.fileAssetId is not None)
         
     # Generate a MQ message and send to UDS
-    def Test(self, testId, prefix):
-        print("In Test")
-        filePrefix = "aptrans_" if prefix[:2]=="ap" else "sptrans_"
-        msg = RequestMessage.new(testId, self.config)
+    def Test(self, testId, file, transform, docName="originalNameWithPrefix", docMode="interleaved"):
+        MQTemplateFile = "RequestMessageTemplate.json"
+        msg = RequestMessage.new(MQTemplateFile, testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
-        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId,'TRANSFORM_MODE', filePrefix, "601597"))
+        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode))
+
 
     # End of test
     def postTest(self, response):
         responseObject = json.loads(response)
         testID = responseObject['requestMsgId'].split("_")
         folderName = "_".join(testID[1:])
+        msg = "postTest issues"
         for assetsInfo in responseObject['assetsInfo']:
-            for outputAssets in assetsInfo['outputAssets']:
+            try:
+                for outputAssets in assetsInfo['outputAssets']:
                 # checking success status
-                if(outputAssets['status'] == "DATAEXTRACT_SUCCESS"):
-                    self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
-                else:
-                    print("\n ---There has been some error! **", outputAssets['status'], "**---\n")
+                    if(outputAssets['hasTransformedAsset'] != False):
+                        while(lock['downloadLock']): continue
+                        lock['downloadLock'] = True
+                        self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
+                        lock['downloadLock'] = False
+                    else:
+                        err = True
+                        if(outputAssets['extractedStructuredContent'] == 'NONE'):
+                            msg += 'There was an error downloading the file -- '
+                        elif("password" in outputAssets['extractedStructuredContent']):
+                            msg += 'Password was not provided or it was wrong for one of the password protected files -- '
+                        print(f"\n-------- {msg} ------\n") 
+            except Exception as e:
+                print(f"{msg}\nerror: {e} occured!")
 
         self.numTests -= 1
         self.closeChannels(folderName, self.numTests==0)
 
     def closeChannels(self, folderName, close):
         # compare expected and tranformed file and ouput Success/Failure
-        self.regressionSuite(folderName)
-
-        if(close):
+#        self.regressionSuite(folderName)
+         if(close):
             self.producer.close()
             self.consumer.close()
             for key, value in self.__tests.items():
                 print(f"{key}: {value}")
+
             print('\n********************** End of Test **********************\n')
 
     def regressionSuite(self, unitTestFolder):
@@ -71,17 +85,25 @@ class run:
         else: self.__tests[unitTestFolder] = status
 
     # constructor
-    def __init__(self, testId, description, uploadFilePath, rulesAssetPath, columnMappingPath):
+    def __init__(self, testId, description, uploadFilePath, ruleFilePath, columnMappingPath):
         self.config = RabbitMQConfiguration.instance()
-        print(f"s3 bucket --> {self.config.getS3Bucket()}")
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
-        self.numTests = len(rulesAssetPath)
+        self.numTests = 8 if args.ui else len(ruleFilePath)
 
-        for rule in rulesAssetPath:    
-            if(self.preTest(testId, description, uploadFilePath, rule, columnMappingPath)):
-                self.Test(testId, rule)
+        uiparams = True if args.ui else False
+        transformation = 'aptrans'
+        if(uiparams):
+            uicombinations = [('originalNameWithPrefix', f"interleaved_{transformation}_", 'interleaved'),('originalNameWithSuffix', f"_interleaved_{transformation}", 'interleaved'),('newName', f"interleaved_{transformation}_newName_of_{os.path.splitext(uploadFilePath)[0]}", 'interleaved'),
+            ('originalNameWithPrefix', f"new_{transformation}_", 'new'),('originalNameWithSuffix', f"_new_{transformation}", 'new'),('newName', f"new_{transformation}_newName_of_{os.path.splitext(uploadFilePath)[0]}", 'new')]
+            for ui in uicombinations:
+                if(self.preTest(testId, description, uploadFilePath, ruleFilePath[0], columnMappingPath)):
+                    self.Test(testId, uploadFilePath, ui[1], ui[0], ui[2])
+        else:
+            if(self.preTest(testId, description, uploadFilePath, ruleFilePath[0], columnMappingPath)):
+                self.Test(testId, uploadFilePath, f"{transformation}_")
+
             
 # parser for command line flags
 parser = argparse.ArgumentParser()
@@ -90,6 +112,7 @@ parser.add_argument("-ap", type=str)
 parser.add_argument("-sp", type=str)
 parser.add_argument("-m", type=str, required=True)
 parser.add_argument("-r", type=str)
+parser.add_argument("-ui", type=str)
 args = parser.parse_args()
 
 def runTest(testID, testDesc, file, rules, mapping):

@@ -1,6 +1,0 @@
-
-
-TotalFiles	Passed	Failed
-1			1			0
-
-Total time taken=1.9358797073364258 seconds
