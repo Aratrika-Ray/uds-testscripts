@@ -1,7 +1,0 @@
-Test results for RegressionTests/Unit_Test_9-
-
-
-TotalFiles	Passed	Failed
-3		3	0
-
-Total time taken=2.230902910232544 seconds
