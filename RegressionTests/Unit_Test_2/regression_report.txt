@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ignore_expected_aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
 RegressionTests/Unit_Test_2/expected_ignore_expected_aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx not found in RegressionTests/Unit_Test_2
 
@@ -8,9 +9,16 @@ ignore_expected_aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
 RegressionTests/Unit_Test_2/expected_ignore_expected_aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx not found in RegressionTests/Unit_Test_2
 
 Test results for RegressionTests/Unit_Test_2-
+=======
+Test results for .\RegressionTests\Unit_Test_2\-
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
 
 
 TotalFiles	Passed	Failed
-2		2	0
+2			2		0
 
+<<<<<<< HEAD
 Total time taken=1.0249741077423096 seconds
+=======
+Total time taken=0.11217641830444336 seconds
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae

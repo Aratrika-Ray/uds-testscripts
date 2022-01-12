@@ -32,4 +32,3 @@ class new:
                 self.request = template 
             except Exception as e:
                 print(e)
-

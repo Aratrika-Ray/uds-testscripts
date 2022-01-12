@@ -1,19 +1,12 @@
-import Producer 
-import Consumer
+import Producer, Consumer
 import RabbitMQConfiguration
 import S3Utility
 import RequestMessage
-import json
-import argparse
-import RegressionSuite
-import threading
-import os
+import os, sys, json
 
 lock = {'folderLock': False, 'downloadLock': False}
 
 class run:
-    __tests = {}
-
     # Method called on receiving a response from UDS
     def onMessageReceived(self, ch, method, properties, body):
         response = body.decode('UTF-8')
@@ -23,24 +16,31 @@ class run:
     # Upload a file to S3 bucket in a given region
     def preTest(self, testId, description, uploadFilePath, rulesAssetPath, columnMappingPath):
         print('*************** Running test ' + testId + ' ***************')
-        print('Description : transforming ' + uploadFilePath) 
-        print('Rules : ' + rulesAssetPath)
+        print('Description : ' + description)
         self.rulesAssetId = self.s3.uploadFileAWS(rulesAssetPath)
         self.columnMapAssetId = self.s3.uploadFileAWS(columnMappingPath)
         self.fileAssetId = self.s3.uploadFileAWS(uploadFilePath)
         return (self.rulesAssetId is not None) and (self.columnMapAssetId is not None) and (self.fileAssetId is not None)
         
     # Generate a MQ message and send to UDS
+<<<<<<< HEAD
     def Test(self, testId, file, transform, docName="originalNameWithPrefix", docMode="interleaved"):
         MQTemplateFile = "RequestMessageTemplate.json"
         msg = RequestMessage.new(MQTemplateFile, testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
         self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode))
 
+=======
+    def Test(self, testId):
+        msg = RequestMessage.new(testId, self.config)
+        msg.newAsset(self.fileAssetId, 'no', 'tika')
+        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId,'TRANSFORM_MODE'))
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
 
     # End of test
     def postTest(self, response):
         responseObject = json.loads(response)
+<<<<<<< HEAD
         testID = responseObject['requestMsgId'].split("_")
         folderName = "_".join(testID[1:])
         msg = "postTest issues"
@@ -84,12 +84,22 @@ class run:
             self.__tests[unitTestFolder] = status if self.__tests[unitTestFolder] != "Fail" else "Fail"
         else: self.__tests[unitTestFolder] = status
 
+=======
+        for assetsInfo in responseObject['assetsInfo']:
+            for outputAssets in assetsInfo['outputAssets']:
+                self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'])
+        self.producer.close()
+        self.consumer.close()
+        print('********************** End of Test **********************')
+   
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
     # constructor
     def __init__(self, testId, description, uploadFilePath, ruleFilePath, columnMappingPath):
         self.config = RabbitMQConfiguration.instance()
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
+<<<<<<< HEAD
         self.numTests = 8 if args.ui else len(ruleFilePath)
 
         uiparams = True if args.ui else False
@@ -144,3 +154,10 @@ elif(args.r):
     for thread in threads:
         thread.start()
         thread.join()
+=======
+        
+        if(self.preTest(testId, description, uploadFilePath, rulesAssetPath, columnMappingPath)):
+            self.Test(testId)
+            
+run('Unit_Test','This is a template dry run', 'Scheme_605685_fortest.xlsx', 'ap_rules.dslr', 'column-map1.json')
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae

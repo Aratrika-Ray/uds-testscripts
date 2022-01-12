@@ -46,6 +46,7 @@ def if_same_sheets(wb1, wb2):
     wb2_sheets = get_comparable_sheetnames(wb2)
     return set(wb1_sheets) == set(wb2_sheets), wb1_sheets
 
+<<<<<<< HEAD
 
 def if_same_color_sheets(wb1, wb2):
     n = len(wb1.worksheets)
@@ -64,6 +65,15 @@ def if_same_color_sheets(wb1, wb2):
             msg += f"\n{sheetnames[i]} does not have the appropriate color coding"
     
     return (True, msg) if msg == "" else (False, msg)
+=======
+def if_same_color_sheets(wb1, wb2):
+    n = len(wb1.worksheets)
+    for i in range(0, n):
+        if(wb1.worksheets[i].sheet_properties.tabColor != wb2.worksheets[i].sheet_properties.tabColor):
+            return (False, f"Sheet colors do not match in {wb1.worksheets[i]} and {wb2.worksheets[i]}")
+    
+    return (True, "")
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
 
 
 def compare_excel_files(transformed_file, ideal_folder):
@@ -98,6 +108,7 @@ def compare_excel_files(transformed_file, ideal_folder):
         return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
 
 def regressionTest(ideal_folder, input_folder):
+<<<<<<< HEAD
     total = len([f for f in os.listdir(ideal_folder) if (f.lower().endswith('.xlsx') and f.startswith('expected_'))])
     total_correct = 0
     start_time = time()
@@ -113,14 +124,37 @@ def regressionTest(ideal_folder, input_folder):
                 total_correct += res
             except Exception as e:
                 f.write(e)
+=======
+    total = len([f for f in os.listdir(ideal_folder) if (f.endswith('.xlsx') and f.startswith('expected_'))])
+    total_correct = 0
+    start_time = time()
+    with open(f"{input_folder}/regression_report.txt", "w") as f:
+        for file in glob(f"{input_folder}/*.xlsx"):
+            if(('aptrans_' in os.path.basename(file) or 'sptrans_' in os.path.basename(file)) and not 'expected_' in os.path.basename(file)):
+                try:
+                    res, msg = compare_excel_files(file, input_folder)
+                    if not res:
+                        f.write(f"{os.path.basename(file)}\n{msg}\n\n")
+
+                    total_correct += res
+                except Exception as e:
+                    f.write(e)
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
         
         f.write(f"Test results for {input_folder}-\n")
         f.write(f"\n\nTotalFiles\tPassed\tFailed\n")
-        f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
+        f.write(f"{total}\t\t\t{total_correct}\t\t{total-total_correct}")
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
+<<<<<<< HEAD
     return (total_correct == total)
 
 #input_folder, ideal_folder = sys.argv[1], sys.argv[2]
 #print(regressionTest(ideal_folder, input_folder))
 
+=======
+    return total_correct == total
+
+# input_folder, ideal_folder = sys.argv[1], sys.argv[2]
+# regressionTest(ideal_folder, input_folder)
+>>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae

@@ -1,0 +1,39 @@
+unit_test_1 - hidden columns
+unit_test_2 - multi-header column
+unit_test_3 - password 
+unit_test_4 - hidden sheets
+unit_test_5 - zip folder
+unit_test_6 - long name
+unit_test_7 - color coding of transformed sheets
+unit_test_8 - ui params
+
+folder
+|--> original file like Unit_Test_Folder/605685_Scheme_ILCB.xlsx
+|--> expected file(s) like Unit_Test_Folder/expected_aptrans_605685_Scheme_ILCB.xlsx
+|--> rules file(s) like ap_rules, sp_rules
+|--> mapping file(s) like column-mapping.json
+|--> other file(s) required
+|--> password will be provided on comman line
+new |--> transformed file(s) like Unit_Test_Folder/aptrans_605685_Scheme_ILCB.xlsx
+
+RunTest
+    send folder, files in folder, ap/sp transformation of each file to UDSTest.setTest()
+    
+UDSTest
+    setTest() appends threads for run() for each unit test folder
+
+for each unit test case-
+    have different mq message templates with hardcoded data in it and if required, for each file in the folder.
+
+UI params for Doc op Mode and Doc op name
+    combinations-
+    1. Interleaved + original name with prefix
+    2. Interleaved + original name with suffix
+    3. Interleaved + retain original name
+    4. Interleaved + new name
+    5. new + original name with prefix
+    6. new + original name with suffix
+    7. new + retain original name
+    8. new + new name
+^^all changes need to be done in the request message template
+
