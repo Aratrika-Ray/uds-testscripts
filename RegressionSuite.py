@@ -92,9 +92,9 @@ def regressionTest(ideal_folder, input_folder):
     start_time = time()
     with open(f"{input_folder}/regression_report.txt", "w") as f:
         for file in glob(f"{input_folder}/*.xlsx"):
-            if(('aptrans_' in os.path.basename(file) or 'sptrans_' in os.path.basename(file)) and not 'expected_' in os.path.basename(file)):
+            if(('aptrans' in os.path.basename(file) or 'sptrans' in os.path.basename(file)) and not 'expected_' in os.path.basename(file)):
                 try:
-                    res, msg = compare_excel_files(file, input_folder)
+                    res, msg = compare_excel_files(file, ideal_folder)
                     if not res:
                         f.write(f"{os.path.basename(file)}\n{msg}\n\n")
 
