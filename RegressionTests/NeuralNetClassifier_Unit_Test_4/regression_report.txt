@@ -1,0 +1,12 @@
+Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_4/aptrans_anon.Copyof603992MonthlyPensionBreakdownMillicentPharmaLtdJuly2020upload.xlsx
+Exception sheet error: 
+aptrans_anon.Copyof603992MonthlyPensionBreakdownMillicentPharmaLtdJuly2020upload.xlsx
+Color Coding: 
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_4-
+
+
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=0.4872462749481201 seconds

@@ -1,0 +1,13 @@
+Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_11/aptrans_anon.602447PRSA_-_Exec_0720.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+aptrans_anon.602447PRSA_-_Exec_0720.xlsx
+Color Coding: 
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_11-
+
+
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=0.18381381034851074 seconds

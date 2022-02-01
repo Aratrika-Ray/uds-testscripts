@@ -1,20 +1,30 @@
+from datetime import datetime
 import os, sys, threading, json
 import Producer, Consumer
 import RabbitMQConfiguration
 import S3Utility
 import RequestMessage
 import RegressionSuite
+from fileChecking import errorChecking
+from Regress import setrabbitmqconn
 
 lock = {'folderLock': False, 'subFolderLock': False, 'downloadLock': False}
+# tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads - ", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - ",
+#     'NeuralNetClassifier_Unit_Test_1': "Hidden Sheets - ", 'NeuralNetClassifier_Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'NeuralNetClassifier_Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'NeuralNetClassifier_Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'NeuralNetClassifier_Unit_Test_6': "UI Params - ", 'NeuralNetClassifier_Unit_Test_7': "Color Coding - ", 'NeuralNetClassifier_Unit_Test_8': "Large Payloads(currently not working)", 'NeuralNetClassifier_Unit_Test_9': ".xls and .xlsx Transformation - ", 'NeuralNetClassifier_Unit_Test_10': "AP&SP Transformation - "}
+
+def sysExit():
+    sys.exit(0)
 
 class run:
-    __tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns - ", 'Unit_Test_3': "Password Protected Files - ", 'Unit_Test_4': "Hidden Sheets and file with Long Name - ", 'Unit_Test_5': "Zip Files - ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads(currently not working)", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - "}
     topFolder = "RegressionTests"
+    tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads - ", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - ",
+    'NeuralNetClassifier_Unit_Test_1': "Hidden Sheets - ", 'NeuralNetClassifier_Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'NeuralNetClassifier_Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'NeuralNetClassifier_Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'NeuralNetClassifier_Unit_Test_6': "UI Params - ", 'NeuralNetClassifier_Unit_Test_7': "Color Coding - ", 'NeuralNetClassifier_Unit_Test_8': "Large Payloads(currently not working)", 'NeuralNetClassifier_Unit_Test_9': ".xls and .xlsx Transformation - ", 'NeuralNetClassifier_Unit_Test_10': "AP&SP Transformation - "}
+
 
     # Method called on receiving a response from UDS
     def onMessageReceived(self, ch, method, properties, body):
         response = body.decode('UTF-8')
-        print('Received message - ' + response)
+        print(f"Consumed Message - {response}")
         self.postTest(response)
 
     # Upload a file to S3 bucket in a given region
@@ -26,15 +36,17 @@ class run:
         
     # Generate a MQ message and send to UDS
     def Test(self, testId, file, transform, docName="originalNameWithPrefix", docMode="interleaved"):
-        MQTemplateFile = f"{self.idealFolder}/{(os.path.splitext(os.path.split(file)[1])[0]).replace('original_', '')}_RequestMessageTemplate.json"
+        MQTemplateFile = f"{self.idealFolder.replace('NeuralNetClassifier_', '')}/{(os.path.splitext(os.path.split(file)[1])[0]).replace('original_', '')}_RequestMessageTemplate.json"
         msg = RequestMessage.new(MQTemplateFile, testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
-        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode))
+
+        pubMsg = msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode)
+        self.producer.publishMessage(pubMsg)
+        print(f"Published Message: {pubMsg}")
 
    # End of test
     def postTest(self, response):
         responseObject = json.loads(response)
-        err =  False
         for assetsInfo in responseObject['assetsInfo']:
             try:
                 if(assetsInfo['outputAssets'] != []):
@@ -43,28 +55,26 @@ class run:
                         if(outputAssets['hasTransformedAsset'] != False):
                             while(lock['downloadLock']): continue
                             lock['downloadLock'] = True
-                            self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], self.downloadFolder)
+                            filemetadata, downloaded = self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], self.downloadFolder)
+                            print(f"{downloaded}\n{filemetadata}")
                             lock['downloadLock'] = False
                         else:
-                            err = True
                             if(outputAssets['extractedStructuredContent'] == 'NONE'):
-                                self.__tests[self.testID] += "There was an error downloading one of the file -- "
+                                print(f"There was an error downloading one of the files in {self.testID}")
                             elif("password" in outputAssets['extractedStructuredContent']):
-                                self.__tests[self.testID] += "Password was not provided or it was wrong for one of the password protected files -- "
+                                self.tests[self.testID] += "Password was not provided or it was wrong for one of the password protected files -- "
                 else:
-                    err = True
                     print("\n**** NO ASSETS RECIEVED! ****\n")
             except Exception as e:
                 print(f"File could not be downloaded becase error -- {e} occured!")
 
         self.numTests -= 1
-        self.closeChannels(self.numTests == 0, err)
+        self.closeChannels(self.numTests == 0)
 
     # close channels after downloaidng all files in the folder
-    def closeChannels(self, close, err):
-        if(err): print("\nRegression Error: Regression testing cannot be done since there was an error with the transfored file. Either it wasn't downloaded properly or no transformed file was recieved from the server.\n")
-
+    def closeChannels(self, close):
         if(close):
+            errorChecking(self.downloadFolder)
             self.regressionSuite()
 
             self.subFolders -= 1
@@ -74,17 +84,16 @@ class run:
                 self.producer.close()
                 self.consumer.close()
                 
-                for key in self.__tests.keys():
-                    print(f"{key}: {self.__tests[key]}")
-                
                 lock['folderLock'] = False
-                print('\n********************** End of Unit Test **********************\n')
+                print(f'\n********************** End of {self.testID}**********************\n')
 
     # start comparison of files
     def regressionSuite(self):
         unitTest = self.testID
         print(f"**** Regression test for {unitTest} ****\n")
-        self.__tests[unitTest] += " Pass" if (RegressionSuite.regressionTest(self.idealFolder, self.downloadFolder) and self.__tests[unitTest] != "Fail") else " Fail"
+        subFolder = self.idealFolder.split('/')[-1]
+        self.tests[unitTest] += subFolder if 'Unit_Test_' not in subFolder else ""
+        self.tests[unitTest] += " \033[1mPass\033[0m " if (RegressionSuite.regressionTest(self.idealFolder, self.downloadFolder) and self.tests[unitTest] != "Fail") else " \033[1mFail\033[0m "
 
     # set values for pretesing and testing
     def startTest(self, folderMap, rulesAssetPath, columnMappingPath):
@@ -101,7 +110,7 @@ class run:
             while(lock['subFolderLock']): continue
             self.numTests = 0
             lock['subFolderLock'] = True
-            self.downloadFolder = folder.replace('original_', 'transformed_')
+            self.downloadFolder = folder.replace('original_', 'transformed_') if not self.newClassifier else folder.replace("/Unit", "/NeuralNetClassifier_Unit").replace('original', 'transformed')
             self.idealFolder = self.downloadFolder.replace('transformed_', 'expected_')
             for file in subFolder[folder]:
                 self.numTests += len(file[1])
@@ -120,32 +129,39 @@ class run:
                     else:
                         if(self.preTest(file[0], ruleFilePath, columnMappingPath)):
                             self.Test(self.testID, file[0], f"{transformation}_")
-                            
 
     # constructor
-    def __init__(self, testId, description, topFolder, unitFolderMap, rulesAssetPath, columnMappingPath):
+    def __init__(self, testId, description, topFolder, unitFolderMap, rulesAssetPath, columnMappingPath, new):
         self.config = RabbitMQConfiguration.instance()
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
+        setrabbitmqconn(type(self.producer), self.consumer)
 
-        print(f"\n\033[1m*************** Running test {testId} ***************\033[0m")
-        print(f"\033[1mDescription:\033[0m {description}\n")
-
-        self.testID = testId
+        self.newClassifier = new
+        self.testID = testId if not self.newClassifier else f"NeuralNetClassifier_{testId}"
         self.testDesc = description
+
+        print(f"\n\033[1m*************** Running test {self.testID} ***************\033[0m")
+        print(f"\033[1mDescription:\033[0m {self.testDesc}\n")
+
         self.topFolder = topFolder
         self.subFolders = 0
         self.numTests = 0 
-        self.downloadFolder = f"{self.topFolder}/{testId}"
+        self.downloadFolder = f"{self.topFolder}/{testId}" if not self.newClassifier else f"{self.topFolder}/NeuralNetClassifier_{testId}"
         self.idealFolder = self.downloadFolder
         
         self.startTest(unitFolderMap, rulesAssetPath, columnMappingPath)       
 
 
-def setTests(unitFolderMap, ap, sp, map, topFolder):
+def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
+    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.txt", "a")
+
     for unitTestFolder in unitFolderMap:
         while(lock['folderLock']): continue
-        if(unitTestFolder != 'Unit_Test_6' and unitFolderMap != 'Unit_Test_8'):
-            lock['folderLock'] = True
-            run(unitTestFolder, f"UDS testing for {unitTestFolder}", topFolder, unitFolderMap[unitTestFolder], [ap, sp], map)
+        lock['folderLock'] = True
+        run(unitTestFolder, f"UDS testing for {unitTestFolder}", topFolder, unitFolderMap[unitTestFolder], [ap, sp], map, new)
+    
+    while(not (lock['folderLock']==False and lock['downloadLock']==False and lock['subFolderLock']==False)): continue
+
+    return True, run.tests

@@ -1,24 +1,22 @@
-<<<<<<< HEAD
-ignore_expected_aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
-RegressionTests/Unit_Test_2/expected_ignore_expected_aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx not found in RegressionTests/Unit_Test_2
+Scheme error: NONE
+Exception sheet error: NONE
+Totaling Check for EE - total sheet - 2640, calculated - []
+Totaling Check for ER - total sheet - 264.0, calculated - [528.0]
+Scheme error: NONE
+Exception sheet error: NONE
+Totaling Check for EE - total sheet - 3214.68, calculated - [6429.36]
+Totaling Check for ER - total sheet - 2878.78, calculated - [5757.56]
+Totaling Check for AVC - total sheet - 500.0, calculated - [1000, 0]
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+Exception Occurred in File=RegressionTests/Unit_Test_2/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx=Lengths must match to compare in sheet=sheet1
 
-aptrans_Scheme_601010.xlsx
-RegressionTests/Unit_Test_2/expected_aptrans_Scheme_601010.xlsx not found in RegressionTests/Unit_Test_2
-
-ignore_expected_aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
-RegressionTests/Unit_Test_2/expected_ignore_expected_aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx not found in RegressionTests/Unit_Test_2
+aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
+Exception Occurred in File=RegressionTests/Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=Lengths must match to compare in sheet=sheet1
 
 Test results for RegressionTests/Unit_Test_2-
-=======
-Test results for .\RegressionTests\Unit_Test_2\-
->>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
 
 
 TotalFiles	Passed	Failed
-2			2		0
+2		0	2
 
-<<<<<<< HEAD
-Total time taken=1.0249741077423096 seconds
-=======
-Total time taken=0.11217641830444336 seconds
->>>>>>> 154e1f6a8025e0da49763bd00367360424e3f2ae
+Total time taken=0.9351317882537842 seconds

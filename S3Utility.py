@@ -10,8 +10,7 @@ class instance:
     def downloadFileAWS(self, asset_id, folder):
         s3 = boto3.client('s3',self.s3Region)
         theFileData = s3.get_object(Bucket=self.s3Bucket, Key=asset_id)
-        print("file meta data: %s\n" %( theFileData))
-        filenameHeader = theFileData["ContentDisposition"]
+        filenameHeader = theFileData['ContentDisposition']
 
         if(not os.path.exists(folder)):
             os.mkdir(folder)
@@ -25,7 +24,7 @@ class instance:
             os.remove(filePath)
             filePath = filePath.replace(".xls", ".xlsx")
         
-        print(f"{filePath} downloaded")
+        return (theFileData, f"{filePath} downloaded")
 
     # Upload file to AWS S3 bucket
     def uploadFileAWS(self, file_name):
