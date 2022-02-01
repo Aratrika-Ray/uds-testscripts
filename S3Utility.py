@@ -44,3 +44,4 @@ class instance:
     def __init__(self, s3Region, s3Bucket):
         self.s3Region = s3Region
         self.s3Bucket = s3Bucket
+

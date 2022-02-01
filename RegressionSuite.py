@@ -46,6 +46,7 @@ def if_same_sheets(wb1, wb2):
     wb2_sheets = get_comparable_sheetnames(wb2)
     return set(wb1_sheets) == set(wb2_sheets), wb1_sheets
 
+
 def if_same_color_sheets(wb1, wb2):
     n = len(wb1.worksheets)   
     sheetnames = [name for name in wb2.sheetnames]
@@ -115,7 +116,7 @@ def regressionTest(ideal_folder, input_folder):
         f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
-    return total_correct == total
+    return (total_correct == total)
 
-# input_folder, ideal_folder = sys.argv[1], sys.argv[2]
-# regressionTest(ideal_folder, input_folder)
+#input_folder, ideal_folder = sys.argv[1], sys.argv[2]
+#print(regressionTest(ideal_folder, input_folder))
