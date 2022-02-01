@@ -12,10 +12,11 @@ class newConsumer:
     
     # close RabbitMQ connection
     def close(self):
+        self.queue.getChannel().stop_consuming()
         self.queue.close()
         
     # constructor
     def __init__(self, config, callback):
         self.config = config
         self.queue = RabbitMQUtility.instance('Consumer', config)
-        threading.Thread(target = self.consumeMessage, args = (callback,)).start()
+        self.thread = [threading.Thread(target = self.consumeMessage, args = (callback,)).start()]

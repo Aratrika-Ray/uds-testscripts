@@ -6,38 +6,33 @@ import os
 import pandas
 
 class instance:
-    # Download asset from AWS S3 bucket
+    # Download asset from AWS S3 bucket'
     def downloadFileAWS(self, asset_id, folder):
         s3 = boto3.client('s3',self.s3Region)
-        # print("asset id to download:" + asset_id)
         theFileData = s3.get_object(Bucket=self.s3Bucket, Key=asset_id)
-        print("file meta data: %s\n" %( theFileData))
         filenameHeader = theFileData["ContentDisposition"]
-        # print("filename after split %s" %(filenameHeader))
 
         if(not os.path.exists(folder)):
             os.mkdir(folder)
         filePath = os.path.join(folder, filenameHeader)
-        print(f"\nDownloading {filePath} ...\n")
-
         s3.download_file(self.s3Bucket, asset_id, filePath)
-        print("done download")
 
         #check if file is in .xlsx format
         if(filePath.endswith(".xls")):
             df = pandas.read_excel(filePath, header=None)
             df.to_excel(filePath.replace(".xls",".xlsx"), index=False, header=False)
             os.remove(filePath)
-
-        return filePath
+            filePath = filePath.replace(".xls", ".xlsx")
+        
+        return (theFileData, f"{filePath} downloaded")
 
     # Upload file to AWS S3 bucket
     def uploadFileAWS(self, file_name):
-        print("start upload")
+        # print("start upload")
         s3_client = boto3.client('s3',self.s3Region)
         logging.info("created client")
         asset_id = str(uuid.uuid1())
-        print("asset id: %s" %( asset_id))
+        # print("asset id: %s" %( asset_id))
         try:
             response = s3_client.upload_file(file_name, self.s3Bucket, asset_id, ExtraArgs={'ContentDisposition': os.path.basename(file_name).replace('original_', '')})
         except ClientError as e:    

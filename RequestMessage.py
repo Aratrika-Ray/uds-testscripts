@@ -22,7 +22,7 @@ class new:
         
     # constructor
     def __init__(self, MQTemplateFile, testId, config):
-        with open(MQTemplateFile,'r') as stream:
+        with open(MQTemplateFile, 'r') as stream:
             try:
                 template = json.load(stream)
                 template['requestMsgId'] = 'reqMsgId_' + testId

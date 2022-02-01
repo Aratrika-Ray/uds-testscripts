@@ -47,12 +47,23 @@ def if_same_sheets(wb1, wb2):
     return set(wb1_sheets) == set(wb2_sheets), wb1_sheets
 
 def if_same_color_sheets(wb1, wb2):
-    n = len(wb1.worksheets)
+    n = len(wb1.worksheets)   
+    sheetnames = [name for name in wb2.sheetnames]
+    sheetcolors = [sheet.sheet_properties.tabColor for sheet in wb2.worksheets]
+    msg = ""
+    
     for i in range(0, n):
         if(wb1.worksheets[i].sheet_properties.tabColor != wb2.worksheets[i].sheet_properties.tabColor):
-            return (False, f"Sheet colors do not match in {wb1.worksheets[i]} and {wb2.worksheets[i]}")
+            msg += f"Sheet colors do not match in {wb1.worksheets[i]} and {wb2.worksheets[i]}"
+            
+        if((sheetnames[i].startswith('~') or sheetnames[i].startswith('#')) and not (sheetcolors[i] == None or sheetcolors[i].rgb == 'FFFFFFFF')):
+            msg += f"\n{sheetnames[i]} does not have the appropriate color coding"
+        elif(sheetnames[i].startswith('$') and not (sheetcolors[i].rgb == 'FFFF0000')):
+            msg += f"\n{sheetnames[i]} does not have the appropriate color coding"
+        elif(sheetnames[i].startswith(r'\W') and not (sheetcolors[i].rgb == 'FFFFFF00')):
+            msg += f"\n{sheetnames[i]} does not have the appropriate color coding"
     
-    return (True, "")
+    return (True, msg) if msg == "" else (False, msg)
 
 
 def compare_excel_files(transformed_file, ideal_folder):
@@ -72,14 +83,9 @@ def compare_excel_files(transformed_file, ideal_folder):
                     df_tranformed = pd.read_excel(transformed_file, sheet_name=sheet)
                     result, message = compare_two_dfs(df_ideal, df_tranformed)
                     
-                    if not (result and sheet_color):
-                        return (False, f"{message} in sheet={sheet}\n{sheet_color_message}")
-                    elif not result:
-                        return (False, f"{message} in sheet={sheet}")
-                    elif not sheet_color:
-                        return (False, f"{sheet_color_message}"
-)
-                return True, ""
+                    if not result:
+                        return (False, f"Color Coding: {sheet_color_message}\n{message} in sheet={sheet}")
+                return True, f"Color Coding: {sheet_color_message}"
             return (False, f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}")
         else:
             return (False, f"{ideal_file} not found in {ideal_folder}")
@@ -87,24 +93,26 @@ def compare_excel_files(transformed_file, ideal_folder):
         return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
 
 def regressionTest(ideal_folder, input_folder):
-    total = len([f for f in os.listdir(ideal_folder) if (f.endswith('.xlsx') and f.startswith('expected_'))])
+    comparison_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
+    # total = len([f for f in os.listdir(ideal_folder) if f.lower().endswith(('.xlsx', '.XLSX')) and f.startswith('expected_')])
+    total = len(comparison_files)
     total_correct = 0
     start_time = time()
-    with open(f"{input_folder}/regression_report.txt", "w") as f:
-        for file in glob(f"{input_folder}/*.xlsx"):
-            if(('aptrans' in os.path.basename(file) or 'sptrans' in os.path.basename(file)) and not 'expected_' in os.path.basename(file)):
-                try:
-                    res, msg = compare_excel_files(file, ideal_folder)
-                    if not res:
-                        f.write(f"{os.path.basename(file)}\n{msg}\n\n")
 
-                    total_correct += res
-                except Exception as e:
-                    f.write(e)
+    # comparison_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
+    with open(f"{input_folder}/regression_report.txt", "a") as f:
+        for file in comparison_files:
+            try:
+                res, msg = compare_excel_files(f"{input_folder}/{file}", ideal_folder)
+                f.write(f"{os.path.basename(file)}\n{msg}\n\n")
+
+                total_correct += res
+            except Exception as e:
+                f.write(e)
         
         f.write(f"Test results for {input_folder}-\n")
         f.write(f"\n\nTotalFiles\tPassed\tFailed\n")
-        f.write(f"{total}\t\t\t{total_correct}\t\t{total-total_correct}")
+        f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
     return total_correct == total
