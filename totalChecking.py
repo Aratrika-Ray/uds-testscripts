@@ -30,11 +30,12 @@ class ExtraneousRowFix:
     def postDFProcessing(self, df):
         n = len(df.index)-1
         m = len(df.columns)
-
+#        print(df)
         for i in range(n, -1, -1):
             row = df.iloc[i]
             cells = [type(cell) for cell in row]
-            if(cells.count(float) > m-1):
+#            print(cells, cells.count(float), m)
+            if(cells.count(float) > m-3):
                 df = df.drop(df.index[i])
         
         df = df.fillna('NAN')
@@ -43,28 +44,31 @@ class ExtraneousRowFix:
  
 
     def calculateTotals(self, df):
+        print(df)
         n = len(df.columns)
         try:
             for i in range(0, n):
                 col = df.iloc[:,i]
                 cells = [cell for cell in col]
-
+                print(cells)
                 for key in self.keywords.keys():
-                    if(any(type(cell)==str and word in cell.lower().strip() for word in self.keywords[key] for cell in cells)):
+                    if(any(word in cell.lower().strip() for word in self.keywords[key] for cell in cells if type(cell)==str)):
                         self.matrix.append(cells)
                         
             m, i = len(self.matrix), 0
             while(i < m):
-                if(not any(type(cell)==float for cell in self.matrix[i])):
+                if(not any(type(cell)==float or type(cell)==int for cell in self.matrix[i])):
                     self.matrix.pop(i)
                 m -= 1
 
-            
+            print(self.matrix)
             n = len(self.matrix[0])-1
 
             for row in self.matrix:
                 sum = 0
                 for i in range(n, -1, -1):
+                    print(row[i], type(row[i]))
+                    if(type(row[i])==str): print(any(word in row[i].lower().strip() for word in self.keywords["ee"]))
                     if(type(row[i]) == float or type(row[i]) == int):
                         sum += row[i]
                     elif(type(row[i]) == str and any(word in row[i].lower().strip() for word in self.keywords["avc"])):
@@ -95,7 +99,6 @@ class ExtraneousRowFix:
         df = pd.read_excel(filepath, sheet_name=sheet.replace('#', '~'))
         df = df.dropna(how='all', axis=1)
         df = df.dropna(how='all')
-        print(df)
 
         self.keywords = {
             'total': ['total'],
@@ -110,9 +113,7 @@ class ExtraneousRowFix:
         n = len(df.columns)
         self.df = self.dfProcessing(n, df)
         self.df = self.postDFProcessing(self.df)
-        print(self.df)
         self.calculateTotals(self.df)
-
         self.compareTotals(filepath, sheet)
 
 

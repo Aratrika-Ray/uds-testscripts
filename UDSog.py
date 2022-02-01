@@ -3,6 +3,7 @@ import RabbitMQConfiguration
 import S3Utility
 import RequestMessage
 import os, sys, json
+import argparse
 
 lock = {'folderLock': False, 'downloadLock': False}
 
@@ -64,8 +65,6 @@ class run:
          if(close):
             self.producer.close()
             self.consumer.close()
-            for key, value in self.__tests.items():
-                print(f"{key}: {value}")
 
             print('\n********************** End of Test **********************\n')
 

@@ -49,7 +49,6 @@ def exceptionSheetError(transformedSheets, exceptionSheets, file):
 
 def errorChecking(input_folder):
     input_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
-    
     with open(f"{input_folder}/regression_report.txt", "w") as f:
         for file in input_files:
             filePath = f"{input_folder}/{file}"
@@ -62,14 +61,10 @@ def errorChecking(input_folder):
             f.write(f"Scheme error: {schemeMsg}\n")
             exceptionRes, exceptionMsg = exceptionSheetError(transformedSheets, exceptionSheets, filePath)
             f.write(f"Exception sheet error: {exceptionMsg}\n")
-            if(not totalSheets == []):
-                msgs = [msg[1] for msg in totalsChecking(filePath, totalSheets)]
-                if(not msgs == []): 
-                    f.write(f"Totaling error: {msgs}\n")
-    
-print(errorChecking('RegressionTests/Unit_Test_2'))
+#            if(totalSheets != []):
+#                msgs = totalsChecking(filePath, totalSheets)
+#                if(msgs != []):
+#                    for msg in msgs:
+#                        f.write(f"Totaling Check for {msg[0]} - {msg[1]}, {msg[2]}\n")
 
-# sheet1
-# ~tabsheet
-# $tabsheet
-# #tabsheet
+#print(errorChecking('RegressionTests/Unit_Test_1'))

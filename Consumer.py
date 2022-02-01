@@ -19,4 +19,4 @@ class newConsumer:
     def __init__(self, config, callback):
         self.config = config
         self.queue = RabbitMQUtility.instance('Consumer', config)
-        self.thread = [threading.Thread(target = self.consumeMessage, args = (callback,)).start()]
+        threading.Thread(target = self.consumeMessage, args = (callback,)).start()

@@ -81,11 +81,11 @@ def compare_excel_files(transformed_file, ideal_folder):
                 for sheet in sheets:
                     cur_sheet = sheet
                     df_ideal = pd.read_excel(ideal_file, sheet_name=sheet)
-                    df_tranformed = pd.read_excel(transformed_file, sheet_name=sheet)
-                    result, message = compare_two_dfs(df_ideal, df_tranformed)
-                    
+                    df_transformed = pd.read_excel(transformed_file, sheet_name=sheet)
+                    result, message = compare_two_dfs(df_ideal, df_transformed)
+
                     if not result:
-                        return (False, f"Color Coding: {sheet_color_message}\n{message} in sheet={sheet}")
+                        return (False, f"Color Coding: {sheet_color_message}\nError: {message} in sheet={sheet}")
                 return True, f"Color Coding: {sheet_color_message}"
             return (False, f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}")
         else:
@@ -95,12 +95,10 @@ def compare_excel_files(transformed_file, ideal_folder):
 
 def regressionTest(ideal_folder, input_folder):
     comparison_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
-    # total = len([f for f in os.listdir(ideal_folder) if f.lower().endswith(('.xlsx', '.XLSX')) and f.startswith('expected_')])
     total = len(comparison_files)
     total_correct = 0
     start_time = time()
 
-    # comparison_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
     with open(f"{input_folder}/regression_report.txt", "a") as f:
         for file in comparison_files:
             try:

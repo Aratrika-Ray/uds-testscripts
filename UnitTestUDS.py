@@ -8,8 +8,6 @@ import RegressionSuite
 from fileChecking import errorChecking
 from Regress import setrabbitmqconn
 
-sys.stdout = open(f"regression_report_{datetime.now()}.txt")
-
 lock = {'folderLock': False, 'subFolderLock': False, 'downloadLock': False}
 # tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads - ", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - ",
 #     'NeuralNetClassifier_Unit_Test_1': "Hidden Sheets - ", 'NeuralNetClassifier_Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'NeuralNetClassifier_Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'NeuralNetClassifier_Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'NeuralNetClassifier_Unit_Test_6': "UI Params - ", 'NeuralNetClassifier_Unit_Test_7': "Color Coding - ", 'NeuralNetClassifier_Unit_Test_8': "Large Payloads(currently not working)", 'NeuralNetClassifier_Unit_Test_9': ".xls and .xlsx Transformation - ", 'NeuralNetClassifier_Unit_Test_10': "AP&SP Transformation - "}
@@ -133,13 +131,12 @@ class run:
                             self.Test(self.testID, file[0], f"{transformation}_")
 
     # constructor
-    def __init__(self, testId, description, topFolder, unitFolderMap, rulesAssetPath, columnMappingPath, new, file):
+    def __init__(self, testId, description, topFolder, unitFolderMap, rulesAssetPath, columnMappingPath, new):
         self.config = RabbitMQConfiguration.instance()
         self.s3 = S3Utility.instance(self.config.getS3Region(), self.config.getS3Bucket())
         self.consumer = Consumer.newConsumer(self.config, self.onMessageReceived)
         self.producer = Producer.newProducer(self.config)
         setrabbitmqconn(type(self.producer), self.consumer)
-        self.logFile = file
 
         self.newClassifier = new
         self.testID = testId if not self.newClassifier else f"NeuralNetClassifier_{testId}"
@@ -158,6 +155,8 @@ class run:
 
 
 def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
+    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.txt", "a")
+
     for unitTestFolder in unitFolderMap:
         while(lock['folderLock']): continue
         lock['folderLock'] = True

@@ -1,5 +1,14 @@
-ignore_expected_aptrans_601595_pass.xlsx
-RegressionTests/Unit_Test_3/expected_ignore_expected_aptrans_601595_pass.xlsx not found in RegressionTests/Unit_Test_3
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_3/aptrans_601595_pass.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_3/aptrans_601597_pass.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+aptrans_601595_pass.xlsx
+Color Coding: 
+
+aptrans_601597_pass.xlsx
+Color Coding: 
 
 Test results for RegressionTests/Unit_Test_3-
 
@@ -7,4 +16,4 @@ Test results for RegressionTests/Unit_Test_3-
 TotalFiles	Passed	Failed
 2		2	0
 
-Total time taken=1.545168161392212 seconds
+Total time taken=1.3172097206115723 seconds

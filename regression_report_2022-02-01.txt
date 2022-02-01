@@ -1,0 +1,46 @@
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_1 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_1
+
+start upload
+asset id: 4e01bce6-831e-11ec-b2a4-06de44122f4d
+start upload
+asset id: 4e01bce7-831e-11ec-b2a4-06de44122f4d
+start upload
+asset id: 4e01bce8-831e-11ec-b2a4-06de44122f4d
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_1", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "4e01bce8-831e-11ec-b2a4-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "4e01bce6-831e-11ec-b2a4-06de44122f4d", "columnMapAssetId": "4e01bce7-831e-11ec-b2a4-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "", "ueTag": "", "s3bucket": "ushurdev", "hostname": "", "apiSecToken": "", "enterpriseId": ""}
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_1","dataExtractionIdentifier":"d44a0278-a6ba-43a9-bea0-96a94ad28e16","assetsInfo":[{"assetId":"4e01bce8-831e-11ec-b2a4-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"7a6d93e2-014d-4096-88bc-122333d53abf","status":"DATAEXTRACT_SUCCESS","startTime":1643692672753,"extractionTimeInMilis":55287,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"7837"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_1/aptrans_HiddenColumn.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'SMGTPTW5KH78NG87', 'HostId': '4nj+gv9VxNPUvq39XUmQeDiLaqQpn/8xiO5Oe6Haa+suBEFeU+bMmvusRvW27qj/kX3L2CnGzhM=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': '4nj+gv9VxNPUvq39XUmQeDiLaqQpn/8xiO5Oe6Haa+suBEFeU+bMmvusRvW27qj/kX3L2CnGzhM=', 'x-amz-request-id': 'SMGTPTW5KH78NG87', 'date': 'Tue, 01 Feb 2022 05:18:49 GMT', 'last-modified': 'Tue, 01 Feb 2022 05:18:48 GMT', 'etag': '"88573e367d2d37c6c0b1568cc16353a5"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_HiddenColumn.xlsx', 'content-disposition': 'aptrans_HiddenColumn.xlsx', 'x-amz-version-id': 'Ec85Jzxd8JjLZ1EEw3Tsmkls_WeYcneT', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '188539'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 1, 5, 18, 48, tzinfo=tzutc()), 'ContentLength': 188539, 'ETag': '"88573e367d2d37c6c0b1568cc16353a5"', 'VersionId': 'Ec85Jzxd8JjLZ1EEw3Tsmkls_WeYcneT', 'ContentDisposition': 'aptrans_HiddenColumn.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_HiddenColumn.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f8c2f29a5e0>}
+**** Regression test for NeuralNetClassifier_Unit_Test_1 ****
+
+
+********************** End of NeuralNetClassifier_Unit_Test_1**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_1 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_1
+
+start upload
+asset id: 1eb2590a-831e-11ec-b2a4-06de44122f4d
+start upload
+asset id: 1eb2590b-831e-11ec-b2a4-06de44122f4d
+start upload
+asset id: 1eb2590c-831e-11ec-b2a4-06de44122f4d
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_1", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "1eb2590c-831e-11ec-b2a4-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "1eb2590a-831e-11ec-b2a4-06de44122f4d", "columnMapAssetId": "1eb2590b-831e-11ec-b2a4-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "", "ueTag": "", "s3bucket": "ushurdev", "hostname": "", "apiSecToken": "", "enterpriseId": ""}
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_1","dataExtractionIdentifier":"7ba3595d-fb70-40f9-af70-90cdbaf06dac","assetsInfo":[{"assetId":"1eb2590c-831e-11ec-b2a4-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"8b91d829-b7b0-42b0-be6e-66a90826a6fc","status":"DATAEXTRACT_SUCCESS","startTime":1643692593379,"extractionTimeInMilis":47307,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"7837"}}]}]}
+RegressionTests/Unit_Test_1/aptrans_HiddenColumn.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'MDHG7VDSVNEX4PHC', 'HostId': 'PtFbwZrrrL5R4v/ZnXlnS99EvQ01oAGi1AZzJ5J9QrsfK5BWoktwzqW2o3LG7aneROfgvCA0lkc=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'PtFbwZrrrL5R4v/ZnXlnS99EvQ01oAGi1AZzJ5J9QrsfK5BWoktwzqW2o3LG7aneROfgvCA0lkc=', 'x-amz-request-id': 'MDHG7VDSVNEX4PHC', 'date': 'Tue, 01 Feb 2022 05:17:21 GMT', 'last-modified': 'Tue, 01 Feb 2022 05:17:21 GMT', 'etag': '"50516f763d6d9220eb05ca0cead8ebbd"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_HiddenColumn.xlsx', 'content-disposition': 'aptrans_HiddenColumn.xlsx', 'x-amz-version-id': 'r2ewk0mIg826vmeMHy1VrCbQdnA3PaYD', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '188539'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 1, 5, 17, 21, tzinfo=tzutc()), 'ContentLength': 188539, 'ETag': '"50516f763d6d9220eb05ca0cead8ebbd"', 'VersionId': 'r2ewk0mIg826vmeMHy1VrCbQdnA3PaYD', 'ContentDisposition': 'aptrans_HiddenColumn.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_HiddenColumn.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f8c3d190d30>}
+**** Regression test for Unit_Test_1 ****
+
+
+********************** End of Unit_Test_1**********************
+
+[93mRegression Testing with Old Classifier Finished
+Proceeding to Regression Testing with New Classifier[0;0m

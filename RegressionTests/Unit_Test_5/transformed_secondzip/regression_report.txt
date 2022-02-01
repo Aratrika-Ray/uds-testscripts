@@ -1,19 +1,55 @@
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Scheme_605685_fortest.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Scheme_601010.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_PPS.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx
+Exception sheet error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx! Mandatory column unique ID not present.
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/sptrans_Scheme_601010.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_601597_pass.xlsx
+Exception sheet error: unique ID error not in exception sheet $January 2020 which is absent in transformed sheet!
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Hidden column3.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
 aptrans_Scheme_605685_fortest.xlsx
-Sheets in the Excel are not same	 ['Sheet1']!=['~Mar 2020', 'Mar 2020', '$Mar 2020', '~Apr 2020', 'Apr 2020', '$Apr 2020', '~May 2020', 'May 2020', '$May 2020', '~June 2020', 'June 2020', '$June 2020', '#June 2020']
+Color Coding: 
 
 aptrans_Scheme_601010.xlsx
-Sheets in the Excel are not same	 ['Sheet1']!=['~Sheet1', 'sheet1', '#Sheet1', '$Sheet1']
+Color Coding: 
+
+aptrans_PPS.xlsx
+Color Coding: 
+
+aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
+Color Coding: 
+
+aptrans_Payroll.xlsx
+Color Coding: 
 
 sptrans_Scheme_601010.xlsx
-Sheets in the Excel are not same	 ['Sheet1']!=['~Sheet1', 'sheet1', '#Sheet1', '$Sheet1']
+Color Coding: 
 
 aptrans_601597_pass.xlsx
 RegressionTests/Unit_Test_5/expected_secondzip/expected_aptrans_601597_pass.xlsx not found in RegressionTests/Unit_Test_5/expected_secondzip
+
+aptrans_Hidden column3.xlsx
+Color Coding: 
 
 Test results for RegressionTests/Unit_Test_5/transformed_secondzip-
 
 
 TotalFiles	Passed	Failed
-7		4	3
+8		7	1
 
-Total time taken=46.772221326828 seconds
+Total time taken=48.46897554397583 seconds

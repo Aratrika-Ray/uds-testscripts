@@ -1,5 +1,26 @@
-aptrans_Hidden column3.xlsx
-RegressionTests/Unit_Test_5/expected_Ext_rows(1)/expected_aptrans_Hidden column3.xlsx not found in RegressionTests/Unit_Test_5/expected_Ext_rows(1)
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.608762-20_11_30nov 4468.65.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
+Exception sheet error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX! Mandatory column unique ID not present.
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Scheme error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Exception sheet error: 
+Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=7345\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+aptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Color Coding: 
+
+aptrans_anon.608762-20_11_30nov 4468.65.xlsx
+Color Coding: 
+
+aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
+Color Coding: 
+
+sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Color Coding: 
 
 Test results for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)-
 
@@ -7,4 +28,4 @@ Test results for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)-
 TotalFiles	Passed	Failed
 4		4	0
 
-Total time taken=17.088433027267456 seconds
+Total time taken=16.04510760307312 seconds
