@@ -1,8 +1,7 @@
 import os
 import sys
-from zipfile import ZipFile
 from UnitTestUDS import setTests
-from Regress import getrabbitmqconn
+from RabbitConn import getrabbitmqconn
 
 class runTests:
     topFolder = 'RegressionTests'

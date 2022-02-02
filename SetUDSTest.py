@@ -1,9 +1,8 @@
 import os
 import sys
-import threading
 from zipfile import ZipFile
-from UnitTestUDS import setTests, sysExit
-from Regress import getrabbitmqconn
+from UnitTestUDS import setTests
+from RabbitConn import getrabbitmqconn
 
 class runTests:
     topFolder = 'RegressionTests'

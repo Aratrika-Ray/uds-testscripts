@@ -5,8 +5,8 @@ import RabbitMQConfiguration
 import S3Utility
 import RequestMessage
 import RegressionSuite
-from fileChecking import errorChecking
-from Regress import setrabbitmqconn
+from FileChecking import errorChecking
+from RabbitConn import setrabbitmqconn
 
 lock = {'folderLock': False, 'subFolderLock': False, 'downloadLock': False}
 
