@@ -1,7 +1,6 @@
 from numpy import NaN
 import pandas as pd
 import openpyxl
-import sys
 
 err = []
 
@@ -123,9 +122,46 @@ def totalsChecking(filePath, totalSheets):
         ExtraneousRowFix(filePath, sheet)
     return err
 
+file1 = 'testingfiles/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'
+file2 = 'testingfiles/aptrans_anon.603570-20_12_03 nov 7721.50.xlsx'
+file3 = 'testingfiles/aptrans_anon.602447PRSA_-_Exec_0720 (2).xlsx'
+file4 = 'testingfiles/aptrans_HiddenColumn.xlsx'
+file5 = 'testingfiles/Trans_anon.Copy of 603992 Monthly Pension Breakdown Millicent Pharma Ltd July 2020 upload.xlsx'
+file6 = 'testingfiles/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx'
+wb = openpyxl.load_workbook(file1)
+totalSheets = [sheet for sheet in wb.sheetnames if sheet.startswith('#')]
+msgs = totalsChecking(file1, totalSheets)
+print(msgs)
 
-#file = sys.argv[1]
-#wb = openpyxl.load_workbook(file)
-#totalSheets = [sheet for sheet in wb.sheetnames if sheet.startswith('#')]
-#msgs = totalsChecking(file, totalSheets)
-#print(msgs)
+
+
+
+ # self.keywords = {'Total': ['Total', 'total', 'subtotal', 'sub total', 'sub-total', 'Sub Totals'],
+        #             'AVC': ["PRSA - AVC", "AVC", "AVEE", "AVCs", "Additional Voluntary Contribution", "(AVC)", "Regular Premium AVC", "AVC Amount", "AVCHALL", "Monthly AVC","AVC Cont", "AVC Cont €", "EE (AVC)", "AVC €", "AVC€"], 
+        #             'ER': ["employer", "EMPLOYER", "Employer", "Employer Monthly Contribution", "Employer Contribution", "Employer Cont", "E'R", "E'ER", "Regular Premium ER", "Employer Amount", "Value TP Eer", "Monthly ER", "Monthly Employer", "ER Cont", "ER Cont €", "er", "ER", "ER €", "ER€", "ER Contributions", "ER Contribution", "ER Amount", "E'r", "(ER)", "Eer cont", "er value", "ers contribution"], 
+        #             'EE': ["employee", "Employee", "EMPLOYEE", "Monthly Salary", "Employee Monthly Contribution", "employee monthly contribution", "ees contibution", "ee value", "EE Cont", "EE Cont €", "EE €", "EE€", "Value TP Eee", "E'E", "E'EE", "ee", "EE", "(EE)","Employee Amount", "EE Amount", "Monthly EE", "Monthly Employee", "EE Contribution", "Employee Contribution", "Employee Contributions"]}
+
+   
+    # def dfProcessing1(self, df):
+    #     k = len(df.index)
+    #     dfend = df.iloc[k-6:]
+    #     dfend = dfend.dropna(thresh=4, axis=0)
+    #     df = df.drop(df.index[k-6:])
+    #     df = df.append(dfend)
+
+    #     return df.fillna('NAN')
+
+    # def dfProcessing2(self, df):
+    #     df = df.fillna('NAN')
+    #     col2 = df.iloc[:, 1]
+    #     cells = [cell for cell in col2]
+    #     n = len(cells)
+    #     cells.reverse()
+    #     index_f = cells.index('NAN')
+    #     if(index_f < n/2):
+    #         for i in range(index_f, n):
+    #             if(cells[i]=='NAN' and not cells[i+1]=='NAN' and cells[i-1]=='NAN'):
+    #                 index_l= i
+    #                 df = df.drop(df.index[n-index_l-1:n-index_f+1])
+    #                 break
+    #     return df

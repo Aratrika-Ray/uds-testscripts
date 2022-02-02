@@ -5,7 +5,7 @@ class instance:
         return self.channel
                 
     # defines the connection paramters for the RabbitMQ queue
-    def getConnectionParameters(self,config):
+    def getConnectionParameters(self, config):
         creds = pika.PlainCredentials(config.getUsername(),config.getPassword())
         return pika.ConnectionParameters(host=config.getHostname(),port=config.getPort(),credentials=creds, heartbeat=300)
         
@@ -17,7 +17,7 @@ class instance:
      
     # constructor
     def __init__(self, name, config):
-        self.connection = pika.BlockingConnection(self.getConnectionParameters(config))
+        self.connection = pika.BlockingConnection(self.getConnectionParameters(config), )
         self.channel = self.connection.channel()
         print(name + ' Queue initialization successful')
 

@@ -23,7 +23,6 @@ def checkExceptionSheet(mcol, sheet, file):
 
     return True, f"{mcol} error not in exception sheet {sheet} which is absent in transformed sheet!"
 
-
 def exceptionSheetError(transformedSheets, exceptionSheets, file):
     for sheet in transformedSheets:
         transdf = pd.read_excel(file, sheet_name=sheet)
@@ -50,7 +49,6 @@ def exceptionSheetError(transformedSheets, exceptionSheets, file):
 
 def errorChecking(input_folder):
     input_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
-
     with open(f"{input_folder}/regression_report.txt", "w") as f:
         for file in input_files:
             filePath = f"{input_folder}/{file}"

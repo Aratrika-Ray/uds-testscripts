@@ -165,5 +165,4 @@ def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
         run(unitTestFolder, f"UDS testing for {unitTestFolder}", topFolder, unitFolderMap[unitTestFolder], [ap, sp], map, new)
     
     while(not (lock['folderLock']==False and lock['downloadLock']==False and lock['subFolderLock']==False)): continue
-
     return True, run.tests

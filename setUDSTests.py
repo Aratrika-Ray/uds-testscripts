@@ -1,13 +1,14 @@
-import os
-import sys
-import threading
+import os, sys
 from zipfile import ZipFile
 from UnitTestUDS import setTests
+from Regress import getrabbitmqconn
 
 class runTests:
     topFolder = 'RegressionTests'
     ap_rules = 'ap_rules.dslr'
+    new_ap_rules = ''
     sp_rules = 'sp_rules.dslr'
+    new_sp_rules = ''
     mapping = 'column-map1.json'
 
     unitTests = len(os.listdir(topFolder))
@@ -78,30 +79,46 @@ class runTests:
                     
             self.unitFolderProcessing(folder, folder)
         
-        setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder)
-        for key in self.unitTestMap.keys():
-            print(f"{key}: {self.unitTestMap[key]}")
+        oldClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder)
+        if(oldClassifierTest):
+            print(f"\33[93mRegression Testing with Old Classifier Finished\nProceeding to Regression Testing with New Classifier\033[0;0m")
+            newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder, True)
+            if(newClassifierTest):
+                sys.stdout = sys.__stdout__
+                for key in testRes.keys():
+                    print(f"{key}: {self.tests[key]}")
+                
+                print(f"\n\033[1mRegression Testing Complete!\033[0m\n")
+
+        #for key in self.unitTestMap.keys():
+        #    print(f"{key}: {self.unitTestMap[key]}")
 
 
-    def __init__(self, regressionFoler):
-        self.topFolder = regressionFoler
+    def __init__(self, regressionFolder):
+        folderBreakdown = regressionFolder.strip('/').split('/')
+        self.topFolder = folderBreakdown[0]
+        self.unitTestFolder = folderBreakdown[len(folderBreakdown)-1]
         self.unitTestMap = {}
 
-        folders = [folder for folder in os.listdir(self.topFolder)]
+        folders = [folder for folder in os.listdir(self.topFolder) if folder.startswith('Unit_Test_')]
         self.topFolderProcessing(folders)
-            
 
-folderToRegress = sys.argv[1].strip('/')
-runTests(folderToRegress)
+def main():
+    try:
+        print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
+        folderToRegress = sys.argv[1].strip('/')
+        runTests(folderToRegress)
+    except KeyboardInterrupt:
+        conns = getrabbitmqconn()
+        for conn in conns:
+            conns[conn].close()
+        print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
+        sys.exit(0)
 
-
-# "Unit_Test_5": {
-#   "properties": {
-#     "zipped": True,
-#   },
-#   "files": {
-#      "RegressionTests/Unit_Test_5/Ext_rows(1)/anon.603570-20_12_03 nov 7721.50.xlsx": ["aptrans", "sptrans"],
-#      "RegressionTests/Unit_Test_5/Ext_rows(1)/anon.608762-20_11_30nov 4468.65.xlsx": ["aptrans"]
-#      } 
-#   }
-# }
+if __name__ == "__main__":
+    main()
+# TODO-
+#     1. Functionality to run one test case -- DONE
+#     2. Functionality to run the new rules/new column classifier - store the transformed 
+#        file associated to the new rules in different folders
+#     3. 

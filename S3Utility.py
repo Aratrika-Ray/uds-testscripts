@@ -28,11 +28,11 @@ class instance:
 
     # Upload file to AWS S3 bucket
     def uploadFileAWS(self, file_name):
-        print("start upload")
+        # print("start upload")
         s3_client = boto3.client('s3',self.s3Region)
         logging.info("created client")
         asset_id = str(uuid.uuid1())
-        print("asset id: %s" %( asset_id))
+        # print("asset id: %s" %( asset_id))
         try:
             response = s3_client.upload_file(file_name, self.s3Bucket, asset_id, ExtraArgs={'ContentDisposition': os.path.basename(file_name).replace('original_', '')})
         except ClientError as e:    

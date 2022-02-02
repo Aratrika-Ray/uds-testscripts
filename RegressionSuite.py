@@ -48,10 +48,11 @@ def if_same_sheets(wb1, wb2):
 
 
 def if_same_color_sheets(wb1, wb2):
-    n = len(wb1.worksheets)
+    n = len(wb1.worksheets)   
     sheetnames = [name for name in wb2.sheetnames]
     sheetcolors = [sheet.sheet_properties.tabColor for sheet in wb2.worksheets]
     msg = ""
+    
     for i in range(0, n):
         if(wb1.worksheets[i].sheet_properties.tabColor != wb2.worksheets[i].sheet_properties.tabColor):
             msg += f"Sheet colors do not match in {wb1.worksheets[i]} and {wb2.worksheets[i]}"
