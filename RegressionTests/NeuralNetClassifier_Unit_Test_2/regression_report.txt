@@ -1,17 +1,12 @@
-Scheme error: NONE
+Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
 Exception sheet error: NONE
-Totaling Check for EE - total sheet - 2640, calculated - []
-Totaling Check for ER - total sheet - 264.0, calculated - [528.0]
-Scheme error: NONE
+Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
 Exception sheet error: NONE
-Totaling Check for EE - total sheet - 3214.68, calculated - [6429.36]
-Totaling Check for ER - total sheet - 2878.78, calculated - [5757.56]
-Totaling Check for AVC - total sheet - 500.0, calculated - [1000, 0]
 aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
-Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx=cannot unpack non-iterable NoneType object in sheet=sheet1
+Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx=Lengths must match to compare in sheet=sheet1
 
 aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
-Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=Lengths must match to compare in sheet=sheet1
+Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=cannot unpack non-iterable NoneType object in sheet=sheet1
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_2-
 
@@ -19,4 +14,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_2-
 TotalFiles	Passed	Failed
 2		0	2
 
-Total time taken=0.4265885353088379 seconds
+Total time taken=0.9465336799621582 seconds

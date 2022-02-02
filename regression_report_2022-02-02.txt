@@ -1,0 +1,7 @@
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_5 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_5
+

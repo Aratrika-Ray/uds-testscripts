@@ -1,21 +1,15 @@
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_Scheme_605685_fortest.xlsx
-Exception sheet error: 
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Exception sheet error: NONE
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_Scheme_601010.xlsx
-Exception sheet error: 
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Exception sheet error: NONE
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_PPS.xlsx
-Exception sheet error: 
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Exception sheet error: NONE
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
-Exception sheet error: 
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Exception sheet error: NONE
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx
 Exception sheet error: Exception sheet not present for Sheet2 in RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx! Mandatory column unique ID not present.
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
 Scheme error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_Hidden column3.xlsx
-Exception sheet error: 
-Totaling Check: ['Before transformation EE=[2254.2], after trasnformation EE=2254.2\n', 'Before transformation AVC=[650.25, 650.25], after trasnformation AVC=650.25\n']
+Exception sheet error: NONE
 aptrans_Scheme_605685_fortest.xlsx
 Color Coding: 
 
@@ -26,18 +20,45 @@ aptrans_PPS.xlsx
 Color Coding: 
 
 aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
-Color Coding: 
+Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=cannot unpack non-iterable NoneType object in sheet=sheet1
 
 aptrans_Payroll.xlsx
 Color Coding: 
 
 aptrans_Hidden column3.xlsx
 Color Coding: 
+Error: Mismatch in Column ER
+0     173.54
+1     355.00
+2     106.88
+3     895.53
+4     205.00
+5     127.08
+6     585.42
+7      50.00
+8     475.00
+9     433.33
+10    500.00
+11    366.50
+Name: ER, dtype: float64 is not equal to 
+0      625.33
+1     1355.00
+2      373.12
+3     3333.03
+4      723.33
+5      444.38
+6     2056.67
+7      200.00
+8     1899.17
+9     1708.33
+10    1000.00
+11     733.00
+Name: ER, dtype: float64 in sheet=April 2020
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip-
 
 
 TotalFiles	Passed	Failed
-6		6	0
+6		4	2
 
-Total time taken=62.84974241256714 seconds
+Total time taken=43.0865318775177 seconds
