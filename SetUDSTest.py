@@ -110,7 +110,6 @@ def main():
         runTests(folderToRegress)
     except KeyboardInterrupt:
         conns = getrabbitmqconn()
-        sysExit()
         for conn in conns: 
            conns[conn].close()
         print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
