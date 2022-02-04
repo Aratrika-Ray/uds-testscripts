@@ -1,7 +1,7 @@
 import os, openpyxl
 from glob import glob
 import pandas as pd
-from totalChecking import totalsChecking
+from TotalChecking import totalsChecking
 
 def schemeErrors(exceptionSheets, file):
     for sheet in exceptionSheets:
