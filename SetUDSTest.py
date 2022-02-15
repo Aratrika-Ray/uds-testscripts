@@ -104,16 +104,19 @@ class runTests:
         self.topFolderProcessing(folders)
 
 def main():
-    try:
-        print("\033[1;31m\nUDS Regression Test Suite running. Please wait!\n\033[0;0m")
-        folderToRegress = sys.argv[1].strip('/')
-        runTests(folderToRegress)
-    except KeyboardInterrupt:
-        conns = getrabbitmqconn()
-        for conn in conns: 
-           conns[conn].close()
-        print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
-        sys.exit(1)
+    print("\033[1;31m\nUDS Regression Test Suite running. Please wait!\n\033[0;0m")
+    folderToRegress = sys.argv[1].strip('/')
+    runTests(folderToRegress)
+#    try:
+#        print("\033[1;31m\nUDS Regression Test Suite running. Please wait!\n\033[0;0m")
+#        folderToRegress = sys.argv[1].strip('/')
+#        runTests(folderToRegress)
+#    except KeyboardInterrupt:
+#        conns = getrabbitmqconn()
+#        for conn in conns: 
+#           conns[conn].close()
+#        print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
+#        sys.exit(1)
 
 if __name__ == "__main__":
     main()

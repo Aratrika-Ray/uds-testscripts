@@ -1,0 +1,30 @@
+FILE -- aptrans_Scheme_601010.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/NeuralNetClassifier_Unit_Test_9/aptrans_Scheme_601010.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+Scheme Error: NONE
+Exception Sheet Error: Forename error not in exception sheet=$Cover which is absent in transformed sheet!
+Paypoint Error: ISSUE FOUND column not present in sheet: Cover
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 1702.78, calculated values = 1702.78
+Totaling Check for EE: total sheet = 851.4, calculated values = 851.4
+Totaling Check for AVC: total sheet = 1125.35, calculated values = 1125.35
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- sptrans_Scheme_601010.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/NeuralNetClassifier_Unit_Test_9/sptrans_Scheme_601010.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_9-
+TotalFiles	Passed	Failed
+3		3	0
+
+Total time taken=0.8653223514556885 seconds

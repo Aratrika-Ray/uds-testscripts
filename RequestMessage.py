@@ -1,5 +1,7 @@
 import json
 import RabbitMQConfiguration
+from random import randint
+
 
 class new:
     # Get request message JSON
@@ -9,6 +11,8 @@ class new:
         self.request['outputFormat']['outputDocumentName'] = docName
         self.request['outputFormat']['outputDocumentNameValue'] = filePrefix
         self.request['outputFormat']['documentOutputMode'] = docMode
+        self.request['requestId'] = f"{self.request['requestMsgId'].replace('reqMsgId_', '')}@{randint(1000,9999)}"
+
         return json.dumps(self.request)
                 
     # Add new asset to request

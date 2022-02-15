@@ -1,0 +1,46 @@
+FILE -- aptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 64958.34, calculated values = 64958.34
+Totaling Check for ER: total sheet = 5221.49, calculated values = 5221.49
+Totaling Check for AVC: total sheet = 2500, calculated values = 2500
+Color Coding Error: Sheet colors do not match in <Worksheet "~February 2020"> and <Worksheet "$January 2020">Sheet colors do not match in <Worksheet "February 2020"> and <Worksheet "~February 2020">Sheet colors do not match in <Worksheet "~March 2020"> and <Worksheet "February 2020">Sheet colors do not match in <Worksheet "March 2020"> and <Worksheet "$February 2020">Sheet colors do not match in <Worksheet "~May 2020"> and <Worksheet "$March 2020">Sheet colors do not match in <Worksheet "May 2020"> and <Worksheet "~April 2020">Sheet colors do not match in <Worksheet "~June 2020"> and <Worksheet "April 2020">Sheet colors do not match in <Worksheet "June 2020"> and <Worksheet "$April 2020">Sheet colors do not match in <Worksheet "~August 2020"> and <Worksheet "$May 2020">Sheet colors do not match in <Worksheet "August 2020"> and <Worksheet "~June 2020">Sheet colors do not match in <Worksheet "~September 2020"> and <Worksheet "June 2020">Sheet colors do not match in <Worksheet "September 2020"> and <Worksheet "$June 2020">Sheet colors do not match in <Worksheet "~November 2020"> and <Worksheet "$July 2020">Sheet colors do not match in <Worksheet "November 2020"> and <Worksheet "~August 2020">Sheet colors do not match in <Worksheet "#November 2020"> and <Worksheet "August 2020">
+File Comparison Error:NONE
+
+FILE -- aptrans_anon.608762-20_11_30nov 4468.65.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 1971.94, calculated values = 1971.94
+Totaling Check for EE: total sheet = 936.92, calculated values = 936.92
+Totaling Check for AVC: total sheet = 1559.8, calculated values = 1559.8
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet2
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 645.74, calculated values = 645.74
+Totaling Check for EE: total sheet = 300, calculated values = 300
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for SPER: total sheet = 5221.49, calculated values = 5221.49
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)-
+TotalFiles	Passed	Failed
+4		3	1
+
+Total time taken=19.181703805923462 seconds

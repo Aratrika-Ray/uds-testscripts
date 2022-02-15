@@ -1,0 +1,5 @@
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_12-
+TotalFiles	Passed	Failed
+0		0	0
+
+Total time taken=8.177757263183594e-05 seconds

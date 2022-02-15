@@ -7,7 +7,7 @@ class instance:
     # defines the connection paramters for the RabbitMQ queue
     def getConnectionParameters(self, config):
         creds = pika.PlainCredentials(config.getUsername(),config.getPassword())
-        return pika.ConnectionParameters(host=config.getHostname(),port=config.getPort(),credentials=creds, heartbeat=300)
+        return pika.ConnectionParameters(host=config.getHostname(),port=config.getPort(),credentials=creds, heartbeat=580)
         
     # Close the queue
     def close(self):
@@ -19,5 +19,9 @@ class instance:
     def __init__(self, name, config):
         self.connection = pika.BlockingConnection(self.getConnectionParameters(config), )
         self.channel = self.connection.channel()
+        dataextqueue = self.channel.queue_declare('UEN_DATAEXT_UNIT_TEST')
+        if(dataextqueue.method.message_count != 0):
+            self.channel.queue_purge('UEN_DATAEXT_UNIT_TEST')
+
         print(name + ' Queue initialization successful')
 

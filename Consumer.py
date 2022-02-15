@@ -12,7 +12,7 @@ class newConsumer:
     
     # close RabbitMQ connection
     def close(self):
-        self.queue.getChannel().stop_consuming()
+#        self.queue.getChannel().stop_consuming()
         self.queue.close()
         
     # constructor

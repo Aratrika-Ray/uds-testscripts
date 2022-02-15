@@ -1,0 +1,15 @@
+FILE -- aptrans_anon.602447PRSA_-_Exec_0720.xlsx
+Scheme Error: NONE
+Exception Sheet Error: unique ID error not in exception sheet=$Tab Sheet which is absent in transformed sheet!
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 7345, calculated values = [2254.2]
+Totaling Check for AVC: total sheet = 650.25, calculated values = 650.25
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_11-
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=0.23766684532165527 seconds

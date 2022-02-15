@@ -1,0 +1,26 @@
+FILE -- aptrans_601595_pass.xlsx
+Scheme Error: Scheme 601597 is not active. Its current status is PUPD for RegressionTests/NeuralNetClassifier_Unit_Test_3/aptrans_601595_pass.xlsx
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 916.27, calculated values = 916.27
+Totaling Check for EE: total sheet = 916.27, calculated values = 916.27
+Totaling Check for AVC: total sheet = 265.13, calculated values = 265.13
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_601597_pass.xlsx
+Scheme Error: Scheme 601597 is not active. Its current status is PUPD for RegressionTests/NeuralNetClassifier_Unit_Test_3/aptrans_601597_pass.xlsx
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 100, calculated values = 100
+Totaling Check for AVC: total sheet = 0, calculated values = 0
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_3-
+TotalFiles	Passed	Failed
+2		2	0
+
+Total time taken=1.221771001815796 seconds

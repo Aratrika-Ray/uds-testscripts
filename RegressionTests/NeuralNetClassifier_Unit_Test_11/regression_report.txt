@@ -1,0 +1,15 @@
+FILE -- aptrans_anon.602447PRSA_-_Exec_0720.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 2254.2, calculated values = 2254.2
+Totaling Check for AVC: total sheet = 650.25, calculated values = 650.25
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_11-
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=0.2121117115020752 seconds

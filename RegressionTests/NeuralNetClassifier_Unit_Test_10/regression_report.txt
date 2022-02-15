@@ -1,0 +1,19 @@
+FILE -- aptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/NeuralNetClassifier_Unit_Test_10/aptrans_Scheme_605685_fortest.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- sptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/NeuralNetClassifier_Unit_Test_10/sptrans_Scheme_605685_fortest.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_10-
+TotalFiles	Passed	Failed
+2		2	0
+
+Total time taken=0.14333057403564453 seconds

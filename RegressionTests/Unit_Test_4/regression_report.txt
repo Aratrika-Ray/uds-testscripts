@@ -1,0 +1,16 @@
+FILE -- aptrans_anon.Copyof603992MonthlyPensionBreakdownMillicentPharmaLtdJuly2020upload.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Forename error not in exception sheet=$Payment details which is absent in transformed sheet!
+Paypoint Error: ISSUE FOUND column not present in sheet: Payment details
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 4605.9, calculated values = 4605.9
+Totaling Check for EE: total sheet = 2104.38, calculated values = 2104.38
+Totaling Check for AVC: total sheet = 4226.14, calculated values = 4226.14
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_4-
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=1.151792049407959 seconds

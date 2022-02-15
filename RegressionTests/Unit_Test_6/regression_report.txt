@@ -1,0 +1,54 @@
+FILE -- Scheme_605685_fortest_interleaved_aptrans.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_6/Scheme_605685_fortest_interleaved_aptrans.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- new_aptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- interleaved_aptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_6/interleaved_aptrans_Scheme_605685_fortest.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- new_aptrans_newName_of_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- interleaved_aptrans_newName_of_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_6/interleaved_aptrans_newName_of_Scheme_605685_fortest.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- Scheme_605685_fortest_new_aptrans.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_6-
+TotalFiles	Passed	Failed
+7		7	0
+
+Total time taken=2.10983943939209 seconds

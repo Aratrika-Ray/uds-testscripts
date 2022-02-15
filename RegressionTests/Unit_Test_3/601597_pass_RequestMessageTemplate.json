@@ -27,11 +27,11 @@
 		"outputDocumentNameValue": "aptrans_",
 		"documentOutputMode": "interleaved"
 	},
-	"appContext": "",
-	"campaignId": "",
-	"ueTag": "",
-	"s3bucket": "",
-	"hostname": "",
-	"apiSecToken": "",
-	"enterpriseId": ""
+        "appContext": "",
+        "campaignId": "udsregression",
+        "ueTag": "",
+        "s3bucket": "ushurdev",
+        "hostname": "localhost:5000",
+        "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq",
+        "enterpriseId": "udsmq"
 }

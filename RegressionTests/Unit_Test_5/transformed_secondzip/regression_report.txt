@@ -1,0 +1,70 @@
+FILE -- aptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 3361.74, calculated values = 3361.74
+Totaling Check for ER: total sheet = 3385.12, calculated values = 3385.12
+Totaling Check for AVC: total sheet = 730.16, calculated values = 730.16
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_Scheme_601010.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 4654.58, calculated values = [0, 5271.25]
+Totaling Check for ER: total sheet = 5094.63, calculated values = [0, 5711.3, 277.61]
+Totaling Check for AVC: total sheet = 3596.85, calculated values = [3646.85]
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_PPS.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 1993.12, calculated values = 1993.12
+Totaling Check for EE: total sheet = 716.29, calculated values = 716.29
+Totaling Check for AVC: total sheet = 84.89, calculated values = 84.89
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
+Scheme Error: NONE
+Exception Sheet Error: unique ID error not in exception sheet=$SK34 PENSION REPORT            which is absent in transformed sheet!
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
+Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
+Totaling Check for AVC: total sheet = 500, calculated values = 500
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_Payroll.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet2
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 12894, calculated values = 12894
+Totaling Check for EE: total sheet = 16134, calculated values = 16134
+Totaling Check for AVC: total sheet = 300, calculated values = 300
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+FILE -- aptrans_Hidden column3.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Forename error not in exception sheet=$August 2020 which is absent in transformed sheet!
+Paypoint Error: NONE
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 5224.67, calculated values = 5224.67
+Totaling Check for ER: total sheet = 2612.33, calculated values = 2612.33
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_5/transformed_secondzip-
+TotalFiles	Passed	Failed
+6		6	0
+
+Total time taken=72.78520369529724 seconds

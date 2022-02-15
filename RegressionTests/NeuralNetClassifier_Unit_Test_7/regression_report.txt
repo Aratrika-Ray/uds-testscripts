@@ -1,0 +1,16 @@
+FILE -- aptrans_anon.471d8233-b124-47fd-80b9-bccc15924bed (2).xlsx
+Scheme Error: NONE
+Exception Sheet Error: Forename error not in exception sheet=$Scheme Info which is absent in transformed sheet!
+Paypoint Error: ISSUE FOUND column not present in sheet: Scheme Info
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 3162.24, calculated values = 3162.24
+Totaling Check for EE: total sheet = 3998.43, calculated values = 3998.43
+Totaling Check for AVC: total sheet = 600, calculated values = 600
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/NeuralNetClassifier_Unit_Test_7-
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=1.1121277809143066 seconds

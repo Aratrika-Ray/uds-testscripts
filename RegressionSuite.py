@@ -1,10 +1,12 @@
-import os
-import sys
+import os, sys
 from glob import glob
+from threading import Thread
 import pandas as pd
 from openpyxl import load_workbook
 from time import time
+from FileChecking import errorChecking
 
+threadRes = {'error': [''], 'comparison': [''], 'color': ['']}
 
 def check_same_cols(df1, df2):
     return all(df1.columns == df2.columns)
@@ -21,12 +23,9 @@ def compare_two_dfs(df_ideal, df_transformed, columns_to_ignore=[]):
             temp = df_ideal[col] != df_transformed[col]
 
             if sum(temp) != 0:
-                return (
-                    False,
-                    f"Mismatch in Column {col}\n{df_ideal[temp][col]} is not equal to \n{df_transformed[temp][col]}",
-                )
+                return (False, f"Mismatch in Column {col}\n{df_ideal[temp][col]} is not equal to \n{df_transformed[temp][col]}")
 
-        return True, ""
+        return True, "NONE"
 
 
 def get_comparable_sheetnames(workbook):
@@ -64,10 +63,11 @@ def if_same_color_sheets(wb1, wb2):
         elif(sheetnames[i].startswith(r'\W') and not (sheetcolors[i].rgb == 'FFFFFF00')):
             msg += f"\n{sheetnames[i]} does not have the appropriate color coding"
     
-    return (True, msg) if msg == "" else (False, msg)
+    return (True, "NONE") if msg == "" else (False, msg)
 
 
 def compare_excel_files(transformed_file, ideal_folder):
+    print('2. comparing expected and transformed files')
     cur_sheet = None
     try:
         exists, ideal_file = os.path.exists(f"{ideal_folder}/expected_{os.path.basename(transformed_file)}"), f"{ideal_folder}/expected_{os.path.basename(transformed_file)}"
@@ -76,22 +76,25 @@ def compare_excel_files(transformed_file, ideal_folder):
             wb2 = load_workbook(transformed_file)
 
             same_sheets, sheets = if_same_sheets(wb1, wb2)
+            sheet_color, sheet_color_message = if_same_color_sheets(wb1, wb2)
             if same_sheets:
-                sheet_color, sheet_color_message = if_same_color_sheets(wb1, wb2)
                 for sheet in sheets:
                     cur_sheet = sheet
                     df_ideal = pd.read_excel(ideal_file, sheet_name=sheet)
                     df_transformed = pd.read_excel(transformed_file, sheet_name=sheet)
-                    result, message = compare_two_dfs(df_ideal, df_transformed)
+                    result, message = compare_two_dfs(df_ideal, df_transformed) if not (df_ideal.empty and df_transformed.empty) else True, "NONE"
 
                     if not result:
-                        return (False, f"Color Coding: {sheet_color_message}\nError: {message} in sheet={sheet}")
-                return True, f"Color Coding: {sheet_color_message}"
-            return (False, f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}")
+                        threadRes["comparison"].append(f"{message} in sheet={sheet}")
+                    else: threadRes["comparison"].append(f"{message}")
+            else:
+                threadRes["comparison"].append(f"Sheets in the Excel are not same\t {wb1.sheetnames}!={wb2.sheetnames}")
+            threadRes['color'].append(f"{sheet_color_message}")
         else:
-            return (False, f"{ideal_file} not found in {ideal_folder}")
+            threadRes["comparison"].append(f"{ideal_file} not found in {ideal_folder}")
     except Exception as e:
-        return False, f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}"
+        threadRes["comparison"].append(f"Exception Occurred in File={transformed_file}={e} in sheet={cur_sheet}")
+
 
 def regressionTest(ideal_folder, input_folder):
     comparison_files = [file for file in os.listdir(input_folder) if file.endswith(('xlsx', 'XLSX')) and not file.startswith(('expected_', 'original_'))]
@@ -99,22 +102,35 @@ def regressionTest(ideal_folder, input_folder):
     total_correct = 0
     start_time = time()
 
-    with open(f"{input_folder}/regression_report.txt", "a") as f:
+    with open(f"{input_folder}/regression_report.txt", "w") as f:
         for file in comparison_files:
             try:
-                res, msg = compare_excel_files(f"{input_folder}/{file}", ideal_folder)
-                f.write(f"{os.path.basename(file)}\n{msg}\n\n")
+                print(file)
+                f.write(f"FILE -- {os.path.basename(file)}\n")
+                thread_error = Thread(target=errorChecking, args=(f"{input_folder}/{file}", threadRes))
+                thread_comparison = Thread(target=compare_excel_files, args=(f"{input_folder}/{file}", ideal_folder))
+                threads = [thread_error, thread_comparison]
+                
+                for thread in threads:
+                    thread.start()
+                for thread in threads:
+                    thread.join()
 
-                total_correct += res
+                f.write(threadRes["error"][-1])
+                f.write(f"Color Coding Error: {threadRes['color'][-1]}\nFile Comparison Error:{threadRes['comparison'][-1]}\n\n")
+                total_correct += 1 if (threadRes['color'][-1] == 'NONE' and threadRes["comparison"][-1] == 'NONE') else 0
+
             except Exception as e:
                 f.write(e)
         
         f.write(f"Test results for {input_folder}-\n")
-        f.write(f"\n\nTotalFiles\tPassed\tFailed\n")
+        f.write(f"TotalFiles\tPassed\tFailed\n")
         f.write(f"{total}\t\t{total_correct}\t{total-total_correct}")
         f.write(f"\n\nTotal time taken={time()-start_time} seconds\n")
     
     return (total_correct == total)
 
-#input_folder, ideal_folder = sys.argv[1], sys.argv[2]
-#print(regressionTest(ideal_folder, input_folder))
+
+#if(__name__ == '__main__'):
+#    input_folder, ideal_folder = sys.argv[1], sys.argv[1]
+#    print(regressionTest(ideal_folder, input_folder))

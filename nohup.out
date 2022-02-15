@@ -1,0 +1,34 @@
+[1;31m
+UDS Regression Test Suite running. Please wait!
+[0;0m
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_9 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_9
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_9': [('RegressionTests/Unit_Test_9/original_Scheme_601010.xls', ['aptrans', 'sptrans']), ('RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_9
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_9
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls ap_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "11b31c98-8e52-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "11b31c96-8e52-11ec-aff0-06de44122f4d", "columnMapAssetId": "11b31c97-8e52-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@2930"}
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls sp_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "11b31c9b-8e52-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "11b31c99-8e52-11ec-aff0-06de44122f4d", "columnMapAssetId": "11b31c9a-8e52-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "sptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@5898"}
+RUN FILE: RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX ap_rules.dslr
+RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "11b31c9e-8e52-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "11b31c9c-8e52-11ec-aff0-06de44122f4d", "columnMapAssetId": "11b31c9d-8e52-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@4046"}
+[1;31m
+Keyboard Interrupt detected!
+Waiting for this test case to finish
+[0;0m
+[1;31m
+Please TERMINATE the session before running the Regression Test Suite again!
+[0;0m
+Exception ignored in: <module 'threading' from '/home/ubuntu/miniconda3/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/lib/python3.8/threading.py", line 1388, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 

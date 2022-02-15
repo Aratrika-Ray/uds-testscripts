@@ -1,0 +1,5 @@
+Test results for RegressionTests/Unit_Test_12-
+TotalFiles	Passed	Failed
+0		0	0
+
+Total time taken=8.082389831542969e-05 seconds

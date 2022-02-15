@@ -1,7 +1,5 @@
-import os
-import sys
+import os, sys
 from UnitTestUDS import setTests
-from RabbitConn import getrabbitmqconn
 
 class runTests:
     topFolder = 'RegressionTests'
@@ -72,8 +70,8 @@ class runTests:
 #            print(f"{key}: {self.unitTestMap[key]}")
         oldClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder)
         if(oldClassifierTest):
-            print(f"\33[93mRegression Testing with Old Classifier Finished\nProceeding to Regression Testing with New Classifier\033[0;0m")
-            newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder, True)
+            print(f"\33[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier\n\033[0;0m")
+            newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True)
             if(newClassifierTest):
                 sys.stdout = sys.__stdout__
                 for key in testRes.keys():
@@ -93,16 +91,13 @@ class runTests:
 
 
 def main():
-    try:
-        print("\033[1;31m\nUDS Regression Test Suite running. Please wait!\n\033[0;0m")
-        folderToRegress = sys.argv[1].strip('/')
-        runTests(folderToRegress)
-    except KeyboardInterrupt:
-        conns = getrabbitmqconn()
-        for conn in conns: 
-           conns[conn].close()
-        print("\033[1;31m\nPlease TERMINATE the session before running the Regression Test Suite again!\n\033[0;0m")
-        sys.exit(1)
+    print("\033[1;31m\nUDS Regression Test Suite running. Please wait!\n\033[0;0m")
+    folderToRegress = sys.argv[1].strip('/')
+    runTests(folderToRegress)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (KeyboardInterrupt):
+        print("\033[1;31m\nRegression Test Suite stopped.\n\033[0;0m")
+        sys.exit(0)

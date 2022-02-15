@@ -1,0 +1,207 @@
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_9 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_9
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_9': [('RegressionTests/Unit_Test_9/original_Scheme_601010.xls', ['aptrans', 'sptrans']), ('RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_9
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_9
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls ap_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "08cc9f8c-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "08cc9f8a-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "08cc9f8b-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@5039"}
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls sp_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "08cc9f8f-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "08cc9f8d-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "08cc9f8e-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "sptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@6400"}
+RUN FILE: RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX ap_rules.dslr
+RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "08cc9f92-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "08cc9f90-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "08cc9f91-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@7234"}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"0d64952d-deb7-4e2b-8202-319f7b4aaaa9","assetsInfo":[{"assetId":"08cc9f92-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"f701537d-6a11-4294-bd93-ba68759ccb69","status":"DATAEXTRACT_SUCCESS","startTime":1644926501485,"extractionTimeInMilis":27280,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"3679.53"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX downloaded
+{'ResponseMetadata': {'RequestId': '43J3BW4PXK2VFZ55', 'HostId': 'Q/UZ1S1uKkagZo6N3aL7LwCJ4eBkytReeOpzefCa0ARP+wnWbm+NRt1UFYtpqlJVXKC7+330VOg=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'Q/UZ1S1uKkagZo6N3aL7LwCJ4eBkytReeOpzefCa0ARP+wnWbm+NRt1UFYtpqlJVXKC7+330VOg=', 'x-amz-request-id': '43J3BW4PXK2VFZ55', 'date': 'Tue, 15 Feb 2022 12:02:09 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:02:09 GMT', 'etag': '"a779e824a121a52e49facab7f7cf45e3"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'content-disposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'x-amz-version-id': 'KI6eTYKVcr4NNZkzZDQs_LZE.jSB.XRM', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '17714'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 2, 9, tzinfo=tzutc()), 'ContentLength': 17714, 'ETag': '"a779e824a121a52e49facab7f7cf45e3"', 'VersionId': 'KI6eTYKVcr4NNZkzZDQs_LZE.jSB.XRM', 'ContentDisposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f3eff60e9a0>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"e243ad2b-29ca-494b-9c78-179c204dff0a","assetsInfo":[{"assetId":"08cc9f8c-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"57d3f867-f366-4abd-872c-94f22da9eb3e","status":"DATAEXTRACT_SUCCESS","startTime":1644926500841,"extractionTimeInMilis":32265,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"13346.06"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'JNK35BPEXB0XE1HP', 'HostId': 'PGqNUXy7/a8KZc+7dDhEA+lWI9KbkTDPG+ckUWijQEvIH/73Exg7W4H/Q3lDNJk6rWYt907g9rY=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'PGqNUXy7/a8KZc+7dDhEA+lWI9KbkTDPG+ckUWijQEvIH/73Exg7W4H/Q3lDNJk6rWYt907g9rY=', 'x-amz-request-id': 'JNK35BPEXB0XE1HP', 'date': 'Tue, 15 Feb 2022 12:02:14 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:02:13 GMT', 'etag': '"8d2a594ae7010e015404dadc9a1763ae"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_Scheme_601010.xls', 'content-disposition': 'aptrans_Scheme_601010.xls', 'x-amz-version-id': 'mYcpDj7kdFtHEBUR3p.rRRsTqDN2u20f', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '207360'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 2, 13, tzinfo=tzutc()), 'ContentLength': 207360, 'ETag': '"8d2a594ae7010e015404dadc9a1763ae"', 'VersionId': 'mYcpDj7kdFtHEBUR3p.rRRsTqDN2u20f', 'ContentDisposition': 'aptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f3efed53a00>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"7f4fd3f9-9817-49c8-b819-954540f167f5","assetsInfo":[{"assetId":"08cc9f8f-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"e83ef358-9640-4413-b8ad-0df3bc581c83","status":"DATAEXTRACT_SUCCESS","startTime":1644926501426,"extractionTimeInMilis":32157,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"sp_totals":"277.61","sp_negatives":"False"}}]}]}
+RegressionTests/Unit_Test_9/sptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': '2HGAGGNH7KTAG1BC', 'HostId': 'tV0rj6qyMrc0KYn4r/b7MGhqzhp+gxpt0aWFMKs5tQzqNeYXxk9nhysurZq3CA4ChEDIgN5WQnE=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'tV0rj6qyMrc0KYn4r/b7MGhqzhp+gxpt0aWFMKs5tQzqNeYXxk9nhysurZq3CA4ChEDIgN5WQnE=', 'x-amz-request-id': '2HGAGGNH7KTAG1BC', 'date': 'Tue, 15 Feb 2022 12:02:15 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:02:14 GMT', 'etag': '"901c388aadaef6258e89836900e49e39"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'sptrans_Scheme_601010.xls', 'content-disposition': 'sptrans_Scheme_601010.xls', 'x-amz-version-id': 'eGtSKsTKvdDYyyoCkb.QNsohkSMhmW75', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '206336'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 2, 14, tzinfo=tzutc()), 'ContentLength': 206336, 'ETag': '"901c388aadaef6258e89836900e49e39"', 'VersionId': 'eGtSKsTKvdDYyyoCkb.QNsohkSMhmW75', 'ContentDisposition': 'sptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'sptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f3efed3cbb0>}
+**** Regression test for Unit_Test_9 ****
+
+aptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+1. error checking
+2. comparing expected and transformed files
+sptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_9**********************
+
+Unit_Test_1: Hidden Sheets - 
+Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+Unit_Test_4: Hidden Sheets AND File with Long Name - 
+Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+Unit_Test_6: UI Params - 
+Unit_Test_7: Color Coding - 
+Unit_Test_8: Large Payloads - 
+Unit_Test_9: .xls and .xlsx Transformation -  [1mPass[0m 
+Unit_Test_10: AP&SP Transformation - 
+Unit_Test_11: New Classifier & Extraneous Row Fix - 
+Unit_Test_12: Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_1: Hidden Sheets - 
+NeuralNetClassifier_Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+NeuralNetClassifier_Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_4: Hidden Sheets AND File with Long Name - 
+NeuralNetClassifier_Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+NeuralNetClassifier_Unit_Test_6: UI Params - 
+NeuralNetClassifier_Unit_Test_7: Color Coding - 
+NeuralNetClassifier_Unit_Test_8: Large Payloads - 
+NeuralNetClassifier_Unit_Test_9: .xls and .xlsx Transformation - 
+NeuralNetClassifier_Unit_Test_10: AP&SP Transformation - 
+NeuralNetClassifier_Unit_Test_11: New Classifier & Extraneous Row Fix - 
+NeuralNetClassifier_Unit_Test_12: Wrong Password Case - 
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_9 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_9
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_9': [('RegressionTests/Unit_Test_9/original_Scheme_601010.xls', ['aptrans', 'sptrans']), ('RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_9
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_9
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls ap_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "7dcf708e-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "7dcf708c-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "7dcf708d-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@6102"}
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls sp_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "7dcf7091-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "7dcf708f-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "7dcf7090-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "sptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@3273"}
+RUN FILE: RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX ap_rules.dslr
+RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "7dcf7094-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "7dcf7092-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "7dcf7093-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@7316"}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"6a1484bb-897c-49f3-bfde-9d17affb2414","assetsInfo":[{"assetId":"7dcf7094-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"4c47d0a1-f966-4793-83be-f599aa812b26","status":"DATAEXTRACT_SUCCESS","startTime":1644926697970,"extractionTimeInMilis":28006,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"3679.53"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX downloaded
+{'ResponseMetadata': {'RequestId': 'K6ZYSW9N7NNNNXWJ', 'HostId': 'kd6TOcQsK8DJP0/DSOEh7woyhiFhcY9vn6ftYl5b8CABHOOAgvA4UQE8Iz0RN4ow4HaPFMcb444=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'kd6TOcQsK8DJP0/DSOEh7woyhiFhcY9vn6ftYl5b8CABHOOAgvA4UQE8Iz0RN4ow4HaPFMcb444=', 'x-amz-request-id': 'K6ZYSW9N7NNNNXWJ', 'date': 'Tue, 15 Feb 2022 12:05:27 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:05:26 GMT', 'etag': '"47fbaaa70ac8ef03906795258fc40472"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'content-disposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'x-amz-version-id': 'RqxRc7jkE2zfNiWrLPAP6wXf_9e_AqtX', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '17714'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 5, 26, tzinfo=tzutc()), 'ContentLength': 17714, 'ETag': '"47fbaaa70ac8ef03906795258fc40472"', 'VersionId': 'RqxRc7jkE2zfNiWrLPAP6wXf_9e_AqtX', 'ContentDisposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7ffb4ea666d0>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"c053a835-3d23-4f72-8658-eb105fff17f0","assetsInfo":[{"assetId":"7dcf7091-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"9676d9d8-e834-403e-a693-afb12226f887","status":"DATAEXTRACT_SUCCESS","startTime":1644926697771,"extractionTimeInMilis":32534,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"sp_totals":"277.61","sp_negatives":"False"}}]}]}
+RegressionTests/Unit_Test_9/sptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'J6K3Z24RYZJ5V3N4', 'HostId': 'lrE57ReS7rnFIxaDn+qvFslvr6Uxab1mEnCYizc5bKDeScqmjlqyx7wUhj1DzR1jYNBYfF3szkw=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'lrE57ReS7rnFIxaDn+qvFslvr6Uxab1mEnCYizc5bKDeScqmjlqyx7wUhj1DzR1jYNBYfF3szkw=', 'x-amz-request-id': 'J6K3Z24RYZJ5V3N4', 'date': 'Tue, 15 Feb 2022 12:05:31 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:05:31 GMT', 'etag': '"679e5ac241bff44a1d41cf40eef0c46e"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'sptrans_Scheme_601010.xls', 'content-disposition': 'sptrans_Scheme_601010.xls', 'x-amz-version-id': 'Fa3jV4QtnYn.VbjgOax1EedBCkVuHqoV', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '207360'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 5, 31, tzinfo=tzutc()), 'ContentLength': 207360, 'ETag': '"679e5ac241bff44a1d41cf40eef0c46e"', 'VersionId': 'Fa3jV4QtnYn.VbjgOax1EedBCkVuHqoV', 'ContentDisposition': 'sptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'sptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7ffb4eba4310>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"2b4eebc0-0f73-4839-b284-c3006dc46e68","assetsInfo":[{"assetId":"7dcf708e-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"9ae52995-6b4c-48c6-8bc8-a6788975dc53","status":"DATAEXTRACT_SUCCESS","startTime":1644926697185,"extractionTimeInMilis":33132,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"13346.06"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'PVCZ72XBMX5JBSDH', 'HostId': 'mfW3nJOd9/jr73ahpZM5xB1dnyokuIHByg28UAabsKtOyFSTsHzCS77K5m/eP+eicxrsw0ZVUB0=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'mfW3nJOd9/jr73ahpZM5xB1dnyokuIHByg28UAabsKtOyFSTsHzCS77K5m/eP+eicxrsw0ZVUB0=', 'x-amz-request-id': 'PVCZ72XBMX5JBSDH', 'date': 'Tue, 15 Feb 2022 12:05:32 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:05:31 GMT', 'etag': '"01bc9edc91eba2723a153bae67301707"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_Scheme_601010.xls', 'content-disposition': 'aptrans_Scheme_601010.xls', 'x-amz-version-id': 'ld5_KQifhgb7gwt4PqE7Xc4Rcgdl0cNc', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '207360'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 5, 31, tzinfo=tzutc()), 'ContentLength': 207360, 'ETag': '"01bc9edc91eba2723a153bae67301707"', 'VersionId': 'ld5_KQifhgb7gwt4PqE7Xc4Rcgdl0cNc', 'ContentDisposition': 'aptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7ffb4e1628b0>}
+**** Regression test for Unit_Test_9 ****
+
+aptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+1. error checking
+2. comparing expected and transformed files
+sptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_9**********************
+
+Unit_Test_1: Hidden Sheets - 
+Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+Unit_Test_4: Hidden Sheets AND File with Long Name - 
+Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+Unit_Test_6: UI Params - 
+Unit_Test_7: Color Coding - 
+Unit_Test_8: Large Payloads - 
+Unit_Test_9: .xls and .xlsx Transformation -  [1mPass[0m 
+Unit_Test_10: AP&SP Transformation - 
+Unit_Test_11: New Classifier & Extraneous Row Fix - 
+Unit_Test_12: Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_1: Hidden Sheets - 
+NeuralNetClassifier_Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+NeuralNetClassifier_Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_4: Hidden Sheets AND File with Long Name - 
+NeuralNetClassifier_Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+NeuralNetClassifier_Unit_Test_6: UI Params - 
+NeuralNetClassifier_Unit_Test_7: Color Coding - 
+NeuralNetClassifier_Unit_Test_8: Large Payloads - 
+NeuralNetClassifier_Unit_Test_9: .xls and .xlsx Transformation - 
+NeuralNetClassifier_Unit_Test_10: AP&SP Transformation - 
+NeuralNetClassifier_Unit_Test_11: New Classifier & Extraneous Row Fix - 
+NeuralNetClassifier_Unit_Test_12: Wrong Password Case - 
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_9 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_9
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_9': [('RegressionTests/Unit_Test_9/original_Scheme_601010.xls', ['aptrans', 'sptrans']), ('RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_9
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_9
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls ap_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "e853cde2-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "e853cde0-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "e853cde1-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@9557"}
+RUN FILE: RegressionTests/Unit_Test_9/original_Scheme_601010.xls sp_rules.dslr
+RegressionTests/Unit_Test_9/original_Scheme_601010.xls
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "e853cde5-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "e853cde3-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "e853cde4-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "sptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@3719"}
+RUN FILE: RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX ap_rules.dslr
+RegressionTests/Unit_Test_9/original_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_9", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "e853cde8-8e57-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "e853cde6-8e57-11ec-aff0-06de44122f4d", "columnMapAssetId": "e853cde7-8e57-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_9@5069"}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"9d4d6eb7-500b-492f-876b-aeb481af52a3","assetsInfo":[{"assetId":"e853cde8-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"2f0ccec4-5c12-4e12-9d99-06155f6c1f52","status":"DATAEXTRACT_SUCCESS","startTime":1644926876573,"extractionTimeInMilis":29414,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"3679.53"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX downloaded
+{'ResponseMetadata': {'RequestId': 'SEE2NGFQXBPBX2XG', 'HostId': 'W9LAqV3e7Z+L6tgvdtsb4KLkbICEXFXZzFZnki3/6vfkWF+CWdnrySLnn1SAE4cz5G8v6qv3dsQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'W9LAqV3e7Z+L6tgvdtsb4KLkbICEXFXZzFZnki3/6vfkWF+CWdnrySLnn1SAE4cz5G8v6qv3dsQ=', 'x-amz-request-id': 'SEE2NGFQXBPBX2XG', 'date': 'Tue, 15 Feb 2022 12:08:27 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:08:26 GMT', 'etag': '"40e4b9b5a3f6ece5add3ba4789240bf2"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'content-disposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'x-amz-version-id': 'UPLnMhDuZPvxGsYoA3xI7HCOjry9cLIe', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '17714'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 8, 26, tzinfo=tzutc()), 'ContentLength': 17714, 'ETag': '"40e4b9b5a3f6ece5add3ba4789240bf2"', 'VersionId': 'UPLnMhDuZPvxGsYoA3xI7HCOjry9cLIe', 'ContentDisposition': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fc27ee416d0>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"c39bc494-4632-4b6e-89e4-7f0d40e2e489","assetsInfo":[{"assetId":"e853cde2-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"0718ac9d-a6fd-44c6-be01-90a0ead20de4","status":"DATAEXTRACT_SUCCESS","startTime":1644926875818,"extractionTimeInMilis":32517,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"13346.06"}}]}]}
+RegressionTests/Unit_Test_9/aptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'ATK7NAD8S2RX4YGY', 'HostId': 'aMJYSFx8tbP5bInhnf53bqS+gbIibPIQfxgISq4v0ekmu8BlBGf1rAWeIvG5JHyec6otgrxABbk=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'aMJYSFx8tbP5bInhnf53bqS+gbIibPIQfxgISq4v0ekmu8BlBGf1rAWeIvG5JHyec6otgrxABbk=', 'x-amz-request-id': 'ATK7NAD8S2RX4YGY', 'date': 'Tue, 15 Feb 2022 12:08:29 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:08:29 GMT', 'etag': '"4efd19d143107ecc843083b6f51db321"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_Scheme_601010.xls', 'content-disposition': 'aptrans_Scheme_601010.xls', 'x-amz-version-id': 'PD1eN899LKdiBmJ2Zz7GGJHct1f82OGx', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '207360'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 8, 29, tzinfo=tzutc()), 'ContentLength': 207360, 'ETag': '"4efd19d143107ecc843083b6f51db321"', 'VersionId': 'PD1eN899LKdiBmJ2Zz7GGJHct1f82OGx', 'ContentDisposition': 'aptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fc27ee77a00>}
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_9","dataExtractionIdentifier":"b07091c7-339f-4408-8788-6bf1283b6842","assetsInfo":[{"assetId":"e853cde5-8e57-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"1a1a5e17-06bd-4e63-8974-9adfd4668953","status":"DATAEXTRACT_SUCCESS","startTime":1644926876276,"extractionTimeInMilis":32117,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"sp_totals":"277.61","sp_negatives":"False"}}]}]}
+RegressionTests/Unit_Test_9/sptrans_Scheme_601010.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'SZB26Y8SMM3DYN5K', 'HostId': 'ZBCfIcfOBsLkPCBfiMH/PYITCvB5wNLLCXo+xjB9UHfjyi0UolInhYfKwimO1eUc/s6T/lQOmIE=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'ZBCfIcfOBsLkPCBfiMH/PYITCvB5wNLLCXo+xjB9UHfjyi0UolInhYfKwimO1eUc/s6T/lQOmIE=', 'x-amz-request-id': 'SZB26Y8SMM3DYN5K', 'date': 'Tue, 15 Feb 2022 12:08:30 GMT', 'last-modified': 'Tue, 15 Feb 2022 12:08:29 GMT', 'etag': '"8cb718d32c1815c1a403851a2b1a5d6a"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'sptrans_Scheme_601010.xls', 'content-disposition': 'sptrans_Scheme_601010.xls', 'x-amz-version-id': 'xo4otog3Zxgd6CuedMU0bRcdhxTk76yD', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '207360'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 2, 15, 12, 8, 29, tzinfo=tzutc()), 'ContentLength': 207360, 'ETag': '"8cb718d32c1815c1a403851a2b1a5d6a"', 'VersionId': 'xo4otog3Zxgd6CuedMU0bRcdhxTk76yD', 'ContentDisposition': 'sptrans_Scheme_601010.xls', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'sptrans_Scheme_601010.xls'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fc27ee60d30>}
+**** Regression test for Unit_Test_9 ****
+
+aptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
+1. error checking
+2. comparing expected and transformed files
+sptrans_Scheme_601010.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_9**********************
+
+Unit_Test_1: Hidden Sheets - 
+Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+Unit_Test_4: Hidden Sheets AND File with Long Name - 
+Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+Unit_Test_6: UI Params - 
+Unit_Test_7: Color Coding - 
+Unit_Test_8: Large Payloads - 
+Unit_Test_9: .xls and .xlsx Transformation -  [1mPass[0m 
+Unit_Test_10: AP&SP Transformation - 
+Unit_Test_11: New Classifier & Extraneous Row Fix - 
+Unit_Test_12: Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_1: Hidden Sheets - 
+NeuralNetClassifier_Unit_Test_2: Multi-Header Columns AND Multiple File Transformation - 
+NeuralNetClassifier_Unit_Test_3: Password Protected Files AND Wrong Password Case - 
+NeuralNetClassifier_Unit_Test_4: Hidden Sheets AND File with Long Name - 
+NeuralNetClassifier_Unit_Test_5: Zip Files AND Multiple Zip File Transformation- 
+NeuralNetClassifier_Unit_Test_6: UI Params - 
+NeuralNetClassifier_Unit_Test_7: Color Coding - 
+NeuralNetClassifier_Unit_Test_8: Large Payloads - 
+NeuralNetClassifier_Unit_Test_9: .xls and .xlsx Transformation - 
+NeuralNetClassifier_Unit_Test_10: AP&SP Transformation - 
+NeuralNetClassifier_Unit_Test_11: New Classifier & Extraneous Row Fix - 
+NeuralNetClassifier_Unit_Test_12: Wrong Password Case - 
