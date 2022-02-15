@@ -144,5 +144,63 @@
                 "aptrans"
             ]
         }
+    },
+    "infoQueryResponse": {
+        "result": [
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.641Z",
+                "variables": {},
+                "ueTag": "UeTag_974271",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            },
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.680Z",
+                "variables": {},
+                "ueTag": "UeTag_543599",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            },
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.738Z",
+                "variables": {
+                    "schemenumber": 605685
+                },
+                "ueTag": "UeTag_619563",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            },
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.749Z",
+                "variables": {
+                    "password": 605685,
+                    "schemenumber": 605685
+                },
+                "ueTag": "UeTag_816690",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            },
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.765Z",
+                "variables": {
+                    "incomingfile": "f3439021-afb0-4ff8-8faf-5d929fd25b93",
+                    "password": 605685,
+                    "incomingtime": "2022-02-03T10:27:26.763Z",
+                    "schemenumber": "605685"
+                },
+                "ueTag": "UeTag_076727",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            },
+            {
+                "lastEngagementTime": "2022-02-03T10:27:26.833Z",
+                "variables": {
+                    "incomingfile": "f3439021-afb0-4ff8-8faf-5d929fd25b93",
+                    "password": 605685,
+                    "incomingtime": "2022-02-03T10:27:26.763Z",
+                    "schemenumber": 605685
+                },
+                "ueTag": "UeTag_896524",
+                "requestId": "ec0d01bc-ec89-44f1-906f-2107eb2037c3"
+            }
+        ],
+        "lastRecordId": "61fbae0e5766565c9401608c",
+        "totalRecords": 6,
+        "counts": 6
     }
 }
