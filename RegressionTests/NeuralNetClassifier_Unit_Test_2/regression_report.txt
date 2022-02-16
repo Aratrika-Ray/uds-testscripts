@@ -16,10 +16,10 @@ Miro Table Error: NONE
 Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
 Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=list index out of range in sheet=None
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_2-
 TotalFiles	Passed	Failed
-2		2	0
+2		1	1
 
-Total time taken=0.5096018314361572 seconds
+Total time taken=1.3119699954986572 seconds

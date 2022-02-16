@@ -10,7 +10,7 @@ Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/new_aptrans_Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- interleaved_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
@@ -24,7 +24,7 @@ Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/new_aptrans_newName_of_Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- interleaved_aptrans_newName_of_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
@@ -38,17 +38,17 @@ Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- Scheme_605685_fortest_new_aptrans.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/Scheme_605685_fortest_new_aptrans.xlsx=Lengths must match to compare in sheet=Sheet1
 
 Test results for RegressionTests/Unit_Test_6-
 TotalFiles	Passed	Failed
-7		7	0
+7		3	4
 
-Total time taken=2.10983943939209 seconds
+Total time taken=2.030043125152588 seconds

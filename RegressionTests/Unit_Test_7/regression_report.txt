@@ -7,10 +7,10 @@ Totaling Check for ER: total sheet = 3162.24, calculated values = 3162.24
 Totaling Check for EE: total sheet = 3998.43, calculated values = 3998.43
 Totaling Check for AVC: total sheet = 600, calculated values = 600
 Color Coding Error: NONE
-File Comparison Error:NONE
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_7/aptrans_anon.471d8233-b124-47fd-80b9-bccc15924bed (2).xlsx=list index out of range in sheet=None
 
 Test results for RegressionTests/Unit_Test_7-
 TotalFiles	Passed	Failed
-1		1	0
+1		0	1
 
-Total time taken=1.1219143867492676 seconds
+Total time taken=2.37449312210083 seconds

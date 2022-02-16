@@ -5,7 +5,7 @@ Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for ER: total sheet = 5221.49, calculated values = 5221.49
 Totaling Check for AVC: total sheet = 2500, calculated values = 2500
-Color Coding Error: 
+Color Coding Error: NONE
 File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.603570-20_12_03 nov 7721.50.xlsx=Lengths must match to compare in sheet=January 2020
 
 FILE -- aptrans_anon.608762-20_11_30nov 4468.65.xlsx
@@ -42,4 +42,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_Ext
 TotalFiles	Passed	Failed
 4		2	2
 
-Total time taken=13.952694177627563 seconds
+Total time taken=9.979081153869629 seconds

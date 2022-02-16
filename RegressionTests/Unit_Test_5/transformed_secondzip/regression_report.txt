@@ -14,8 +14,8 @@ Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
 Miro Table Error: NONE
-Totaling Check for EE: total sheet = 4654.58, calculated values = [0, 5271.25]
-Totaling Check for ER: total sheet = 5094.63, calculated values = [0, 5711.3, 277.61]
+Totaling Check for EE: total sheet = 4654.58, calculated values = [0, 6173.33]
+Totaling Check for ER: total sheet = 5094.63, calculated values = [0, 6613.38, 277.61]
 Totaling Check for AVC: total sheet = 3596.85, calculated values = [3646.85]
 Color Coding Error: NONE
 File Comparison Error:NONE
@@ -47,9 +47,9 @@ Scheme Error: NONE
 Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_Payroll.xlsx! Mandatory column Forename not present.
 Paypoint Error: ISSUE FOUND column not present in sheet: Sheet2
 Miro Table Error: NONE
-Totaling Check for ER: total sheet = 12894, calculated values = 12894
-Totaling Check for EE: total sheet = 16134, calculated values = 16134
-Totaling Check for AVC: total sheet = 300, calculated values = 300
+Totaling Check for ER: total sheet = 12894, calculated values = [0, 604220, 25788.0]
+Totaling Check for EE: total sheet = 16134, calculated values = [0, 32268.0]
+Totaling Check for AVC: total sheet = 300, calculated values = [600.0]
 Color Coding Error: NONE
 File Comparison Error:NONE
 
@@ -67,4 +67,4 @@ Test results for RegressionTests/Unit_Test_5/transformed_secondzip-
 TotalFiles	Passed	Failed
 6		6	0
 
-Total time taken=72.78520369529724 seconds
+Total time taken=77.04287695884705 seconds

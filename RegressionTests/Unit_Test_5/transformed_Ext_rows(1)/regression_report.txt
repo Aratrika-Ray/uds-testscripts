@@ -43,4 +43,4 @@ Test results for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)-
 TotalFiles	Passed	Failed
 4		3	1
 
-Total time taken=19.181703805923462 seconds
+Total time taken=13.13210654258728 seconds

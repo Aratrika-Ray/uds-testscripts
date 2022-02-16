@@ -9,7 +9,6 @@ class newProducer:
     
     # close RabbitMQ connection
     def close(self):
-#        self.queue.getChannel().basic_cancel('Consumer')
         self.queue.close()
         
     # constructor
