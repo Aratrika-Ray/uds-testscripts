@@ -9,6 +9,28 @@ Totaling Check for AVC: total sheet = 730.16, calculated values = 730.16
 Color Coding Error: NONE
 File Comparison Error:NONE
 
+FILE -- aptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Scheme Error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Exception Sheet Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Miro Table Error: NONE
+Totaling Check for EE: total sheet = 64958.34, calculated values = 64958.34
+Totaling Check for ER: total sheet = 5221.49, calculated values = 5221.49
+Totaling Check for AVC: total sheet = 2500.0, calculated values = 2500.0
+Color Coding Error: NONE
+File Comparison Error:RegressionTests/Unit_Test_5/expected_secondzip/expected_aptrans_anon.603570-20_12_03 nov 7721.50.xlsx not found in RegressionTests/Unit_Test_5/expected_secondzip
+
+FILE -- aptrans_anon.608762-20_11_30nov 4468.65.xlsx
+Scheme Error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_anon.608762-20_11_30nov 4468.65.xlsx
+Exception Sheet Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 1971.94, calculated values = 1971.94
+Totaling Check for EE: total sheet = 936.92, calculated values = 936.92
+Totaling Check for AVC: total sheet = 1559.8, calculated values = 1559.8
+Color Coding Error: NONE
+File Comparison Error:RegressionTests/Unit_Test_5/expected_secondzip/expected_aptrans_anon.608762-20_11_30nov 4468.65.xlsx not found in RegressionTests/Unit_Test_5/expected_secondzip
+
 FILE -- aptrans_Scheme_601010.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
@@ -30,6 +52,16 @@ Totaling Check for EE: total sheet = 716.29, calculated values = 716.29
 Totaling Check for AVC: total sheet = 84.89, calculated values = 84.89
 Color Coding Error: NONE
 File Comparison Error:NONE
+
+FILE -- aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
+Scheme Error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
+Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_secondzip/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet2
+Miro Table Error: NONE
+Totaling Check for ER: total sheet = 645.74, calculated values = 645.74
+Totaling Check for EE: total sheet = 300.0, calculated values = 300.0
+Color Coding Error: NONE
+File Comparison Error:RegressionTests/Unit_Test_5/expected_secondzip/expected_aptrans_anon.608407-20_12_01 NOV 945.74.XLSX not found in RegressionTests/Unit_Test_5/expected_secondzip
 
 FILE -- aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
 Scheme Error: NONE
@@ -53,6 +85,15 @@ Totaling Check for AVC: total sheet = 300, calculated values = [600.0]
 Color Coding Error: NONE
 File Comparison Error:NONE
 
+FILE -- sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Scheme Error: The Scheme ID is missing for RegressionTests/Unit_Test_5/transformed_secondzip/sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
+Exception Sheet Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Miro Table Error: NONE
+Totaling Check for SPER: total sheet = 5221.49, calculated values = 5221.49
+Color Coding Error: NONE
+File Comparison Error:RegressionTests/Unit_Test_5/expected_secondzip/expected_sptrans_anon.603570-20_12_03 nov 7721.50.xlsx not found in RegressionTests/Unit_Test_5/expected_secondzip
+
 FILE -- aptrans_Hidden column3.xlsx
 Scheme Error: NONE
 Exception Sheet Error: Forename error not in exception sheet=$August 2020 which is absent in transformed sheet!
@@ -65,6 +106,6 @@ File Comparison Error:NONE
 
 Test results for RegressionTests/Unit_Test_5/transformed_secondzip-
 TotalFiles	Passed	Failed
-6		6	0
+10		6	4
 
-Total time taken=77.04287695884705 seconds
+Total time taken=94.14235424995422 seconds
