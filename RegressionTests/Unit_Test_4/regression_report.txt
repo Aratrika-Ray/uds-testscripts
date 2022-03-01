@@ -7,10 +7,10 @@ Totaling Check for ER: total sheet = 4605.9, calculated values = 4605.9
 Totaling Check for EE: total sheet = 2104.38, calculated values = 2104.38
 Totaling Check for AVC: total sheet = 4226.14, calculated values = 4226.14
 Color Coding Error: NONE
-File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_4/aptrans_anon.Copyof603992MonthlyPensionBreakdownMillicentPharmaLtdJuly2020upload.xlsx=list index out of range in sheet=None
+File Comparison Error:NONE
 
 Test results for RegressionTests/Unit_Test_4-
 TotalFiles	Passed	Failed
-1		0	1
+1		1	0
 
-Total time taken=1.0487682819366455 seconds
+Total time taken=1.109908103942871 seconds

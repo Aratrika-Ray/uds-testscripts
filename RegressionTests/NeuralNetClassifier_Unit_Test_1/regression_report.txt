@@ -6,10 +6,10 @@ Miro Table Error: NONE
 Totaling Check for EE: total sheet = 5224.67, calculated values = 5224.67
 Totaling Check for ER: total sheet = 2612.33, calculated values = 2612.33
 Color Coding Error: NONE
-File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_1/aptrans_HiddenColumn.xlsx=list index out of range in sheet=None
+File Comparison Error:NONE
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_1-
 TotalFiles	Passed	Failed
-1		0	1
+1		1	0
 
-Total time taken=21.527764320373535 seconds
+Total time taken=41.46912622451782 seconds

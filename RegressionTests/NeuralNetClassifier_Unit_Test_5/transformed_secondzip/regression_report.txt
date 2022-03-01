@@ -38,8 +38,8 @@ Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
 Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
-Color Coding Error: NONE
-File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=list index out of range in sheet=None
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=Lengths must match to compare in sheet=sheet1
 
 FILE -- aptrans_Payroll.xlsx
 Scheme Error: NONE
@@ -66,4 +66,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_sec
 TotalFiles	Passed	Failed
 6		5	1
 
-Total time taken=77.96075224876404 seconds
+Total time taken=72.39326667785645 seconds

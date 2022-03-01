@@ -1,0 +1,12 @@
+FILE -- aptrans_anon.601082-modified.xlsx
+Scheme Error: NONE
+Exception Sheet Error: NONE
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
+Test results for RegressionTests/Unit_Test_13-
+TotalFiles	Passed	Failed
+1		1	0
+
+Total time taken=0.27172136306762695 seconds
