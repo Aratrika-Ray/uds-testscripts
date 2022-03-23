@@ -1,0 +1,260 @@
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/NeuralNetClassifier_Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules_new.dslr
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "3bc3f120-a50d-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "3bc3f11e-a50d-11ec-aff0-06de44122f4d", "columnMapAssetId": "3bc3f11f-a50d-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "NeuralNetClassifier_Unit_Test_14@7964"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_14","dataExtractionIdentifier":"d66ff187-c8a8-4a38-9039-1a3b2615b6de","assetsInfo":[{"assetId":"3bc3f120-a50d-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"9428e04e-9c18-4d5e-9164-c7d6c8dd41f0","status":"DATAEXTRACT_SUCCESS","startTime":1647423680311,"extractionTimeInMilis":12189,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'K2GV01VXHEG7A82C', 'HostId': 'DmRwlI2nV1hU78X1yEDf41WzVLTGGVBeFJsXFHuzthFWrjhAzCg/JPf+qwrSE2LXs0kYb7feCaQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'DmRwlI2nV1hU78X1yEDf41WzVLTGGVBeFJsXFHuzthFWrjhAzCg/JPf+qwrSE2LXs0kYb7feCaQ=', 'x-amz-request-id': 'K2GV01VXHEG7A82C', 'date': 'Wed, 16 Mar 2022 09:41:33 GMT', 'last-modified': 'Wed, 16 Mar 2022 09:41:33 GMT', 'etag': '"8a3e58a292524172f65c920efd897b37"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'YjApZ44uKxvmLIcg.bUik2thnaTsutRI', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '13767'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 9, 41, 33, tzinfo=tzutc()), 'ContentLength': 13767, 'ETag': '"8a3e58a292524172f65c920efd897b37"', 'VersionId': 'YjApZ44uKxvmLIcg.bUik2thnaTsutRI', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f3789292640>}
+**** Regression test for NeuralNetClassifier_Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of NeuralNetClassifier_Unit_Test_14**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules.dslr
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "2855f12e-a50d-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "2855f12c-a50d-11ec-aff0-06de44122f4d", "columnMapAssetId": "2855f12d-a50d-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_14@2655"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_14","dataExtractionIdentifier":"377c2083-eff4-4ab4-ab63-928548a88a32","assetsInfo":[{"assetId":"2855f12e-a50d-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"13b5c878-9392-40bb-9f8c-c4aba0ea856e","status":"DATAEXTRACT_SUCCESS","startTime":1647423652990,"extractionTimeInMilis":25011,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': '0CFQFCKP534AY8FT', 'HostId': 'iqLI6VblIYKWOiiRy4GsWwdMmTjXp+PV05hQ+f5t6AsP/pd0ExPD9YM2bWMPNLc379xCL4jTk1Y=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'iqLI6VblIYKWOiiRy4GsWwdMmTjXp+PV05hQ+f5t6AsP/pd0ExPD9YM2bWMPNLc379xCL4jTk1Y=', 'x-amz-request-id': '0CFQFCKP534AY8FT', 'date': 'Wed, 16 Mar 2022 09:41:19 GMT', 'last-modified': 'Wed, 16 Mar 2022 09:41:18 GMT', 'etag': '"6fd5437bcf89064ba4b7796080ef0b69"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'vlVxzczLq8RYhsreo9YZO6rfHEXCmgXv', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '13822'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 9, 41, 18, tzinfo=tzutc()), 'ContentLength': 13822, 'ETag': '"6fd5437bcf89064ba4b7796080ef0b69"', 'VersionId': 'vlVxzczLq8RYhsreo9YZO6rfHEXCmgXv', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f379807a6a0>}
+**** Regression test for Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_14**********************
+
+[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier
+[0;0m
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/NeuralNetClassifier_Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules_new.dslr
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "89575548-a50e-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "89575546-a50e-11ec-aff0-06de44122f4d", "columnMapAssetId": "89575547-a50e-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "NeuralNetClassifier_Unit_Test_14@6756"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_14","dataExtractionIdentifier":"98cb0b49-a223-47a2-929b-791c08211e51","assetsInfo":[{"assetId":"89575548-a50e-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"cc253627-d56b-42c3-8142-2a51d0077c33","status":"DATAEXTRACT_SUCCESS","startTime":1647424240025,"extractionTimeInMilis":11325,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'EPH9C9APM8HWS667', 'HostId': 'LapJ3yvUErZ/54/OFNuF3bK5M37FAb3iZ/s8Nz/YzczQgZVeQRg/OaBkohpDnVynC47B7GENPFc=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'LapJ3yvUErZ/54/OFNuF3bK5M37FAb3iZ/s8Nz/YzczQgZVeQRg/OaBkohpDnVynC47B7GENPFc=', 'x-amz-request-id': 'EPH9C9APM8HWS667', 'date': 'Wed, 16 Mar 2022 09:50:52 GMT', 'last-modified': 'Wed, 16 Mar 2022 09:50:52 GMT', 'etag': '"17fed0cdcbd64e830d086f667db40290"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'R9TLKrcMi4VndezCOjrmj_8j0KkOnvIX', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14695'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 9, 50, 52, tzinfo=tzutc()), 'ContentLength': 14695, 'ETag': '"17fed0cdcbd64e830d086f667db40290"', 'VersionId': 'R9TLKrcMi4VndezCOjrmj_8j0KkOnvIX', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fb5f445c100>}
+**** Regression test for NeuralNetClassifier_Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of NeuralNetClassifier_Unit_Test_14**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules.dslr
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "75a2f62e-a50e-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "75a2f62c-a50e-11ec-aff0-06de44122f4d", "columnMapAssetId": "75a2f62d-a50e-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_14@2646"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_14","dataExtractionIdentifier":"f52a5e8a-30f7-4077-9c09-b7ecad9df528","assetsInfo":[{"assetId":"75a2f62e-a50e-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"9b6dd21a-34f5-4edd-ae4d-c7bbd53817c4","status":"DATAEXTRACT_SUCCESS","startTime":1647424206946,"extractionTimeInMilis":30930,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'AZQJMMJRV3EVY3AT', 'HostId': 'bspdx4rBKfSwL3dNcbXbwpzxaZed/g/mGZGvvkpTOuwKubUML6THbKU5igZ75zMgHGr/MimkCxw=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'bspdx4rBKfSwL3dNcbXbwpzxaZed/g/mGZGvvkpTOuwKubUML6THbKU5igZ75zMgHGr/MimkCxw=', 'x-amz-request-id': 'AZQJMMJRV3EVY3AT', 'date': 'Wed, 16 Mar 2022 09:50:38 GMT', 'last-modified': 'Wed, 16 Mar 2022 09:50:38 GMT', 'etag': '"ddea7f8b758f5af3d298ad4d1736ac8f"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'KqRlSMhl52TL7ZX9Anl4gVUs_Yjn4sLj', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14041'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 9, 50, 38, tzinfo=tzutc()), 'ContentLength': 14041, 'ETag': '"ddea7f8b758f5af3d298ad4d1736ac8f"', 'VersionId': 'KqRlSMhl52TL7ZX9Anl4gVUs_Yjn4sLj', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fb5f678a6a0>}
+**** Regression test for Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_14**********************
+
+[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier
+[0;0m
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/NeuralNetClassifier_Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules_new.dslr
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "d1eb9f82-a511-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "d1eb9f80-a511-11ec-aff0-06de44122f4d", "columnMapAssetId": "d1eb9f81-a511-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "NeuralNetClassifier_Unit_Test_14@5403"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_14","dataExtractionIdentifier":"c51354c4-f2b3-4e0c-8e75-0d1141009f3d","assetsInfo":[{"assetId":"d1eb9f82-a511-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"2e8ea1ed-101a-410a-b058-d4736f0a6265","status":"DATAEXTRACT_SUCCESS","startTime":1647425650221,"extractionTimeInMilis":10998,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'HXPD0V62M0QS7BF1', 'HostId': 'Rt50HPCoked6hK246yHLOxvAQeBXn45uHuWPYukpqHRtJIregRNSRLXk+Z5da1kT77eLQ2Bw77U=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'Rt50HPCoked6hK246yHLOxvAQeBXn45uHuWPYukpqHRtJIregRNSRLXk+Z5da1kT77eLQ2Bw77U=', 'x-amz-request-id': 'HXPD0V62M0QS7BF1', 'date': 'Wed, 16 Mar 2022 10:14:22 GMT', 'last-modified': 'Wed, 16 Mar 2022 10:14:22 GMT', 'etag': '"7e405789b650990a1997e39669fe3655"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'TbOcWJfpd24nwu7qKvfz9Yv6w2d_GmAX', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14695'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 10, 14, 22, tzinfo=tzutc()), 'ContentLength': 14695, 'ETag': '"7e405789b650990a1997e39669fe3655"', 'VersionId': 'TbOcWJfpd24nwu7qKvfz9Yv6w2d_GmAX', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f1039f6be20>}
+**** Regression test for NeuralNetClassifier_Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of NeuralNetClassifier_Unit_Test_14**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules.dslr
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "bd49e016-a511-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "bd49e014-a511-11ec-aff0-06de44122f4d", "columnMapAssetId": "bd49e015-a511-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_14@3513"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_14","dataExtractionIdentifier":"d9023edc-5f2f-4d88-bf01-5e104d47acd5","assetsInfo":[{"assetId":"bd49e016-a511-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"e0bebdd1-1eb8-47e8-a271-ebbc327e1c58","status":"DATAEXTRACT_SUCCESS","startTime":1647425620842,"extractionTimeInMilis":27204,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'S10HFE5SB80XXBRJ', 'HostId': 'HAxTpuK+axSP+2fPwUGOsoskeaMUAcfZV14ZfjcKj4A1MidUyrTV47TNMKaYvuQwsw/AyALfeqg=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'HAxTpuK+axSP+2fPwUGOsoskeaMUAcfZV14ZfjcKj4A1MidUyrTV47TNMKaYvuQwsw/AyALfeqg=', 'x-amz-request-id': 'S10HFE5SB80XXBRJ', 'date': 'Wed, 16 Mar 2022 10:14:09 GMT', 'last-modified': 'Wed, 16 Mar 2022 10:14:08 GMT', 'etag': '"b0c88164bb97968c2a49b672d9c05378"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': '03piRSPkgfjl7ZPgwl.pG_M0jKl7w_N6', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14041'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 10, 14, 8, tzinfo=tzutc()), 'ContentLength': 14041, 'ETag': '"b0c88164bb97968c2a49b672d9c05378"', 'VersionId': '03piRSPkgfjl7ZPgwl.pG_M0jKl7w_N6', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f101e0756a0>}
+**** Regression test for Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_14**********************
+
+[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier
+[0;0m
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/NeuralNetClassifier_Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules_new.dslr
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "e9a72efe-a51e-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "e9a72efc-a51e-11ec-aff0-06de44122f4d", "columnMapAssetId": "e9a72efd-a51e-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "NeuralNetClassifier_Unit_Test_14@8648"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_14","dataExtractionIdentifier":"915e3c21-d064-4b33-9eb3-ae81fda631f3","assetsInfo":[{"assetId":"e9a72efe-a51e-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"46ef6da5-d3ad-4a5c-b566-7380fbc61b43","status":"DATAEXTRACT_SUCCESS","startTime":1647431273648,"extractionTimeInMilis":19760,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'BDA9N89R5XY308VE', 'HostId': '6CuUzHHmZx+V3j0xDu367afdkxBhM+ElVhH137jDds7nxwvKf1pDxiMPHPCWZL62JsYmd9AQbpQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': '6CuUzHHmZx+V3j0xDu367afdkxBhM+ElVhH137jDds7nxwvKf1pDxiMPHPCWZL62JsYmd9AQbpQ=', 'x-amz-request-id': 'BDA9N89R5XY308VE', 'date': 'Wed, 16 Mar 2022 11:48:14 GMT', 'last-modified': 'Wed, 16 Mar 2022 11:48:14 GMT', 'etag': '"065ca0a8dc05e2a12035da088e1ab3ca"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': '5wo68yKNUEpsMvduHKFDkUdV1gI9yMmz', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14695'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 11, 48, 14, tzinfo=tzutc()), 'ContentLength': 14695, 'ETag': '"065ca0a8dc05e2a12035da088e1ab3ca"', 'VersionId': '5wo68yKNUEpsMvduHKFDkUdV1gI9yMmz', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f755c31dbb0>}
+**** Regression test for NeuralNetClassifier_Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of NeuralNetClassifier_Unit_Test_14**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules.dslr
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "c97084be-a51e-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "c97084bc-a51e-11ec-aff0-06de44122f4d", "columnMapAssetId": "c97084bd-a51e-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_14@6766"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_14","dataExtractionIdentifier":"828cf52e-f04f-482a-9275-d55b6e44dd9b","assetsInfo":[{"assetId":"c97084be-a51e-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"36091d06-afb2-402f-b896-14ee596e665f","status":"DATAEXTRACT_SUCCESS","startTime":1647431227966,"extractionTimeInMilis":43525,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'JRZ71R561E4TGXD1', 'HostId': 'WdxdJXQ8oJ6XgVR0Aj+ZSR+0CMo+NKu2/7mCyeHzqgDSJ4XYqJ6ZxNXXm/YR0jGp9zrc/T4THAQ=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'WdxdJXQ8oJ6XgVR0Aj+ZSR+0CMo+NKu2/7mCyeHzqgDSJ4XYqJ6ZxNXXm/YR0jGp9zrc/T4THAQ=', 'x-amz-request-id': 'JRZ71R561E4TGXD1', 'date': 'Wed, 16 Mar 2022 11:47:52 GMT', 'last-modified': 'Wed, 16 Mar 2022 11:47:52 GMT', 'etag': '"d73ad73cc6b71a739b43b2bc9a93cd7b"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'pxjeTipqeO3s1eDXZycwNgHauM5VdSYV', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14041'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 11, 47, 52, tzinfo=tzutc()), 'ContentLength': 14041, 'ETag': '"d73ad73cc6b71a739b43b2bc9a93cd7b"', 'VersionId': 'pxjeTipqeO3s1eDXZycwNgHauM5VdSYV', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7f755ce956a0>}
+**** Regression test for Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_14**********************
+
+[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier
+[0;0m
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test NeuralNetClassifier_Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/NeuralNetClassifier_Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules_new.dslr
+Published Message: {"requestMsgId": "reqMsgId_NeuralNetClassifier_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "b11e7370-a533-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "b11e736e-a533-11ec-aff0-06de44122f4d", "columnMapAssetId": "b11e736f-a533-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "NeuralNetClassifier_Unit_Test_14@8011"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_NeuralNetClassifier_Unit_Test_14","dataExtractionIdentifier":"f1c110f0-dad1-42d3-a289-6ca345457b28","assetsInfo":[{"assetId":"b11e7370-a533-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"362af344-f474-469c-b782-e3351df94259","status":"DATAEXTRACT_SUCCESS","startTime":1647440198061,"extractionTimeInMilis":12475,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/NeuralNetClassifier_Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'TBPJ5YS8KQKTCVTM', 'HostId': 'KM1mqjKHPEbb1xe50o3QOgh1hZFbjinodiadC16T4t2i7O8dTmSqQvxNli7Ujcxf3/G8zpjuCFg=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'KM1mqjKHPEbb1xe50o3QOgh1hZFbjinodiadC16T4t2i7O8dTmSqQvxNli7Ujcxf3/G8zpjuCFg=', 'x-amz-request-id': 'TBPJ5YS8KQKTCVTM', 'date': 'Wed, 16 Mar 2022 14:16:51 GMT', 'last-modified': 'Wed, 16 Mar 2022 14:16:51 GMT', 'etag': '"b2ce8499eef56d677d9f7d1df8abd2db"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'HUIUMQqw3ri.5SPgxsLhmbKCuTBx3nU3', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14828'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 14, 16, 51, tzinfo=tzutc()), 'ContentLength': 14828, 'ETag': '"b2ce8499eef56d677d9f7d1df8abd2db"', 'VersionId': 'HUIUMQqw3ri.5SPgxsLhmbKCuTBx3nU3', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fb42897e1c0>}
+**** Regression test for NeuralNetClassifier_Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of NeuralNetClassifier_Unit_Test_14**********************
+
+RabbitMQ configurations retrieved successfully
+Consumer Queue initialization successful
+Producer Queue initialization successful
+
+[1m*************** Running test Unit_Test_14 ***************[0m
+[1mDescription:[0m UDS testing for Unit_Test_14
+
+SUBFOLDERS:  {'RegressionTests/Unit_Test_14': [('RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', ['aptrans'])]}
+FOLDER:  RegressionTests/Unit_Test_14
+DOWNLOAD FOLDER:  RegressionTests/Unit_Test_14
+RUN FILE: RegressionTests/Unit_Test_14/original_anon.Copy_of_Irish_Life_Transfer_letter.xlsx ap_rules.dslr
+Published Message: {"requestMsgId": "reqMsgId_Unit_Test_14", "replyMQExchange": "UDS_RESPONSE_UNIT_TEST", "replyMQRoutingKey": "UEN_DATAEXT_UNIT_TEST", "assets": [{"id": "95bd275c-a533-11ec-aff0-06de44122f4d", "performOCR": "no", "ocrEngine": "tika"}], "docProcessingMode": "TRANSFORM_MODE", "rulesAssetId": "95bd275a-a533-11ec-aff0-06de44122f4d", "columnMapAssetId": "95bd275b-a533-11ec-aff0-06de44122f4d", "filePassword": "", "outputFormat": {"newSheet": {"prefixOrSuffixForName": "Prefix", "character": "", "color": "#FFFF00"}, "originSheet": {"prefixOrSuffixForName": "Prefix", "character": "~", "color": "#FFFFFF"}, "exceptionSheet": {"prefixOrSuffixForName": "Prefix", "character": "$", "color": "#FF0000"}, "outputDocumentName": "originalNameWithPrefix", "outputDocumentNameValue": "aptrans_", "documentOutputMode": "interleaved"}, "appContext": "", "campaignId": "udsregression", "ueTag": "", "s3bucket": "ushurdev", "hostname": "localhost:5000", "apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq", "enterpriseId": "udsmq", "requestId": "Unit_Test_14@2618"}
+
+
+Consumed Message - {"requestMsgId":"reqMsgId_Unit_Test_14","dataExtractionIdentifier":"9b96ca4c-2199-44aa-8094-f5413eeba7dc","assetsInfo":[{"assetId":"95bd275c-a533-11ec-aff0-06de44122f4d","outputAssets":[{"extractedContent":"","extractedStructuredContent":"760584ce-cd0b-4774-90b2-43edcc40ae4b","status":"DATAEXTRACT_SUCCESS","startTime":1647440163035,"extractionTimeInMilis":32813,"hasTransformedAsset":true,"passwordProtected":false,"vars":{"ap_negatives":"False","ap_totals":"2904"}}]}]}
+RegressionTests/Unit_Test_14/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx downloaded
+{'ResponseMetadata': {'RequestId': 'MXRRY2HHP3VYEHRN', 'HostId': 'W4PaL1jtP5USGrpcX3Bk+aI4Fi9c5/nO/i6fE9tjs9YBMYUXti2MVrvJuz0dSTqQcePSSPQTA6Y=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'W4PaL1jtP5USGrpcX3Bk+aI4Fi9c5/nO/i6fE9tjs9YBMYUXti2MVrvJuz0dSTqQcePSSPQTA6Y=', 'x-amz-request-id': 'MXRRY2HHP3VYEHRN', 'date': 'Wed, 16 Mar 2022 14:16:37 GMT', 'last-modified': 'Wed, 16 Mar 2022 14:16:36 GMT', 'etag': '"897d51aff847f8ddead1368c015c09a5"', 'x-amz-server-side-encryption': 'aws:kms', 'x-amz-server-side-encryption-aws-kms-key-id': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'x-amz-server-side-encryption-bucket-key-enabled': 'true', 'x-amz-meta-filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'content-disposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'x-amz-version-id': 'Hj_Y5Cd1tCKdVOl5G_dwinUghp8S9PoG', 'accept-ranges': 'bytes', 'content-type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'server': 'AmazonS3', 'content-length': '14285'}, 'RetryAttempts': 0}, 'AcceptRanges': 'bytes', 'LastModified': datetime.datetime(2022, 3, 16, 14, 16, 36, tzinfo=tzutc()), 'ContentLength': 14285, 'ETag': '"897d51aff847f8ddead1368c015c09a5"', 'VersionId': 'Hj_Y5Cd1tCKdVOl5G_dwinUghp8S9PoG', 'ContentDisposition': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx', 'ContentType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'ServerSideEncryption': 'aws:kms', 'Metadata': {'filename': 'aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx'}, 'SSEKMSKeyId': 'arn:aws:kms:us-west-2:920349478710:key/dbea4c05-4f90-41ef-97d3-59fabc8bde63', 'BucketKeyEnabled': True, 'Body': <botocore.response.StreamingBody object at 0x7fb410af66a0>}
+**** Regression test for Unit_Test_14 ****
+
+aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
+1. error checking
+2. comparing expected and transformed files
+
+********************** End of Unit_Test_14**********************
+
+[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier
+[0;0m

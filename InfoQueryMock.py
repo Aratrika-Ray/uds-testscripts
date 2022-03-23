@@ -29,6 +29,7 @@ def infoQuery():
 
 
 if __name__ == "__main__":
-    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-    context.load_cert_chain("cert.pem", "key.pem", 'ushur@1234')
+    context = ssl.SSLContext()
+    context.load_cert_chain("cert.pem", "key.pem", "ushur@1234")
     app.run(debug=True, ssl_context=context)
+#    app.run(debug=True)

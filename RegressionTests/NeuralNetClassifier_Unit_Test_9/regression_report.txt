@@ -6,9 +6,9 @@ Color Coding Error: NONE
 File Comparison Error:NONE
 
 FILE -- aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
-Scheme Error: NONE
+Scheme Error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_9/aptrans_b6e69a92-eb69-4ed6-bf71-805fe69f2f3d.XLSX
 Exception Sheet Error: Forename error not in exception sheet=$Cover which is absent in transformed sheet!
-Paypoint Error: ISSUE FOUND column not present in sheet: Cover
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
 Miro Table Error: NONE
 Totaling Check for ER: total sheet = 1702.78, calculated values = 1702.78
 Totaling Check for EE: total sheet = 851.4, calculated values = 851.4
@@ -27,4 +27,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_9-
 TotalFiles	Passed	Failed
 3		3	0
 
-Total time taken=2.7004306316375732 seconds
+Total time taken=3.2312700748443604 seconds

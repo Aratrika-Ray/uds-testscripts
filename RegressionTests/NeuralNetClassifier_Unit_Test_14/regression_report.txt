@@ -1,6 +1,6 @@
 FILE -- aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
 Scheme Error: NONE
-Exception Sheet Error: NONE
+Exception Sheet Error: unique ID error not in exception sheet=$Details which is absent in transformed sheet!
 Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 2640, calculated values = 2640
@@ -12,4 +12,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_14-
 TotalFiles	Passed	Failed
 1		1	0
 
-Total time taken=0.6326892375946045 seconds
+Total time taken=0.8572773933410645 seconds

@@ -1,6 +1,6 @@
 FILE -- aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
 Scheme Error: NONE
-Exception Sheet Error: NONE
+Exception Sheet Error: unique ID error not in exception sheet=$Details which is absent in transformed sheet!
 Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 2640, calculated values = 2640
@@ -10,12 +10,11 @@ File Comparison Error:NONE
 
 FILE -- aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
 Scheme Error: NONE
-Exception Sheet Error: unique ID error not in exception sheet=$SK34 PENSION REPORT            which is absent in transformed sheet!
+Exception Sheet Error: NONE
 Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
 Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
-Totaling Check for AVC: total sheet = 500, calculated values = 500
 Color Coding Error: NONE
 File Comparison Error:NONE
 
@@ -23,4 +22,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_2-
 TotalFiles	Passed	Failed
 2		2	0
 
-Total time taken=1.5388166904449463 seconds
+Total time taken=1.2285034656524658 seconds

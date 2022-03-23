@@ -20,8 +20,8 @@ class instance:
         self.connection = pika.BlockingConnection(self.getConnectionParameters(config), )
         self.channel = self.connection.channel()
         queue = config.getConsumeQueue()
-        dataextqueue = self.channel.queue_declare(queue)
-        if(dataextqueue.method.message_count != 0):
+        consumequeueprops = self.channel.queue_declare(queue)
+        if(consumequeueprops.method.message_count != 0):
             self.channel.queue_purge(queue)
 
         print(name + ' Queue initialization successful')

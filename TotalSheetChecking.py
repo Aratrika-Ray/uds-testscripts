@@ -142,17 +142,18 @@ def totalsChecking(filePath, totalSheets, threadRes):
 
 def miroTableChecking(filePath, totalSheets, transformedSheets, threadRes):
     threadRes['miro'] = "NONE"
-    if(len(transformedSheets) == 1):
-        transdf = pd.read_excel(filePath, sheet_name=transformedSheets[0])
+    miroHeaders = ['Payment Frequency', 'Invoice Number', 'Paypoint', 'Collection Method', 'Date Received', 'Override Date', 'Amount Received', 'MIRO Date', 'Comment']
+    n = len(transformedSheets)
+    
+    for sheet in totalSheets:
+        sheetname = 'sheet1' if n == 1 else sheet.replace('#', '')
+        transdf = pd.read_excel(filePath, sheet_name=sheetname)
+
         if('ISSUES FOUND' in transdf.columns and not transdf['ISSUES FOUND'].isna().all()):
-            totaldf = pd.read_excel(filePath, sheet_name=totalSheets[0])
+            totaldf = pd.read_excel(filePath, sheet_name=sheet)
             if(not len(totaldf.index) > 10):
-                threadRes['miro'] = f"Scheme Number present but Miro Table not found in total sheet: {totalSheets[0]}"
-    else:
-        for sheet in totalSheets:
-            transdf = pd.read_excel(
-                filePath, sheet_name=sheet.replace('#', ''))
-            if('ISSUES FOUND' in transdf.columns and not transdf['ISSUES FOUND'].isna().all()):
-                totaldf = pd.read_excel(filePath, sheet_name=sheet)
-                if(not len(totaldf.index) > 10):
-                    threadRes['miro'] = f"Scheme Number present but Miro Table not found in total sheet: {sheet}"
+                threadRes['miro'] = f"Scheme Number present but Miro Table not found in total sheet: {sheet}"
+            else:
+                miroHeadersTransformed = [val[1] for val in totaldf.iloc[10].items()]
+                if(miroHeadersTransformed != miroHeaders):
+                    threadRes['miro'] = f"Miro Headers incorrect/not present in total sheet: {sheet}"

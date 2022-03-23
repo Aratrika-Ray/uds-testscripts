@@ -11,8 +11,8 @@ lock = {'folderLock': False, 'subFolderLock': False, 'downloadLock': False}
 
 class run:
     topFolder = "RegressionTests"
-    tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads - ", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - ", 'Unit_Test_11': "New Classifier & Extraneous Row Fix - ", 'Unit_Test_12': "Wrong Password Case - ", 
-    'NeuralNetClassifier_Unit_Test_1': "Hidden Sheets - ", 'NeuralNetClassifier_Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'NeuralNetClassifier_Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'NeuralNetClassifier_Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'NeuralNetClassifier_Unit_Test_6': "UI Params - ", 'NeuralNetClassifier_Unit_Test_7': "Color Coding - ", 'NeuralNetClassifier_Unit_Test_8': "Large Payloads - ", 'NeuralNetClassifier_Unit_Test_9': ".xls and .xlsx Transformation - ", 'NeuralNetClassifier_Unit_Test_10': "AP&SP Transformation - ", 'NeuralNetClassifier_Unit_Test_11': "New Classifier & Extraneous Row Fix - ", 'NeuralNetClassifier_Unit_Test_12': "Wrong Password Case - "}
+    tests = {'Unit_Test_1': "Hidden Sheets - ", 'Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'Unit_Test_6': "UI Params - ", 'Unit_Test_7': "Color Coding - ", 'Unit_Test_8': "Large Payloads - ", 'Unit_Test_9': ".xls and .xlsx Transformation - ", 'Unit_Test_10': "AP&SP Transformation - ", 'Unit_Test_11': "New Classifier & Extraneous Row Fix - ", 'Unit_Test_12': "Wrong Password Case - ", 'Unit_Test_13': "Exception Sheet Errors & Scheme Level Errors - ", 'Unit_Test_14': "Miro Details in Total Sheet - ", 'Unit_Test_15': "Paypoint Information in Transformed Sheet - ",
+    'NeuralNetClassifier_Unit_Test_1': "Hidden Sheets - ", 'NeuralNetClassifier_Unit_Test_2': "Multi-Header Columns AND Multiple File Transformation - ", 'NeuralNetClassifier_Unit_Test_3': "Password Protected Files AND Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_4': "Hidden Sheets AND File with Long Name - ", 'NeuralNetClassifier_Unit_Test_5': "Zip Files AND Multiple Zip File Transformation- ", 'NeuralNetClassifier_Unit_Test_6': "UI Params - ", 'NeuralNetClassifier_Unit_Test_7': "Color Coding - ", 'NeuralNetClassifier_Unit_Test_8': "Large Payloads - ", 'NeuralNetClassifier_Unit_Test_9': ".xls and .xlsx Transformation - ", 'NeuralNetClassifier_Unit_Test_10': "AP&SP Transformation - ", 'NeuralNetClassifier_Unit_Test_11': "New Classifier & Extraneous Row Fix - ", 'NeuralNetClassifier_Unit_Test_12': "Wrong Password Case - ", 'NeuralNetClassifier_Unit_Test_13': "Exception Sheet Errors & Scheme Level Errors - ", 'NeuralNetClassifier_Unit_Test_14': "Miro Details in Total Sheet - ", 'NeuralNetClassifier_Unit_Test_15': "Paypoint Information in Transformed Sheet - " }
 
     # Method called on receiving a response from UDS
     def onMessageReceived(self, ch, method, properties, body):
@@ -29,14 +29,13 @@ class run:
         
     # Generate a MQ message and send to UDS
     def Test(self, testId, file, transform, docName="originalNameWithPrefix", docMode="interleaved"):
-        MQTemplateFile = f"{self.idealFolder.replace('NeuralNetClassifier_', '')}/{(os.path.splitext(os.path.split(file)[1])[0]).replace('original_', '')}_RequestMessageTemplate.json"
-        print(file)
+        MQTemplateFile = f"{self.idealFolder.replace('NeuralNetClassifier_', '')}/{(os.path.splitext(os.path.split(file)[1])[0]).replace('original_', '')}_{transform}RequestMessageTemplate.json"
         msg = RequestMessage.new(MQTemplateFile, testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
 
         pubMsg = msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode)
         self.producer.publishMessage(pubMsg)
-        print(f"Published Message: {pubMsg}")
+        print(f"Published Message: {pubMsg}\n")
         self.numTests += 1
 
    # End of test
@@ -133,6 +132,7 @@ class run:
         self.newClassifier = new
         self.testID = testId if not self.newClassifier else f"NeuralNetClassifier_{testId}"
         self.testDesc = description
+        if(self.testID not in self.tests): self.tests[self.testID] = "New Test Case testID(please set a brief desc): "
 
         print(f"\n\033[1m*************** Running test {self.testID} ***************\033[0m")
         print(f"\033[1mDescription:\033[0m {self.testDesc}\n")
@@ -147,7 +147,7 @@ class run:
 
 
 def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
-    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.txt", "a")
+#    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.txt", "a")
     try:
         for unitTestFolder in unitFolderMap:
             while(lock['folderLock']): continue
@@ -155,11 +155,9 @@ def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
             run(unitTestFolder, f"UDS testing for {unitTestFolder}", topFolder, unitFolderMap[unitTestFolder], [ap, sp], map, new)
 
         while(not (lock['folderLock']==False and lock['subFolderLock']==False)): continue
-        for key in run.tests:
-            print(f"{key}: {run.tests[key]}")
+
         return True, run.tests
     except (KeyboardInterrupt):
-#        sys.stdout = sys.__stdout__
         sys.__stdout__.write("\033[1;31m\nKeyboard Interrupt detected!\nWaiting for the current test case to finish\n\033[0;0m")
         while(not (lock['folderLock']==False and lock['subFolderLock']==False)): continue
         for key in run.tests:

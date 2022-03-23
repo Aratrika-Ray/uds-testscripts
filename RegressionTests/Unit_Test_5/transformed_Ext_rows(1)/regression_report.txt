@@ -20,13 +20,6 @@ Totaling Check for AVC: total sheet = 1559.8, calculated values = 1559.8
 Color Coding Error: NONE
 File Comparison Error:NONE
 
-FILE -- aptrans_Scheme_601010.xlsx
-Scheme Error: NONE
-Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_Scheme_601010.xlsx! Mandatory column Forename not present.
-Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
-Color Coding Error: Can't check for color coding of sheets due to missng expecetd file
-File Comparison Error:RegressionTests/Unit_Test_5/expected_Ext_rows(1)/expected_aptrans_Scheme_601010.xlsx not found in RegressionTests/Unit_Test_5/expected_Ext_rows(1)
-
 FILE -- aptrans_anon.608407-20_12_01 NOV 945.74.XLSX
 Scheme Error: NONE
 Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/aptrans_anon.608407-20_12_01 NOV 945.74.XLSX! Mandatory column Forename not present.
@@ -36,13 +29,6 @@ Totaling Check for ER: total sheet = 645.74, calculated values = 645.74
 Totaling Check for EE: total sheet = 300, calculated values = 300
 Color Coding Error: NONE
 File Comparison Error:NONE
-
-FILE -- sptrans_Scheme_601010.xlsx
-Scheme Error: NONE
-Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_5/transformed_Ext_rows(1)/sptrans_Scheme_601010.xlsx! Mandatory column Forename not present.
-Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
-Color Coding Error: Can't check for color coding of sheets due to missng expecetd file
-File Comparison Error:RegressionTests/Unit_Test_5/expected_Ext_rows(1)/expected_sptrans_Scheme_601010.xlsx not found in RegressionTests/Unit_Test_5/expected_Ext_rows(1)
 
 FILE -- sptrans_anon.603570-20_12_03 nov 7721.50.xlsx
 Scheme Error: NONE
@@ -55,6 +41,6 @@ File Comparison Error:NONE
 
 Test results for RegressionTests/Unit_Test_5/transformed_Ext_rows(1)-
 TotalFiles	Passed	Failed
-6		4	2
+4		4	0
 
-Total time taken=20.271804332733154 seconds
+Total time taken=18.512067556381226 seconds

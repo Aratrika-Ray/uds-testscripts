@@ -38,8 +38,8 @@ Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
 Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
-Color Coding Error: Can't check for color coding of sheets due to exception
-File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx=Lengths must match to compare in sheet=sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
 
 FILE -- aptrans_Payroll.xlsx
 Scheme Error: NONE
@@ -47,8 +47,8 @@ Exception Sheet Error: Exception sheet not present for Sheet2 in RegressionTests
 Paypoint Error: ISSUE FOUND column not present in sheet: Sheet2
 Miro Table Error: NONE
 Totaling Check for ER: total sheet = 12894, calculated values = [0, 604220, 25788.0]
-Totaling Check for EE: total sheet = 16134, calculated values = [0, 32268.0]
-Totaling Check for AVC: total sheet = 300, calculated values = [600.0]
+Totaling Check for EE: total sheet = 16134.0, calculated values = [0, 32268.0]
+Totaling Check for AVC: total sheet = 300.0, calculated values = [600.0]
 Color Coding Error: NONE
 File Comparison Error:NONE
 
@@ -64,6 +64,6 @@ File Comparison Error:NONE
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_secondzip-
 TotalFiles	Passed	Failed
-6		5	1
+6		6	0
 
-Total time taken=72.39326667785645 seconds
+Total time taken=77.33431124687195 seconds

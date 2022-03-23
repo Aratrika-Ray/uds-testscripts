@@ -34,18 +34,17 @@ def exceptionSheetError(transformedSheets, exceptionSheets, file):
     for sheet in transformedSheets:
         transdf = pd.read_excel(file, sheet_name=sheet)
 
-        mandatory_cols = {'unique ID': ['REFNO', 'PPSNO', 'PAYROLL'], 'Contribution': [
-            'EE', 'ER', 'AVC', 'SPEE', 'SPER', 'SPAVC'], 'Surname': 'SURNAME', 'Forename': 'FORENAME'}
-        trans_cols = transdf.keys()
+        mandatory_cols = {'unique ID': ['REFNO', 'PPSNO', 'PAYROLL', 'PPS NO'], 'Contribution': [
+            'EE', 'ER', 'AVC', 'SPEE', 'SPER', 'SPAVC'], 'Surname': ['SURNAME', 'Surname'], 'Forename': ['FORENAME', 'Forename']}
+        trans_cols = transdf.keys();
 
         for mcol in mandatory_cols:
-            res = any(col.upper()
-                      for col in trans_cols if col in mandatory_cols[mcol])
+            res = any(col.upper() for col in trans_cols if col in mandatory_cols[mcol])
             if(len(transformedSheets) == 1):
                 n_exp = len(exceptionSheets)
-                if(not res and not n_exp):
+                if(not res and n_exp == 0):
                     threadRes['exception'] = f"Exception sheet not present for {sheet} in {file}! Mandatory column {mcol} not present."
-                elif(not res and n_exp):
+                elif(not res and n_exp > 0):
                     checkExceptionSheet(mcol, exceptionSheets[0], file)
             else:
                 if(not res and not f"${sheet}" in exceptionSheets):

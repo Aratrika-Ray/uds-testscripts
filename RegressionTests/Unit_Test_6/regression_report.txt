@@ -5,6 +5,13 @@ Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
 Color Coding Error: NONE
 File Comparison Error:NONE
 
+FILE -- aptrans_Scheme_605685_fortest.xlsx
+Scheme Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/Unit_Test_6/aptrans_Scheme_605685_fortest.xlsx! Mandatory column Forename not present.
+Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
+Color Coding Error: NONE
+File Comparison Error:NONE
+
 FILE -- new_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
@@ -49,6 +56,6 @@ File Comparison Error:NONE
 
 Test results for RegressionTests/Unit_Test_6-
 TotalFiles	Passed	Failed
-7		7	0
+8		8	0
 
-Total time taken=1.9100472927093506 seconds
+Total time taken=2.6276700496673584 seconds

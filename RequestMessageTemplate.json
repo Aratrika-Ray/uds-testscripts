@@ -28,10 +28,10 @@
 		"documentOutputMode": "interleaved"
 	},
 	"appContext": "",
-	"campaignId": "udsmq-regression",
+	"campaignId": "udsmqregression",
 	"ueTag": "",
 	"s3bucket": "",
-	"hostname": "",
+	"hostname": "localhost:5000",
 	"apiSecToken": "fbh1h7RvXs14k01XIbIRxTs5TgG2dxnDOlQnxJAgxiXMHkbq",
-	"enterpriseId": "udsmqregressiondummy"
+	"enterpriseId": "udsmq"
 }

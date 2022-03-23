@@ -5,8 +5,6 @@ import RequestMessage
 import os, sys, json
 import argparse
 
-lock = {'folderLock': False, 'downloadLock': False}
-
 class run:
     # Method called on receiving a response from UDS
     def onMessageReceived(self, ch, method, properties, body):
@@ -21,6 +19,7 @@ class run:
         self.rulesAssetId = self.s3.uploadFileAWS(rulesAssetPath)
         self.columnMapAssetId = self.s3.uploadFileAWS(columnMappingPath)
         self.fileAssetId = self.s3.uploadFileAWS(uploadFilePath)
+
         return (self.rulesAssetId is not None) and (self.columnMapAssetId is not None) and (self.fileAssetId is not None)
         
     # Generate a MQ message and send to UDS
@@ -28,8 +27,11 @@ class run:
         MQTemplateFile = "RequestMessageTemplate.json"
         msg = RequestMessage.new(MQTemplateFile, testId, self.config)
         msg.newAsset(self.fileAssetId, 'no', 'tika')
-        self.producer.publishMessage(msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode))
 
+        pubMsg = msg.getRequestMessage(self.rulesAssetId,self.columnMapAssetId, transform, docName, docMode)
+        self.producer.publishMessage(pubMsg)
+        print(f"Published Message: {pubMsg}")
+        self.numTests += 1
 
     # End of test
     def postTest(self, response):
@@ -42,10 +44,7 @@ class run:
                 for outputAssets in assetsInfo['outputAssets']:
                 # checking success status
                     if(outputAssets['hasTransformedAsset'] != False):
-                        while(lock['downloadLock']): continue
-                        lock['downloadLock'] = True
                         self.s3.downloadFileAWS(outputAssets['extractedStructuredContent'], folderName)
-                        lock['downloadLock'] = False
                     else:
                         err = True
                         if(outputAssets['extractedStructuredContent'] == 'NONE'):
@@ -84,7 +83,7 @@ class run:
         self.numTests = 8 if args.ui else len(ruleFilePath)
 
         uiparams = True if args.ui else False
-        transformation = 'aptrans'
+        transformation = 'aptrans' if 'ap' in ruleFilePath[0] else 'sp'
         if(uiparams):
             uicombinations = [('originalNameWithPrefix', f"interleaved_{transformation}_", 'interleaved'),('originalNameWithSuffix', f"_interleaved_{transformation}", 'interleaved'),('newName', f"interleaved_{transformation}_newName_of_{os.path.splitext(uploadFilePath)[0]}", 'interleaved'),
             ('originalNameWithPrefix', f"new_{transformation}_", 'new'),('originalNameWithSuffix', f"_new_{transformation}", 'new'),('newName', f"new_{transformation}_newName_of_{os.path.splitext(uploadFilePath)[0]}", 'new')]

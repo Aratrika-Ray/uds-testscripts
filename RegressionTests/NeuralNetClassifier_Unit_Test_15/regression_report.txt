@@ -4,11 +4,11 @@ Exception Sheet Error: NONE
 Paypoint Error: NONE
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 7170.99, calculated values = 7170.99
-Color Coding Error: NONE
-File Comparison Error:NONE
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_15/aptrans_anon.SAA_Pension_Remit_-_07.20_SPPP__601013_.xlsx=Lengths must match to compare in sheet=sheet1
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_15-
 TotalFiles	Passed	Failed
-1		1	0
+1		0	1
 
-Total time taken=0.6246263980865479 seconds
+Total time taken=0.6124105453491211 seconds
