@@ -1,12 +1,12 @@
 from threading import Thread
 import openpyxl
 import re
-from glob import glob
 import pandas as pd
 from TotalSheetChecking import miroTableChecking, totalsChecking
 
 threadRes = {'scheme': '', 'exception': '', 'paypoint': '', 'miro': '', 'total': []}
 
+# check for any scheme level errors
 def schemeErrors(exceptionSheets, file):
     threadRes['scheme'] = "NONE"
 
@@ -17,7 +17,7 @@ def schemeErrors(exceptionSheets, file):
             if(excp_df.iloc[i, 0].startswith('scheme')):
                 threadRes['scheme'] = f"{excp_df.iloc[i, 1]} for {file}"
 
-
+# check if mandatory columns exist 
 def checkExceptionSheet(mcol, sheet, file):
     excpdf = pd.read_excel(file, sheet_name=sheet)
     n = len(excpdf.index)
@@ -27,7 +27,7 @@ def checkExceptionSheet(mcol, sheet, file):
 
     threadRes['exception'] = f"{mcol} error not in exception sheet={sheet} which is absent in transformed sheet!"
 
-
+# check for any exception sheet errors
 def exceptionSheetError(transformedSheets, exceptionSheets, file):
     threadRes['exception'] = "NONE"
 
@@ -35,8 +35,8 @@ def exceptionSheetError(transformedSheets, exceptionSheets, file):
         transdf = pd.read_excel(file, sheet_name=sheet)
 
         mandatory_cols = {'unique ID': ['REFNO', 'PPSNO', 'PAYROLL', 'PPS NO'], 'Contribution': [
-            'EE', 'ER', 'AVC', 'SPEE', 'SPER', 'SPAVC'], 'Surname': ['SURNAME', 'Surname'], 'Forename': ['FORENAME', 'Forename']}
-        trans_cols = transdf.keys();
+            'EE', 'ER', 'AVC', 'SPEE', 'SPER', 'SPAVC'], 'Surname': 'SURNAME', 'Forename': 'FORENAME'}
+        trans_cols = transdf.keys()
 
         for mcol in mandatory_cols:
             res = any(col.upper() for col in trans_cols if col in mandatory_cols[mcol])
@@ -52,7 +52,7 @@ def exceptionSheetError(transformedSheets, exceptionSheets, file):
                 elif(not res and f"${sheet}" in exceptionSheets):
                     checkExceptionSheet(mcol, f"${sheet}", file)
 
-
+# check for any paypoint errors
 def paypointChecking(transformedSheets, file):
     threadRes['paypoint'] = "NONE"
 
@@ -74,9 +74,9 @@ def paypointChecking(transformedSheets, file):
                     if("Member does not have open Paypoints" not in transdf.iloc[i, 0]):
                         threadRes['paypoint'] = f"Scheme Number incorrect; Paypoint issue not present in ISSUE FOUND column in sheet: {sheet}"
 
-
+# check for errors in transformed files
 def errorChecking(filePath, parentRes):
-    print("1. error checking")
+    print("1. Error checking")
     res = ""
     wb = openpyxl.load_workbook(filePath)
     pattern = 'sheet "(.*?)">'

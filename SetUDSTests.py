@@ -11,7 +11,7 @@ def mockServerStart():
     if(servercmd.returncode == 0 and serverpid.stdout != ''):
         print("\nInfoQuery mock server is running.")
         return 1
-    
+
     print("\nInfoQuery mock server could not be started.")
     return 0
 
@@ -24,7 +24,7 @@ def mockServerStop():
     if(killserver.returncode == 0 and len(pid) <= 2):
         print("\nInfoQuery mock server stopped.")
         return 1
-    
+
     print("\nInfoQuery mock server could not be stopped.")
     return 0
 
@@ -36,7 +36,7 @@ class runTests:
     sp_rules = 'sp_rules.dslr'
     sp_rules_new = 'sp_rules_new.dslr'
     mapping = 'column-map1.json'
-    
+
     # checks for zip files in folder
     def checkZip(self, folder):
         return any(file.endswith('.zip') for file in os.listdir(folder))
@@ -54,10 +54,14 @@ class runTests:
         return t
 
 
-    def unitFolderProcessing(self, original_folder, expected_folder=""):
+    def unitFolderProcessing(self, original_folder):
         originalFileFolder = os.path.join(self.topFolder, original_folder)
         folderFiles = os.listdir(originalFileFolder)
         original_files = [file for file in folderFiles if file.startswith('original_')]
+
+        ui_params = any("interleaved_" in file for file in folderFiles)
+        self.unitTestMap[original_folder]['properties']['uiparams'] = ui_params
+
         for file in original_files:
             basename = os.path.splitext(file.replace('original_',''))[0]
             filename = f"{originalFileFolder}/{file}"
@@ -81,16 +85,16 @@ class runTests:
 
 #        for key in self.unitTestMap.keys():
 #           print(f"{key}: {self.unitTestMap[key]}")
-#        oldClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder)
-#        if(oldClassifierTest):
-        print(f"\33[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier\n\033[0;0m")
-        newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True)
-        if(newClassifierTest):
-            sys.stdout = sys.__stdout__
-            for key in testRes.keys():
-                print(f"{key}: {testRes[key]}")
+        oldClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules, self.sp_rules, self.mapping, self.topFolder) if self.topFolder ==self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules, self.sp_rules, self.mapping, self.topFolder)
+        if(oldClassifierTest):
+            print(f"\33[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier\n\033[0;0m")
+            newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True)
+            if(newClassifierTest):
+                sys.stdout = sys.__stdout__
+                for key in testRes.keys():
+                    print(f"{key}: {testRes[key]}")
 
-            print(f"\n\033[1mRegression Testing Complete!\033[0m\n")
+                print(f"\n\033[1mRegression Testing Complete!\033[0m\n")
 
 
     #constructor
@@ -102,7 +106,7 @@ class runTests:
 
         folders = [folder for folder in os.listdir(self.topFolder) if folder.startswith('Unit_Test_')]
         self.topFolderProcessing(folders)
-    
+
 
 if __name__ == "__main__":
     try:
@@ -116,6 +120,5 @@ if __name__ == "__main__":
         serverstop = mockServerStop()
         if(serverstop):
             print("\033[1;31m\nRegression Test Suite stopped.\n\033[0;0m")
-        
-        sys.exit(0)
 
+        sys.exit(0)

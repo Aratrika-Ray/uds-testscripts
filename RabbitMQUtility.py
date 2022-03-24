@@ -19,10 +19,10 @@ class instance:
     def __init__(self, name, config):
         self.connection = pika.BlockingConnection(self.getConnectionParameters(config), )
         self.channel = self.connection.channel()
-        queue = config.getConsumeQueue()
-        consumequeueprops = self.channel.queue_declare(queue)
+        # get consume queue and purge queue if pending messages
+        consumequeue = config.getConsumeQueue()
+        consumequeueprops = self.channel.queue_declare(consumequeue)
         if(consumequeueprops.method.message_count != 0):
-            self.channel.queue_purge(queue)
+            self.channel.queue_purge(consumequeue)
 
         print(name + ' Queue initialization successful')
-

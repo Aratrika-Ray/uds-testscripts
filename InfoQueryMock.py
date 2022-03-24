@@ -4,12 +4,15 @@ import json, ssl
 
 app = Flask(__name__)
 
+# mock api server for infoquery
 @app.route('/infoQuery', methods=['POST'])
 def infoQuery():
     try:
         info = request.get_json()
+        # store scheme numbers of associated unit test in schemenumbers.json
         schemefile = open('schemenumbers.json')
         schemenumbers = json.loads(schemefile.read())
+        
         if(info['apiSecToken'] == schemenumbers['apiSecToken'] and info['campaignId'] != "" and info['entId'] != ""):
             unitTest = info['requestId'].split('@')[0].replace('NeuralNetClassifier_', '')
             if(unitTest in schemenumbers):
@@ -30,6 +33,6 @@ def infoQuery():
 
 if __name__ == "__main__":
     context = ssl.SSLContext()
-    context.load_cert_chain("cert.pem", "key.pem", "ushur@1234")
+    # certfile, keyfile and pwd for keyfile
+    context.load_cert_chain("cert.pem", "key.pem", 'ushur@1234')
     app.run(debug=True, ssl_context=context)
-#    app.run(debug=True)

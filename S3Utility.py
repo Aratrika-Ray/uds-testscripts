@@ -10,7 +10,7 @@ class instance:
     def downloadFileAWS(self, asset_id, folder):
         s3 = boto3.client('s3',self.s3Region)
         theFileData = s3.get_object(Bucket=self.s3Bucket, Key=asset_id)
-        filenameHeader = "expected_"+theFileData['ContentDisposition']
+        filenameHeader = theFileData["ContentDisposition"]
 
         if(not os.path.exists(folder)):
             os.mkdir(folder)
@@ -44,4 +44,3 @@ class instance:
     def __init__(self, s3Region, s3Bucket):
         self.s3Region = s3Region
         self.s3Bucket = s3Bucket
-
