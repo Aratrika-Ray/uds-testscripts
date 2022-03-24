@@ -90,9 +90,9 @@ class runTests:
             print(f"\33[93mRegression Testing with Old Classifier Finished.Proceeding to Regression Testing with New Classifier\n\033[0;0m")
             newClassifierTest, testRes = setTests(self.unitTestMap, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True) if self.topFolder == self.unitTestFolder else setTests({self.unitTestFolder: self.unitTestMap[self.unitTestFolder]}, self.ap_rules_new, self.sp_rules_new, self.mapping, self.topFolder, True)
             if(newClassifierTest):
-                sys.stdout = sys.__stdout__
                 for key in testRes.keys():
                     print(f"{key}: {testRes[key]}")
+                    sys.__stdout__.write(f"{key}: {testRes[key]}\n")
 
                 print(f"\n\033[1mRegression Testing Complete!\033[0m\n")
 

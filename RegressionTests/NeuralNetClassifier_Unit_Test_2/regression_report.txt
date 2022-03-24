@@ -1,17 +1,17 @@
 FILE -- aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
-Scheme Error: NONE
+Scheme Error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.Copy_of_Irish_Life_Transfer_letter.xlsx
 Exception Sheet Error: unique ID error not in exception sheet=$Details which is absent in transformed sheet!
-Paypoint Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 2640, calculated values = 2640
-Totaling Check for ER: total sheet = 264, calculated values = 264
+Totaling Check for ER: total sheet = 264.0, calculated values = 264.0
 Color Coding Error: NONE
 File Comparison Error:NONE
 
 FILE -- aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
-Scheme Error: NONE
+Scheme Error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_2/aptrans_anon.603520Irish_Life_Pension_Report_July_2020.xlsx
 Exception Sheet Error: NONE
-Paypoint Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 3214.68, calculated values = 3214.68
 Totaling Check for ER: total sheet = 2878.78, calculated values = 2878.78
@@ -22,4 +22,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_2-
 TotalFiles	Passed	Failed
 2		2	0
 
-Total time taken=1.2285034656524658 seconds
+Total time taken=1.3095245361328125 seconds

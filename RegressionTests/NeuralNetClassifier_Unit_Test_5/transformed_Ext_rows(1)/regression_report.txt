@@ -42,4 +42,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_5/transformed_Ext
 TotalFiles	Passed	Failed
 4		4	0
 
-Total time taken=19.196131944656372 seconds
+Total time taken=18.877342462539673 seconds

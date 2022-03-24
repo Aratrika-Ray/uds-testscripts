@@ -13,4 +13,4 @@ Test results for RegressionTests/Unit_Test_4-
 TotalFiles	Passed	Failed
 1		1	0
 
-Total time taken=1.3197746276855469 seconds
+Total time taken=1.1836676597595215 seconds

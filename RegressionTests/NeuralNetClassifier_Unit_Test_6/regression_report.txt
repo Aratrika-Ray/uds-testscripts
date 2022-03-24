@@ -9,8 +9,8 @@ FILE -- new_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_6/new_aptrans_Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- interleaved_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
@@ -23,8 +23,8 @@ FILE -- new_aptrans_newName_of_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_6/new_aptrans_newName_of_Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- interleaved_aptrans_newName_of_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
@@ -37,18 +37,18 @@ FILE -- Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_6/Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- Scheme_605685_fortest_new_aptrans.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
 Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/NeuralNetClassifier_Unit_Test_6/Scheme_605685_fortest_new_aptrans.xlsx=Lengths must match to compare in sheet=Sheet1
 
 Test results for RegressionTests/NeuralNetClassifier_Unit_Test_6-
 TotalFiles	Passed	Failed
-7		7	0
+7		3	4
 
-Total time taken=2.293820858001709 seconds
+Total time taken=2.242931604385376 seconds

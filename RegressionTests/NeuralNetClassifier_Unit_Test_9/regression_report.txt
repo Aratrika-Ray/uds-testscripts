@@ -27,4 +27,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_9-
 TotalFiles	Passed	Failed
 3		3	0
 
-Total time taken=3.2312700748443604 seconds
+Total time taken=3.124345541000366 seconds

@@ -1,7 +1,7 @@
 FILE -- aptrans_HiddenColumn.xlsx
-Scheme Error: NONE
+Scheme Error: The Scheme ID is missing for RegressionTests/NeuralNetClassifier_Unit_Test_1/aptrans_HiddenColumn.xlsx
 Exception Sheet Error: NONE
-Paypoint Error: NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
 Miro Table Error: NONE
 Totaling Check for EE: total sheet = 5224.67, calculated values = 5224.67
 Totaling Check for ER: total sheet = 2612.33, calculated values = 2612.33
@@ -12,4 +12,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_1-
 TotalFiles	Passed	Failed
 1		1	0
 
-Total time taken=42.57866191864014 seconds
+Total time taken=46.299731969833374 seconds

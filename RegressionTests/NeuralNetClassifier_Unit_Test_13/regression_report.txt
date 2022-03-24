@@ -1,6 +1,6 @@
 FILE -- aptrans_anon.601082-modified.xlsx
 Scheme Error: NONE
-Exception Sheet Error: NONE
+Exception Sheet Error: Exception sheet not present for Sheet1 in RegressionTests/NeuralNetClassifier_Unit_Test_13/aptrans_anon.601082-modified.xlsx! Mandatory column Forename not present.
 Paypoint Error: ISSUE FOUND column not present in sheet: Sheet1
 Color Coding Error: NONE
 File Comparison Error:NONE
@@ -9,4 +9,4 @@ Test results for RegressionTests/NeuralNetClassifier_Unit_Test_13-
 TotalFiles	Passed	Failed
 1		1	0
 
-Total time taken=0.395566463470459 seconds
+Total time taken=0.4574410915374756 seconds

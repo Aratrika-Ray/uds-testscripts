@@ -149,7 +149,8 @@ class run:
 
 
 def setTests(unitFolderMap, ap, sp, map, topFolder, new=False):
-#    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.txt", "a")
+#    sys.stdout = open(f"regression_report_{datetime.date(datetime.now())}.out", "a")
+    print(str(datetime.now()))
     # loop the unit folder dictionary and runs one test case at a time.
 
     try:

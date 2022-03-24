@@ -1,11 +1,11 @@
 FILE -- aptrans_anon.471d8233-b124-47fd-80b9-bccc15924bed (2).xlsx
-Scheme Error: NONE
+Scheme Error: The Scheme ID is missing for RegressionTests/Unit_Test_7/aptrans_anon.471d8233-b124-47fd-80b9-bccc15924bed (2).xlsx
 Exception Sheet Error: Forename error not in exception sheet=$Scheme Info which is absent in transformed sheet!
-Paypoint Error: ISSUE FOUND column not present in sheet: Scheme Info
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
 Miro Table Error: NONE
 Totaling Check for ER: total sheet = 3162.24, calculated values = 3162.24
 Totaling Check for EE: total sheet = 3998.43, calculated values = 3998.43
-Totaling Check for AVC: total sheet = 600, calculated values = 600
+Totaling Check for AVC: total sheet = 600.0, calculated values = 600.0
 Color Coding Error: NONE
 File Comparison Error:NONE
 
@@ -13,4 +13,4 @@ Test results for RegressionTests/Unit_Test_7-
 TotalFiles	Passed	Failed
 1		1	0
 
-Total time taken=2.5279386043548584 seconds
+Total time taken=2.461402416229248 seconds
