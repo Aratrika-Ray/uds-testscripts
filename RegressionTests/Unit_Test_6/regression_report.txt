@@ -15,9 +15,9 @@ File Comparison Error:NONE
 FILE -- new_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
-Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/new_aptrans_Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- interleaved_aptrans_Scheme_605685_fortest.xlsx
 Scheme Error: NONE
@@ -43,19 +43,19 @@ File Comparison Error:NONE
 FILE -- Scheme_605685_fortest.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
-Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/Scheme_605685_fortest.xlsx=Lengths must match to compare in sheet=Sheet1
 
 FILE -- Scheme_605685_fortest_new_aptrans.xlsx
 Scheme Error: NONE
 Exception Sheet Error: NONE
-Paypoint Error: NONE
-Color Coding Error: NONE
-File Comparison Error:NONE
+Paypoint Error: Scheme Number not provided - Issues Found column is blank
+Color Coding Error: Can't check for color coding of sheets due to exception
+File Comparison Error:Exception Occurred in File=RegressionTests/Unit_Test_6/Scheme_605685_fortest_new_aptrans.xlsx=Lengths must match to compare in sheet=Sheet1
 
 Test results for RegressionTests/Unit_Test_6-
 TotalFiles	Passed	Failed
-8		8	0
+8		5	3
 
-Total time taken=2.6276700496673584 seconds
+Total time taken=1.9235973358154297 seconds
